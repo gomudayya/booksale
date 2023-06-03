@@ -2,7 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
+<!--  mybatis 주의사항-->
+<!--  select를 쿼리를 이용하고, 도메인 객체에 값을 셋팅할 때 멤버변수의 이름과 테이블의 컬럼이 일치해야함.-->
+
 <!--  id : mapper 인터페이스의 메소드 이름  -->
+
 
 <mapper namespace="dbteam4.booksale.repository.UserMapper">
     <insert id="save" useGeneratedKeys="true" keyProperty="id">
@@ -10,6 +14,12 @@
         VALUES (#{userName}, #{phoneNumber}, #{userID}, #{password})
     </insert>
 
+    <select id="findByLoginID" resultType="User">
+        select id, user_id, user_password, user_name, phone_number from user where user_id = #{userID}
+    </select>
 
+    <select id="findById" resultType="User">
+        select * from user where id={id};
+    </select>
 
 </mapper>

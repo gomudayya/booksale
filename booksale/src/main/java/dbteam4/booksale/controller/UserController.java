@@ -1,7 +1,14 @@
 package dbteam4.booksale.controller;
 
+import dbteam4.booksale.constant.SessionConst;
+import dbteam4.booksale.domain.User;
+import dbteam4.booksale.dto.LoginDTO;
 import dbteam4.booksale.dto.UserDTO;
 import dbteam4.booksale.service.UserService;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -25,6 +32,35 @@ public class UserController {
     public String save(@ModelAttribute UserDTO userDTO) {
         log.info("userDTO ={}", userDTO.toString());
         userService.save(userDTO);
+        return "redirect:/";
+    }
+
+    @PostMapping("/login")
+    public String login(@ModelAttribute LoginDTO loginDTO, HttpServletRequest request) {
+        User loginUser = userService.login(loginDTO.getLoginID(), loginDTO.getPassword());
+
+        if (loginUser == null) {
+            log.info("Controller계층 : 로그인 실패 ");
+            return "login";
+        }
+
+        else {
+            //로그인 성공 처리
+            //세션이 있으면 세션 반환, 없으면 신규 세션 생성
+            HttpSession session = request.getSession();
+            //세션에 로그인 회원 정보 보관
+            session.setAttribute(SessionConst.LOGIN_USER, loginUser);
+            log.info("로그인 성공");
+            return "redirect:/";
+        }
+    }
+
+    @PostMapping("/logout")
+    public String logout(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        if(session != null) {
+            session.invalidate();
+        }
         return "redirect:/";
     }
 }

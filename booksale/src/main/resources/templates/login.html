@@ -11,16 +11,16 @@
 <body style >
     <!-- = "background-image: url('https://blog.kakaocdn.net/dn/EUyI3/btqDPYEYgss/x3dY0uYvYR6dqEamgVP6rK/img.jpg');
     background-size: cover;" -->
-    <a href="index.html"><img src="/img/1.jpg" class="logo" alt="." style="margin:2rem"></a>
+    <a href="index.html" th:href="@{/}"><img src="/img/1.jpg" class="logo" alt="." style="margin:2rem"></a>
     <main class="login-main">
         <h1 class="display-5 login-text">Login</h1>
         <div class="row">
-            <form class="login-form"></form>
-            <span class="login-input">
-            <input type="text" class="form-control login-id" placeholder="ID" aria-label="Username" aria-describedby="addon-wrapping">
-            <input type="password" class="form-control login-pw" placeholder="Password" aria-label="Username" aria-describedby="addon-wrapping">
-            </span>
-            <input class="btn btn-dark login-button" type="submit" value="Login">
+            <form class="login-form" method="post" action="/user/login">
+                <span class="login-input">
+                <input type="text" class="form-control login-id" placeholder="ID" aria-label="Username" aria-describedby="addon-wrapping" name ="loginID">
+                <input type="password" class="form-control login-pw" placeholder="Password" aria-label="Username" aria-describedby="addon-wrapping" name="password">
+                </span>
+                <input class="btn btn-dark login-button" type="submit" value="Login">
             </form>
         </div>
         <span style="color:gray"><br>You don't have an ID yet?</span>
