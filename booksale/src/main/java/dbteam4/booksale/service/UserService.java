@@ -31,14 +31,11 @@ public class UserService {
         User user = userMapper.findByLoginID(loginID);
 
         if (user == null) {
-            log.info("아이디를 찾을 수 없음");
             return null;
         }
-        //log.info("service계층 {} ", user.toString());
         if (user.getUserPassword().equals(password)) {
             return user; // 로그인 성공
         } else {
-            log.info("password가 일치하지 않음");
             return null;
         }
     }

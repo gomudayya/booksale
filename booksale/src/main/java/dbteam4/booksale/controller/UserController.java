@@ -30,7 +30,6 @@ public class UserController {
 
     @PostMapping("/save")
     public String save(@ModelAttribute UserDTO userDTO) {
-        log.info("userDTO ={}", userDTO.toString());
         userService.save(userDTO);
         return "redirect:/";
     }
@@ -40,7 +39,6 @@ public class UserController {
         User loginUser = userService.login(loginDTO.getLoginID(), loginDTO.getPassword());
 
         if (loginUser == null) {
-            log.info("Controller계층 : 로그인 실패 ");
             return "login";
         }
 
@@ -50,7 +48,6 @@ public class UserController {
             HttpSession session = request.getSession();
             //세션에 로그인 회원 정보 보관
             session.setAttribute(SessionConst.LOGIN_USER, loginUser);
-            log.info("로그인 성공");
             return "redirect:/";
         }
     }

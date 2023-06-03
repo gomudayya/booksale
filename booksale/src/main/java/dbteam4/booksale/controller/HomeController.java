@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 @Controller
 @RequiredArgsConstructor
@@ -18,13 +19,7 @@ public class HomeController {
 
     private final UserMapper userMapper;
     @GetMapping("/")
-    public String homeLogin(HttpServletRequest request, Model model) {
-        HttpSession session = request.getSession(false);
-        if (session == null) {
-            return "index";
-        }
-
-        User loginUser = (User) session.getAttribute(SessionConst.LOGIN_USER);
+    public String homeLogin(@SessionAttribute(name = SessionConst.LOGIN_USER, required = false)User loginUser, Model model) {
 
         //세션에 회원 데이터가 없으면 home
         if(loginUser == null) {
