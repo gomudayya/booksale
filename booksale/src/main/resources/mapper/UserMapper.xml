@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--  id : mapper 인터페이스의 메소드 이름  -->
+
+<mapper namespace="dbteam4.booksale.repository.UserMapper">
+    <insert id="save" useGeneratedKeys="true" keyProperty="id">
+        insert into user (user_name, phone_number, user_id, user_password)
+        VALUES (#{userName}, #{phoneNumber}, #{userID}, #{password})
+    </insert>
+
+
+
+</mapper>
