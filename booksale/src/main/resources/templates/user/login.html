@@ -11,21 +11,20 @@
 <body style >
     <!-- = "background-image: url('https://blog.kakaocdn.net/dn/EUyI3/btqDPYEYgss/x3dY0uYvYR6dqEamgVP6rK/img.jpg');
     background-size: cover;" -->
-    <a href="index.html" th:href="@{/}"><img src="/img/1.jpg" class="logo" alt="." style="margin:2rem"></a>
+    <a href="../index.html" th:href="@{/}"><h1 class = "title logo"><span>R</span><span>E</span><span>B</span><span>O</span><span>O</span><span>K</span></h1></a>
     <main class="login-main">
-        <h1 class="display-5 login-text">Login</h1>
+        <h1 class="display-5 login-text">로그인</h1>
         <div class="row">
-            <form class="login-form" method="post" action="/user/login">
-                <span class="login-input">
-                <input type="text" class="form-control login-id" placeholder="ID" aria-label="Username" aria-describedby="addon-wrapping" name ="loginID">
-                <input type="password" class="form-control login-pw" placeholder="Password" aria-label="Username" aria-describedby="addon-wrapping" name="password">
-                </span>
-                <input class="btn btn-dark login-button" type="submit" value="Login">
+            <form class = "flex-space-between" th:method="post" th:action="@{/user/login}">
+                <div class="login-input">
+                    <input type="text" class="form-control login-id" placeholder="ID" aria-label="Username" aria-describedby="addon-wrapping" name="loginID">
+                    <input type="password" class="form-control login-pw" placeholder="Password" aria-label="Username" aria-describedby="addon-wrapping" name="password">
+                </div>
+                <input class="btn login-button" type="submit" value="Login">
             </form>
         </div>
-        <span style="color:gray"><br>You don't have an ID yet?</span>
-        <a style="margin-left:5em" href="register.html">register!</a>
-        
+        <span style="color:gray"><br>아직 아이디가 없으시다면?</span>
+        <a style="margin-left:5em" href="register.html" th:href="@{/user/register}">회원가입</a>
     </main>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 

@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Slf4j
@@ -21,10 +22,22 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping("/register")
-    public String register() { return "register"; }
+    public String register() { return "user/register"; }
 
     @GetMapping("/login")
-    public String login() { return "login";}
+    public String login() { return "user/login";}
+
+    @GetMapping("/info")
+    public String userInfo(@SessionAttribute(name = SessionConst.LOGIN_USER, required = false)User loginUser, Model model) {
+        model.addAttribute("user", loginUser);
+        return "user/userInfo";
+    }
+
+    @GetMapping("/edit")
+    public String userEdit(@SessionAttribute(name = SessionConst.LOGIN_USER, required = false)User loginUser, Model model) {
+        model.addAttribute("user", loginUser);
+        return "user/userEdit";
+    }
 
     @PostMapping("/save")
     public String save(@ModelAttribute RegisterDTO registerDTO) {
@@ -47,6 +60,7 @@ public class UserController {
             //세션에 로그인 회원 정보 보관
             session.setAttribute(SessionConst.LOGIN_USER, loginUser);
             return "redirect:/";
+
         }
     }
 
