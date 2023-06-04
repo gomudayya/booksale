@@ -59,7 +59,7 @@ public class BookApiService {
         return xml.substring(startNum, endNum + endToken.length());
     }
 
-    public BookDTO xmlToObject(String xml) throws JsonProcessingException {
+    private BookDTO xmlToObject(String xml) throws JsonProcessingException {
         XmlMapper xmlMapper = new XmlMapper();
         BookDTO bookDTO = xmlMapper.readValue(xml, BookDTO.class);
         return bookDTO;
