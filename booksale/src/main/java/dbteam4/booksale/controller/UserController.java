@@ -3,11 +3,9 @@ package dbteam4.booksale.controller;
 import dbteam4.booksale.constant.SessionConst;
 import dbteam4.booksale.domain.User;
 import dbteam4.booksale.dto.LoginDTO;
-import dbteam4.booksale.dto.UserDTO;
+import dbteam4.booksale.dto.RegisterDTO;
 import dbteam4.booksale.service.UserService;
-import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -29,8 +27,8 @@ public class UserController {
     public String login() { return "login";}
 
     @PostMapping("/save")
-    public String save(@ModelAttribute UserDTO userDTO) {
-        userService.save(userDTO);
+    public String save(@ModelAttribute RegisterDTO registerDTO) {
+        userService.save(registerDTO);
         return "redirect:/";
     }
 

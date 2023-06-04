@@ -6,7 +6,7 @@ import lombok.ToString;
 
 @Getter @Setter
 @ToString
-public class UserDTO {
+public class RegisterDTO {
     private Long id;
     private String userName;
     private String phoneNumber;

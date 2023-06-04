@@ -2,13 +2,11 @@ package dbteam4.booksale.service;
 
 
 import dbteam4.booksale.domain.User;
-import dbteam4.booksale.dto.UserDTO;
+import dbteam4.booksale.dto.RegisterDTO;
 import dbteam4.booksale.repository.UserMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 @Slf4j
@@ -16,8 +14,8 @@ import java.util.Optional;
 public class UserService {
 
     private final UserMapper userMapper;
-    public void save(UserDTO userDTO) {
-        userMapper.save(userDTO);
+    public void save(RegisterDTO registerDTO) {
+        userMapper.save(registerDTO);
     }
 
 

@@ -2,15 +2,13 @@ package dbteam4.booksale.repository;
 
 
 import dbteam4.booksale.domain.User;
-import dbteam4.booksale.dto.UserDTO;
+import dbteam4.booksale.dto.RegisterDTO;
 import org.apache.ibatis.annotations.Mapper;
-
-import java.util.Optional;
 
 
 @Mapper
 public interface UserMapper {
-    void save(UserDTO userDTO);
+    void save(RegisterDTO registerDTO);
 
     User findByLoginID(String userID);
 
