@@ -59,7 +59,7 @@ public class UserController {
         User loginUser = userService.login(loginDTO.getLoginID(), loginDTO.getPassword());
 
         if (loginUser == null) {
-            return "user/zlogin";
+            return "user/login";
         }
 
         else {

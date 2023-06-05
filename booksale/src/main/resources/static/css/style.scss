@@ -4,6 +4,7 @@ $bright2: rgb(190, 133, 255);
 $bright3: rgb(211, 230, 255);
 $bright4: rgb(255, 255, 229);
 $bright5: rgb(255, 239, 146);
+$bright6: rgb(228, 205, 255);
 
 $border: rgb(36, 0, 165);
 $dark: rgb(36, 0, 165);
@@ -311,7 +312,7 @@ main .content{
 }
 
 
-.flex-space-between{ // 미사용
+.flex-space-between{ 
     display: flex;
     justify-content: space-between;
 }
@@ -385,8 +386,9 @@ main .content{
     // background-color: white;
     position:fixed;
     top:0;
-    width: 70vw;
+    width: 70rem;
     margin-left: 3rem;
+    background-color: white;
 }
 
 
@@ -436,12 +438,21 @@ main .content{
 // }
 
 
+.margin-top{
+    margin-top: 1rem;
+    
+}
 
-// home
 
 .search-main{
     margin: 1rem;
     margin-top: 10rem;
+    margin-left: 3rem;
+    // background-color: white;
+    padding: 3rem;
+    border-radius: 2rem;;
+    padding-left: 15rem;
+    width: 65rem; // 왜 이 이상 안되는지?
 }
 .sub-title{
     border-left: $dark solid 2px;
@@ -449,13 +460,56 @@ main .content{
     margin-bottom: 1.5rem;
 }
 .main-box{
-    margin-bottom:2rem;
     border-radius: 1.5rem;
+    padding-bottom:0.4rem;
+    height: auto;
 }
 .book{
     margin:1rem;
     margin-top:1.7rem;
     margin-bottom:1.7rem;
+}
+
+
+//search selected
+.content .settings{
+    margin:0.4rem;
+    font-size: 1.1rem;
+}
+
+.no-padding{
+    padding-left: 0rem;
+}
+.flex{
+    display:flex;
+    align-items: flex-start;
+}
+.filter{
+    width:18rem;
+    padding-left: 1.5rem;
+}
+.filter-item{
+    margin-top: 1.7rem;
+    margin-bottom: 0.4rem;
+}
+.filter-search-button{
+    margin-top:0.5rem;
+    background-color: $dark;
+    color:white;
+}
+.filter{
+    background-color: $bright3;
+    padding:1rem;
+    margin:1rem;
+    border-radius: 1rem;
+}
+.filter-item{
+    padding-left:0.5rem;
+    border-left: 1px solid $bright2;
+}
+
+.main-list{
+    margin-top: 3rem;
 }
 
 
@@ -468,3 +522,95 @@ main .content{
     // top: 50%;
     // left: 50%;
     // transform: translate(-50%, -50%);
+
+
+
+
+
+    //post
+
+.post-main{
+    margin:1rem;
+    width:50vw;
+    background-color: $bright3;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.post-main .form-label{
+    width:5rem;
+}
+.buttons{
+
+}
+.custom-button{
+    margin:0.5rem;
+    padding:0.5rem;
+    background-color: $bright6;
+    border-radius: 0.5rem;
+}
+.post-book{
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid black;
+}
+.post-main .buttons{
+    margin-top: 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid $bright;
+}
+
+.post-main .item{
+    margin:0.4rem;
+}
+
+.margin-right{
+    margin-right: 0.7rem;
+}
+.post-main .margin-top{
+    margin-top: 0.4rem;
+}
+
+.post-text{
+    height:30rem;
+    width:100%; 
+    margin:0.4rem;
+    margin-left: 0.7rem;
+}
+
+//post-view
+.post-content{
+    width:100%;
+    background-color: $bright4;
+    padding: 0.5rem;
+    border-radius: 0.8rem;
+    margin-top: 0.8rem;
+}
+
+.post-main .detail{
+    background-color: $bright;
+    color:white;
+    border-radius: 0.5rem;
+    padding-left:0.7rem;
+    padding-right:0.7rem;
+}
+.post-main .title{
+    margin:1rem;
+    font-size: 1.2rem;
+    text-align: left;
+}
+.post-photo{
+    width:40%;
+    height: auto;
+    margin:1rem;
+}
+//others
+.review-text{
+    height:6rem;
+    width:95%; 
+    margin:0.4rem;
+    margin-left: 0.7rem;
+}
+.top-border{
+    border-top: 2px solid $bright2;
+    padding-top: 1rem;
+}

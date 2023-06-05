@@ -359,8 +359,9 @@ main .content {
   height: auto;
   position: fixed;
   top: 0;
-  width: 70vw;
+  width: 70rem;
   margin-left: 3rem;
+  background-color: white;
 }
 
 .search-form {
@@ -390,9 +391,18 @@ main .content {
   color: white;
 }
 
+.margin-top {
+  margin-top: 1rem;
+}
+
 .search-main {
   margin: 1rem;
   margin-top: 10rem;
+  margin-left: 3rem;
+  padding: 3rem;
+  border-radius: 2rem;
+  padding-left: 15rem;
+  width: 65rem;
 }
 
 .sub-title {
@@ -402,12 +412,149 @@ main .content {
 }
 
 .main-box {
-  margin-bottom: 2rem;
   border-radius: 1.5rem;
+  padding-bottom: 0.4rem;
+  height: auto;
 }
 
 .book {
   margin: 1rem;
   margin-top: 1.7rem;
   margin-bottom: 1.7rem;
+}
+
+.content .settings {
+  margin: 0.4rem;
+  font-size: 1.1rem;
+}
+
+.no-padding {
+  padding-left: 0rem;
+}
+
+.flex {
+  display: flex;
+  align-items: flex-start;
+}
+
+.filter {
+  width: 18rem;
+  padding-left: 1.5rem;
+}
+
+.filter-item {
+  margin-top: 1.7rem;
+  margin-bottom: 0.4rem;
+}
+
+.filter-search-button {
+  margin-top: 0.5rem;
+  background-color: rgb(36, 0, 165);
+  color: white;
+}
+
+.filter {
+  background-color: rgb(211, 230, 255);
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 1rem;
+}
+
+.filter-item {
+  padding-left: 0.5rem;
+  border-left: 1px solid rgb(190, 133, 255);
+}
+
+.main-list {
+  margin-top: 3rem;
+}
+
+.post-main {
+  margin: 1rem;
+  width: 50vw;
+  background-color: rgb(211, 230, 255);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.post-main .form-label {
+  width: 5rem;
+}
+
+.custom-button {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  background-color: rgb(228, 205, 255);
+  border-radius: 0.5rem;
+}
+
+.post-book {
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid black;
+}
+
+.post-main .buttons {
+  margin-top: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgb(170, 204, 248);
+}
+
+.post-main .item {
+  margin: 0.4rem;
+}
+
+.margin-right {
+  margin-right: 0.7rem;
+}
+
+.post-main .margin-top {
+  margin-top: 0.4rem;
+}
+
+.post-text {
+  height: 30rem;
+  width: 100%;
+  margin: 0.4rem;
+  margin-left: 0.7rem;
+}
+
+.post-content {
+  width: 100%;
+  background-color: rgb(255, 255, 229);
+  padding: 0.5rem;
+  border-radius: 0.8rem;
+  margin-top: 0.8rem;
+}
+
+.post-main .detail {
+  background-color: rgb(170, 204, 248);
+  color: white;
+  border-radius: 0.5rem;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+}
+
+.post-main .title {
+  margin: 1rem;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+.post-photo {
+  width: 40%;
+  height: auto;
+  margin: 1rem;
+}
+
+.review-text {
+  height: 6rem;
+  width: 95%;
+  margin: 0.4rem;
+  margin-left: 0.7rem;
+}
+
+.top-border {
+  border-top: 2px solid rgb(190, 133, 255);
+  padding-top: 1rem;
 }/*# sourceMappingURL=style.css.map */

@@ -11,121 +11,74 @@
 <body>
 
 
-  
+
 <!-- 메인 -->
-  <main class="container search-main">
-    <h1 class="display-5 sub-title">'검색어'에 대한 검색 결과</h1>
-    example:
-    <div class ="row container border main-box">
+<main class="container search-main">
+    <h1 class="display-5 sub-title">'창의적'에 대한 검색 결과</h1>
 
-      <div class="card book" style="width: 15rem;">
-        <img src="../img/ex.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">제목: Book is alive</h5>
-          <p class="card-text">4권 언넝 가져가셔요</p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">10,000 👍</li>
-          <li class="list-group-item">거의 새 것</li>
-        </ul>
-      </div>
+    <div class ="container border main-box">
 
-      <div class="card book" style="width: 15rem;">
-        <img src="../img/ex.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">제목: Book is alive</h5>
-          <p class="card-text">4권 언넝 가져가셔요</p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">10,000 👍</li>
-          <li class="list-group-item">거의 새 것</li>
-        </ul>
-      </div>
+        <!-- example -->
+        <a href = "selected.html" th:href="@{/search/selected}">
+            <div class = "content margin-top">
+                <img class = "book-icon" src = "../img/ex.png">
+                <div class = "content-info settings">
+                    <div>창의적 잠자기</div>
+                    <span>저자</span>
+                    <span>출판사</span>
+                    <span>출판 년도</span>
+                </div>
+                <div class = "state">1건</div>
+            </div>
+        </a>
 
-    </div>
-
-    <h1 class="display-5 sub-title">최근 거래</h1>
-    
-    example:
-    <div class ="row container border main-box">
-
-      <div class="card book" style="width: 15rem;">
-        <img src="../img/ex.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">제목: Book is alive</h5>
-          <p class="card-text">4권 언넝 가져가셔요</p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">10,000 👍</li>
-          <li class="list-group-item">거의 새 것</li>
-        </ul>
-      </div>
-
-      <div class="card book" style="width: 15rem;">
-        <img src="../img/ex.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">제목: Book is alive</h5>
-          <p class="card-text">4권 언넝 가져가셔요</p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">10,000 👍</li>
-          <li class="list-group-item">거의 새 것</li>
-        </ul>
-      </div>
-
-    </div>
-
-    <h1 class="display-5 sub-title">우수 회원</h1>
-    
-    example:
-    <div class ="row container border main-box">
-
-      <div class="card book" style="width: 15rem;">
-        <img src="../img/human.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">전강옥</h5>
-          <p class="card-text">코딩 좋아하는.. 사람입니다..</p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">142,857 points!</li>
-          <li class="list-group-item">절대신</li>
-        </ul>
-      </div>
-
+        <!-- example -->
+        <a href = "selected.html" th:href="@{/search/selected}">
+            <div class = "content margin-top">
+                <img class = "book-icon" src = "../img/ex.png">
+                <div class = "content-info settings">
+                    <div>창의적 숨쉬기</div>
+                    <span>저자</span>
+                    <span>출판사</span>
+                    <span>출판 년도</span>
+                </div>
+                <div class = "state">2건</div>
+            </div>
+        </a>
     </div>
 
 
-  </main>
+</main>
 
 
 
 
-  <!-- 헤더 -->
-  <header class="container-fluid header">
+<!-- 헤더 -->
+<header class="container-fluid header">
     <div class="row">
-      <div class="col">
-      </div>
-      <div class="col">
-        <a href="index.html"><h1 class = "title logo"><span>R</span><span>E</span><span>B</span><span>O</span><span>O</span><span>K</span></h1></a>
-      </div>
-      <div class="col col-5">
-        <form class = "search-form mt-3">
-          
-          <select class="form-select search-select" aria-label="filter for searching">
-            <option selected>통합검색</option>
-            <option value="1">책 제목</option>
-            <option value="2">ISBN</option>
-            <option value="3">저자</option>
-          </select>
-          <input type="text" class="form-control search-input" placeholder="Search">
-          <input type="submit" class="btn search-button" value="Go!"></button>
-        </form>
-      </div>
-      <div class="col col-3">
+        <div class="col">
+        </div>
+        <div class="col">
+            <a href="index.html" th:href="@{/}"><h1 class = "title logo"><span>R</span><span>E</span><span>B</span><span>O</span><span>O</span><span>K</span></h1></a>
+        </div>
+        <div class="col col-5">
+            <form class = "search-form mt-3">
 
-      </div>
+                <select class="form-select search-select" aria-label="filter for searching">
+                    <option selected>통합검색</option>
+                    <option value="1">책 제목</option>
+                    <option value="2">ISBN</option>
+                    <option value="3">저자</option>
+                </select>
+                <input type="text" class="form-control search-input" placeholder="Search">
+                <input type="submit" class="btn search-button" value="Go!"></button>
+            </form>
+        </div>
+        <div class="col col-3">
+
+        </div>
     </div>
-  
+
     <!-- <nav class="navbar navbar-expand-lg nav-mar">
       <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -141,86 +94,86 @@
             </li>
           </ul>
         </div>
-      </div> 
+      </div>
     </nav> -->
-  </header>
-    <!-- about membr -->
-    <div class = "account-logined margin-header">
-      <div class = "member-info" role="group">
-          <div class = "member-detail">
-              <div>전강욱 님</div>
-              <div>절대신</div>
-          </div>
-          <div class = "member-detail">
-              <span class = "col"><a href = "user/userInfo.html">회원정보</a></span>
-              <span class = "col"><a href = "index.html">로그아웃</a></span>
-          </div>
-      </div>
+</header>
+<!-- about membr -->
+<div class = "account-logined margin-header">
+    <div class = "member-info" role="group">
+        <div class = "member-detail">
+            <div>전강욱 님</div>
+            <div>절대신</div>
+        </div>
+        <div class = "member-detail">
+            <span class = "col"><a href = "member_info.html" th:href="@{/user/info}">회원정보</a></span>
+            <span class = "col"><a href = "index.html" th:href="@{/}">로그아웃</a></span>
+        </div>
+    </div>
 
-      <div class = "post-button">판매글 작성하기</div>
+    <div class = "post-button">판매글 작성하기</div>
 
-      <div class = "chat">
-          <div class = "chat-button btn">
-              ▼ 대화내역
-          </div>
-          <div class = "chat-list invisible">
-
-
-
-              <div class = "chat-block">
-                  <div class = "chat-name btn">박병욱</div>
-                  <div class = "chat-detail invisible">
-                      <div class = "chat-sent">
-                          <span class = "time">01:23</span>
-                          <span class = "message">디자인 빨리 끝내</span>
-                      </div>
-                      <div class = "chat-sent">
-                          <span class = "time">01:23</span>
-                          <span class = "message">대답.</span>
-                      </div>
-
-                      <div class = "chat-received">
-                          <span class = "message">ㅇㅇ</span>
-                          <span class = "time">01:23</span>
-                      </div>
-                      <form>
-                          <input class = "input-message">
-                      </form>
-                  </div>
-
-              </div>
+    <div class = "chat">
+        <div class = "chat-button btn">
+            ▼ 대화내역
+        </div>
+        <div class = "chat-list invisible">
 
 
 
-              <div class = "chat-block">
-                  <div class = "chat-name btn">전강옥</div>
-                  <div class = "chat-detail invisible">
-                      <div class = "chat-sent">
-                          <span class = "time">01:23</span>
-                          <span class = "message">데베설 A+ 받는 방법? 줄 바 꿈 테 스 트</span>
-                      </div>
+            <div class = "chat-block">
+                <div class = "chat-name btn">박병욱</div>
+                <div class = "chat-detail invisible">
+                    <div class = "chat-sent">
+                        <span class = "time">01:23</span>
+                        <span class = "message">디자인 빨리 끝내</span>
+                    </div>
+                    <div class = "chat-sent">
+                        <span class = "time">01:23</span>
+                        <span class = "message">대답.</span>
+                    </div>
 
-                      <div class = "chat-received">
-                          <span class = "message">있겠냐?</span>
-                          <span class = "time">01:23</span>
-                      </div>
-                      <form>
-                          <input class = "input-message">
-                      </form>
-                  </div>
-              </div>
+                    <div class = "chat-received">
+                        <span class = "message">ㅇㅇ</span>
+                        <span class = "time">01:23</span>
+                    </div>
+                    <form>
+                        <input class = "input-message">
+                    </form>
+                </div>
+
+            </div>
 
 
-          </div>
-      </div>
 
-  </div>
+            <div class = "chat-block">
+                <div class = "chat-name btn">전강옥</div>
+                <div class = "chat-detail invisible">
+                    <div class = "chat-sent">
+                        <span class = "time">01:23</span>
+                        <span class = "message">데베설 A+ 받는 방법? 줄 바 꿈 테 스 트</span>
+                    </div>
+
+                    <div class = "chat-received">
+                        <span class = "message">있겠냐?</span>
+                        <span class = "time">01:23</span>
+                    </div>
+                    <form>
+                        <input class = "input-message">
+                    </form>
+                </div>
+            </div>
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
-  <!--JQUERY-->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="/js/chat.js"></script>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!--JQUERY-->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="/js/chat.js"></script>
 </body>
 </html>
