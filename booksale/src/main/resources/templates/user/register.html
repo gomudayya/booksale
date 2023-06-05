@@ -38,16 +38,16 @@
 
                 <div class="col-md-3 register-input">
                     <label for="validationServer04" class="form-label">학교</label>
-                    <select class="form-select" id="validationServer04" aria-describedby="validationServer04Feedback" required>
+                    <select class="form-select"  id="validationServer04" aria-describedby="validationServer04Feedback" onchange="changeDepartment()"required>
                         <option selected disabled value="">Choose...</option>
-                        <option>한국기술교육대학교</option>
+                        <option th:each="schoolname : ${schoolMajorMap.keySet()}" th:text="${schoolname}" >한국기술교육대학교</option>
                     </select>
                 </div>
                 <div class="col-md-3 register-input" style="margin-left:4rem;">
                     <label for="validationServer04" class="form-label">학과</label>
-                    <select class="form-select" id="validationServer04" aria-describedby="validationServer04Feedback" required>
+                    <select class="form-select" id="validationServer05" aria-describedby="validationServer04Feedback" required>
                         <option selected disabled value="">Choose...</option>
-                        <option>컴퓨터공학</option>
+                        <option class="department-option">컴퓨터공학</option>
                     </select>
                 </div>
                 
@@ -69,6 +69,27 @@
     </main>
     <!-- <img src="/img/bigBook.jpg" class="" alt="." style="height:27rem"> -->
     </div>
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        const schoolMajorMap = /*[[${schoolMajorMap}]]*/;
+
+        function changeDepartment() {
+
+            const university_option = document.getElementById("validationServer04");
+
+            let selectedUniversity = university_option.options[university_option.selectedIndex].text
+
+            let departmentList = schoolMajorMap[selectedUniversity]
+            let option="<option selected disabled value=\"\">Choose...</option>";
+            for (let i = 0; i < departmentList.length; i++) {
+                option += "<option value="+departmentList[i]+">"+departmentList[i]+"</option>";
+            }
+
+            document.getElementById("validationServer05").innerHTML = option;
+        }
+        /*]]>*/
+    </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
     <!--JQUERY-->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

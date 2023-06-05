@@ -8,6 +8,8 @@
         VALUES (#{university}, #{department})
     </insert>
 
-
+    <select id="findAll" resultType="School">
+        select * from school
+    </select>
 
 </mapper>

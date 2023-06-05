@@ -4,6 +4,7 @@ import dbteam4.booksale.constant.SessionConst;
 import dbteam4.booksale.domain.User;
 import dbteam4.booksale.dto.LoginDTO;
 import dbteam4.booksale.dto.RegisterDTO;
+import dbteam4.booksale.service.SchoolService;
 import dbteam4.booksale.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -13,16 +14,24 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+import java.util.List;
+
 @Slf4j
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/user")
 public class UserController {
 
+    private final SchoolService schoolService;
     private final UserService userService;
 
     @GetMapping("/register")
-    public String register() { return "user/register"; }
+    public String register(Model model) {
+        HashMap<String, List<String>> allSchoolByMap = schoolService.findAllSchoolByMap();
+        model.addAttribute("schoolMajorMap", allSchoolByMap);
+        return "user/register";
+    }
 
     @GetMapping("/login")
     public String login() { return "user/login";}
@@ -50,7 +59,7 @@ public class UserController {
         User loginUser = userService.login(loginDTO.getLoginID(), loginDTO.getPassword());
 
         if (loginUser == null) {
-            return "login";
+            return "user/zlogin";
         }
 
         else {
