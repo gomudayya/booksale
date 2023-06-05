@@ -17,8 +17,8 @@
 
             <form class="row g-3 register-form" th:method="post" th:action="@{/user/save}">
                 <div class="col-md-10 register-input">
-                    <label for="validationServer01" class="form-label" name="userName">이름</label>
-                    <input type="text" class="form-control rName" id="validationServer01" placeholder="Name" required>
+                    <label for="validationServer01" class="form-label">이름</label>
+                    <input type="text" class="form-control rName" id="validationServer01" placeholder="Name" name="userName" required>
                 </div>
     
                 <div class="col-md-10 register-input">
@@ -38,16 +38,15 @@
 
                 <div class="col-md-3 register-input">
                     <label for="validationServer04" class="form-label">학교</label>
-                    <select class="form-select"  id="validationServer04" aria-describedby="validationServer04Feedback" onchange="changeDepartment()"required>
+                    <select class="form-select"  id="validationServer04" aria-describedby="validationServer04Feedback" name="university" onchange="changeDepartment()"required>
                         <option selected disabled value="">Choose...</option>
                         <option th:each="schoolname : ${schoolMajorMap.keySet()}" th:text="${schoolname}" >한국기술교육대학교</option>
                     </select>
                 </div>
                 <div class="col-md-3 register-input" style="margin-left:4rem;">
                     <label for="validationServer04" class="form-label">학과</label>
-                    <select class="form-select" id="validationServer05" aria-describedby="validationServer04Feedback" required>
+                    <select class="form-select" id="validationServer05" aria-describedby="validationServer04Feedback" name="department" required>
                         <option selected disabled value="">Choose...</option>
-                        <option class="department-option">컴퓨터공학</option>
                     </select>
                 </div>
                 

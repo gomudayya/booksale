@@ -16,6 +16,7 @@ public class UserService {
 
     private final UserMapper userMapper;
     public void save(RegisterDTO registerDTO) {
+        System.out.println("registerDTO = " + registerDTO);
         userMapper.save(registerDTO);
     }
 
