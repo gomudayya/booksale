@@ -15,9 +15,10 @@ public class TestController {
 
     private final BookApiService bookApiService;
     @GetMapping()
-    public String useBookAPI() throws JsonProcessingException {
+    public String useBookAPI() {
         String ISBN = "9791160734072";
         BookDTO bookData = bookApiService.getBookData(ISBN);
+        System.out.println("bookData = " + bookData);
         return "index";
     }
 }
