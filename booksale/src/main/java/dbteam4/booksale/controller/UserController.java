@@ -60,6 +60,7 @@ public class UserController {
     public String login(@ModelAttribute LoginDTO loginDTO, HttpServletRequest request) {
         User loginUser = userService.login(loginDTO.getLoginID(), loginDTO.getPassword());
 
+
         if (loginUser == null) {
             return "user/login";
         }
@@ -77,11 +78,13 @@ public class UserController {
 
     @PostMapping("/logout")
     public String logout(HttpServletRequest request) {
+        String referer = request.getHeader("Referer");
+
         HttpSession session = request.getSession(false);
         if(session != null) {
             session.invalidate();
         }
-        return "redirect:/";
+        return "redirect:" + referer;
     }
 
     @PostMapping("/edit")

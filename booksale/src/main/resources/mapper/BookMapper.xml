@@ -13,4 +13,10 @@
         select * from book
         where ISBN =#{ISBN};
     </select>
+
+    <select id="findAll" resultType="Map">
+        SELECT b.ISBN, COUNT(p.post_id) AS post_count
+        FROM book b LEFT JOIN post p ON b.ISBN = p.book_ISBN
+        GROUP BY b.ISBN;
+    </select>
 </mapper>

@@ -17,16 +17,21 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 @RequiredArgsConstructor
 public class HomeController {
 
+//    @GetMapping("/")
+//    public String homeLogin(@SessionAttribute(name = SessionConst.LOGIN_USER, required = false)User loginUser, Model model) {
+//
+//        //세션에 회원 데이터가 없으면 home
+//        if(loginUser == null) {
+//            return "index";
+//        }
+//
+//        //세션이 확인되면 로그인으로 이동
+//        model.addAttribute("user", loginUser);
+//        return "loginIndex";
+//    }
+
     @GetMapping("/")
-    public String homeLogin(@SessionAttribute(name = SessionConst.LOGIN_USER, required = false)User loginUser, Model model) {
-
-        //세션에 회원 데이터가 없으면 home
-        if(loginUser == null) {
-            return "index";
-        }
-
-        //세션이 확인되면 로그인으로 이동
-        model.addAttribute("user", loginUser);
-        return "loginIndex";
+    public String home() {
+        return "index";
     }
 }
