@@ -7,7 +7,6 @@ import dbteam4.booksale.repository.UserMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.ModelMap;
 
 @Service
 @Slf4j
@@ -16,7 +15,6 @@ public class UserService {
 
     private final UserMapper userMapper;
     public void save(RegisterDTO registerDTO) {
-        System.out.println("registerDTO = " + registerDTO);
         userMapper.save(registerDTO);
     }
 
@@ -29,7 +27,6 @@ public class UserService {
     public User login(String loginID, String password) {
 
         User user = userMapper.findByLoginID(loginID);
-
 
         if (user == null) {
             return null;

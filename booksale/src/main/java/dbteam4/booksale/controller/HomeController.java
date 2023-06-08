@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 @RequiredArgsConstructor
 public class HomeController {
 
+    private final UserMapper userMapper;
     @GetMapping("/")
     public String homeLogin(@SessionAttribute(name = SessionConst.LOGIN_USER, required = false)User loginUser, Model model) {
 
