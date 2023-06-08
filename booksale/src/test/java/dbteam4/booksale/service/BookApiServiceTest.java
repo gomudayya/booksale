@@ -5,20 +5,22 @@ import dbteam4.booksale.dto.BookDTO;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+@SpringBootTest
 class BookApiServiceTest {
 
-    private BookApiService bookApiService = new BookApiService();
+    @Autowired
+    private BookApiService bookApiService;
 
     @Test
-    void getBookData() throws JsonProcessingException {
-        String testISBN = "9788960174191";
-        BookDTO bookDTO = bookApiService.getBookData(testISBN);
+    void bookSearch() {
 
-        String resultTitle = "제노사이드 (다카노 가즈아키 장편소설)";
-        assertThat(bookDTO.getTitle()).isEqualTo(resultTitle);
+        String httpBody = bookApiService.bookSearch("영어");
+        System.out.println("httpBody = " + httpBody);
+
     }
 }

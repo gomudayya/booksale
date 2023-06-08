@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dbteam4.booksale.repository.PostMapper">
+
+    <insert id="save" useGeneratedKeys="true" keyProperty="postId">
+        insert into post (book_ISBN, post_content, sales_method,shipping_method, book_quality)
+        Values (#{ISBN}, #{postContent}, #{salesMethod}, #{shippingMethod}, #{bookQuality})
+    </insert>
+
+    <select id="findByPostId" resultType="Post">
+        select * from posd where post_id = #{postId};
+    </select>
+</mapper>
