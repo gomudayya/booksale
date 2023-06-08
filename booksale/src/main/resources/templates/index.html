@@ -9,18 +9,19 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <div class = "account mt-3" role="group">
-        <a href="user/login.html" th:href="@{/user/login}"><p class="btn rounded-pill">login</p></a>
-        <a href="user/register.html" th:href="@{user/register}"><p class="btn rounded-pill">register</p></a>
-    </div>
+    <div th:if="${session.loginUser == null}" th:replace="~{layout/fragment/header :: header}"></div>
     <br>
 
     <h1 class = "title"><span>R</span><span>E</span><span>B</span><span>O</span><span>O</span><span>K</span></h1>
-    <form action = "">
+    <form th:method="get" th:action="@{/search}">
         <div class = "mt-5 mx-auto main-search-bar input-group mb-3">
-            <input class = "form-control rounded-pill" type="text" placeholder="검색어를 입력해주십시오.">
+            <input type="hidden" name="condition" th:value="all">
+            <input class = "form-control rounded-pill" type="text" placeholder="검색어를 입력해주십시오." name="keyword">
         </div>
     </form>
+
+    <div th:if="${session.loginUser != null}"  th:insert="~{layout/fragment/login-sidebar :: login-sidebar}"></div>
+
 
     <main class = "mx-auto">
         <div class = "recent">recent</div>

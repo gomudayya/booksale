@@ -30,7 +30,6 @@ public class BookApiService {
 
     public void saveBook(String ISBN) {
         Book bookInDB = bookMapper.findByISBN(ISBN);
-        System.out.println("bookInDB = " + bookInDB);
 
         if (bookInDB == null) {
             BookDTO bookData = getBookData(ISBN);
@@ -67,7 +66,7 @@ public class BookApiService {
         String parsedXML = parseForBookInfo(response.getBody());
         BookDTO bookDTO = xmlToObject(parsedXML);
 
-        log.info(bookDTO.toString());
+        bookDTO.setAuthor(bookDTO.getAuthor().replaceAll("\\^", ","));
 
         return bookDTO;
     }

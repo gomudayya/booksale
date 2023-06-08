@@ -22,18 +22,21 @@ public class PostController {
     private final BookApiService bookApiService;
 
     @GetMapping()
-    public String post(@SessionAttribute(name = SessionConst.LOGIN_USER, required = true) User loginUser) {
+    public String post(@SessionAttribute(name = SessionConst.LOGIN_USER) User loginUser) {
 
         return "post";
     }
 
     @PostMapping()
-    public String savePost(@ModelAttribute PostDTO postDTO) {
+    public String savePost(@ModelAttribute PostDTO postDTO, @SessionAttribute(name = SessionConst.LOGIN_USER) User loginUser) {
+        postDTO.setSellerId(loginUser.getId());
+        postDTO.setPostTime(LocalDateTime.now());
 
         System.out.println("postDTO = " + postDTO);
 
-        postService.savePost(postDTO);
+        //무조건 책 먼저 저장해야함
         bookApiService.saveBook(postDTO.getISBN());
+        postService.savePost(postDTO);
 
         return "redirect:/";
     }

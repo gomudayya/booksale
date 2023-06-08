@@ -12,11 +12,12 @@ import java.time.LocalDateTime;
 @ToString
 public class Post {
     private Long postId;
-    private String bookISBN;
-    private String sellerId;
-    private LocalDateTime postTime;
+    private Book book;
+    private Long sellerId;
+    private String postTitle;
     private String postContent;
     private String salesMethod;
     private String shippingMethod;
-    private String book_quality;
+    private String bookQuality;
+    private LocalDateTime postTime;
 }

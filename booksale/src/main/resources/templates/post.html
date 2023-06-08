@@ -17,7 +17,7 @@
   <form th:method ="post" th:action="@{/post}">
     <div class="col-md-10 register-input flex">
       <label for="validationServer01" class="form-label" name="">제목</label>
-      <input type="text" class="form-control" id="validationServer01" placeholder="title" name="title" required>
+      <input type="text" class="form-control" id="validationServer01" placeholder="title" name="postTitle" required>
     </div>
 
     <div class="buttons">
@@ -51,10 +51,10 @@
 
     <div class = "flex item">
       <div class="form-label">분류</div>
-      <input class="margin-top" type="radio" id="option1" name="salesMethod" value="option1" checked>
+      <input class="margin-top" type="radio" id="option1" name="salesMethod" value="판매" checked>
       <label class="margin-right" for="option1">판매</label>
 
-      <input class="margin-top" type="radio" id="option2" name="salesMethod" value="option2">
+      <input class="margin-top" type="radio" id="option2" name="salesMethod" value="물려주기">
       <label for="option2">물려주기</label>
     </div>
 
@@ -62,10 +62,10 @@
 
     <div class = "flex item">
       <div class = "form-label">거래 방법</div>
-      <input class="margin-top" type="radio" id="option3" name="shippingMethod" value="option3" checked>
+      <input class="margin-top" type="radio" id="option3" name="shippingMethod" value="택배" checked>
       <label class="margin-right" for="option3">택배</label>
 
-      <input class="margin-top" type="radio" id="option4" name="shippingMethod" value="option4">
+      <input class="margin-top" type="radio" id="option4" name="shippingMethod" value="직거래">
       <label for="option4">직거래</label>
     </div>
 
