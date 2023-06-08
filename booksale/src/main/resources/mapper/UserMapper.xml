@@ -10,16 +10,23 @@
 
 <mapper namespace="dbteam4.booksale.repository.UserMapper">
     <insert id="save" useGeneratedKeys="true" keyProperty="id">
-        insert into user (user_name, phone_number, user_id, user_password)
-        VALUES (#{userName}, #{phoneNumber}, #{userID}, #{password})
+        insert into user (user_name, phone_number, user_id, user_password, school_id)
+        VALUES (#{userName},
+                #{phoneNumber},
+                #{userID},
+                #{password},
+                (SELECT school_id FROM school WHERE school.university=#{university} AND school.department=#{department}))
     </insert>
 
     <select id="findByLoginID" resultType="User">
-        select id, user_id, user_password, user_name, phone_number from user where user_id = #{userID}
+        select u.id, u.user_id, u.user_password, u.user_name, u.phone_number, s.university, s.department
+        from user u
+        inner join school s on u.school_id = s.school_id
+        where u.user_id=#{userID};
     </select>
 
     <select id="findById" resultType="User">
-        select * from user where id={id};
+        select * from user where id=#{id};
     </select>
 
 </mapper>
