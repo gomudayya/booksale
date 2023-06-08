@@ -16,8 +16,9 @@ public class TestController {
     private final BookApiService bookApiService;
     @GetMapping()
     public String useBookAPI() {
-        String ISBN = "9791160734072";
+        String ISBN = "9788960779761";
         BookDTO bookData = bookApiService.getBookData(ISBN);
+        bookApiService.saveBook(bookData.getISBN());
         System.out.println("bookData = " + bookData);
         return "index";
     }

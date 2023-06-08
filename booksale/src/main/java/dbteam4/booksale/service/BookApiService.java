@@ -8,10 +8,12 @@ import dbteam4.booksale.repository.BookMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.*;
+import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,26 +38,31 @@ public class BookApiService {
         }
     }
 
+    public String bookSearch(String searchWord) {
+        RestTemplate restTemplate = new RestTemplate();
+
+        HttpEntity request = getHttpEntity();
+
+        UriComponentsBuilder uriComponentsBuilder = UriComponentsBuilder.fromHttpUrl("https://openapi.naver.com/v1/search/book.json")
+                .queryParam("query", searchWord);
+
+        URI uri = uriComponentsBuilder.build().encode().toUri();
+
+        ResponseEntity<String> response = restTemplate.exchange(uri, HttpMethod.GET, request, String.class);
+        return response.getBody();
+    }
+
     public BookDTO getBookData(String ISBN) {
         RestTemplate restTemplate = new RestTemplate();
 
-        HttpHeaders headers = new HttpHeaders();
-
-        headers.set("X-Naver-Client-Id", naverClientID);
-        headers.set("X-Naver-Client-Secret", naverClientSecret);
-        headers.setContentType(MediaType.APPLICATION_XML);
-
-        HttpEntity request = new HttpEntity(headers);
+        HttpEntity request = getHttpEntity();
 
         String urlTemplate = UriComponentsBuilder.fromHttpUrl(bookURL)
                 .queryParam("d_isbn", ISBN)
                 .encode()
                 .toUriString();
 
-//        log.info(urlTemplate);
-
         ResponseEntity<String> response = restTemplate.exchange(urlTemplate, HttpMethod.GET, request, String.class);
-//        log.info(response.getBody());
 
         String parsedXML = parseForBookInfo(response.getBody());
         BookDTO bookDTO = xmlToObject(parsedXML);
@@ -63,6 +70,16 @@ public class BookApiService {
         log.info(bookDTO.toString());
 
         return bookDTO;
+    }
+
+    private HttpEntity getHttpEntity() {
+        HttpHeaders headers = new HttpHeaders();
+
+        headers.set("X-Naver-Client-Id", naverClientID);
+        headers.set("X-Naver-Client-Secret", naverClientSecret);
+
+        HttpEntity request = new HttpEntity(headers);
+        return request;
     }
 
     private String parseForBookInfo(String xml) {

@@ -1,21 +1,22 @@
-package dbteam4.booksale.dto;
+package dbteam4.booksale.domain;
 
-import dbteam4.booksale.domain.Book;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @ToString
-public class PostDTO {
+public class Post {
     private Long postId;
-    private Book book;
-    private Long sellerId;
-    //private
-    private String title;
+    private String bookISBN;
+    private String sellerId;
+    private LocalDateTime postTime;
     private String postContent;
     private String salesMethod;
     private String shippingMethod;
-    private String bookQuality;
+    private String book_quality;
 }

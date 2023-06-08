@@ -20,10 +20,9 @@ public class PostController {
     private final BookApiService bookApiService;
 
     @GetMapping()
-    public String post(@SessionAttribute(name = SessionConst.LOGIN_USER, required = true) User loginUser,
-                       @ModelAttribute PostDTO postDTO) {
-
-
+    @CrossOrigin
+//    public String post(@SessionAttribute(name = SessionConst.LOGIN_USER, required = true) User loginUser) {
+    public String post() {
 
         return "post";
     }
@@ -35,8 +34,14 @@ public class PostController {
         return "redirect:/";
     }
 
-    @GetMapping("/view")
-    public String view(){return "postview";}
+    @GetMapping("/view/{postId}")
+    public String view(@PathVariable Long postId) {
+
+        
+
+
+        return "postview";
+    }
 
     @GetMapping("/otherview")
     public String otherview(){return "postviewothers";}
