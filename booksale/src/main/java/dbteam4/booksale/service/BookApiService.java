@@ -52,7 +52,7 @@ public class BookApiService {
         return response.getBody();
     }
 
-    public BookDTO getBookData(String ISBN) {
+    private BookDTO getBookData(String ISBN) {
         RestTemplate restTemplate = new RestTemplate();
 
         HttpEntity request = getHttpEntity();

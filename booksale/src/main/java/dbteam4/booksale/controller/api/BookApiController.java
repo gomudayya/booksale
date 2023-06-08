@@ -1,4 +1,4 @@
-package dbteam4.booksale.controller;
+package dbteam4.booksale.controller.api;
 
 import dbteam4.booksale.service.BookApiService;
 import lombok.RequiredArgsConstructor;
@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @RequestMapping("bookApi")
 public class BookApiController {
+
     private final BookApiService bookApiService;
 
     @GetMapping("/search-json")

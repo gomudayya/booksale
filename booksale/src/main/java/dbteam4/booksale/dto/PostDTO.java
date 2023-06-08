@@ -10,9 +10,8 @@ import lombok.ToString;
 @ToString
 public class PostDTO {
     private Long postId;
-    private Book book;
+    private String ISBN;
     private Long sellerId;
-    //private
     private String title;
     private String postContent;
     private String salesMethod;
