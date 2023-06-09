@@ -44,6 +44,7 @@ public class PostController {
     @GetMapping("/view/{postId}")
     public String view(@PathVariable Long postId) {
 
+
         
 
 

@@ -2,6 +2,7 @@ package dbteam4.booksale.repository;
 
 import dbteam4.booksale.domain.Book;
 import dbteam4.booksale.dto.BookDTO;
+import dbteam4.booksale.dto.BookPostsDTO;
 import dbteam4.booksale.dto.BookSearchCond;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -13,6 +14,7 @@ public interface BookMapper {
 
     Book findByISBN(String ISBN);
 
-    List<Book> findAll(BookSearchCond bookSearchCond);
+    BookPostsDTO findBookWithPostsByISBN(String ISBN);
+    List<BookPostsDTO> findAll(BookSearchCond bookSearchCond);
 
 }
