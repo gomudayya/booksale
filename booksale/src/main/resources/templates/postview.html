@@ -16,7 +16,7 @@
 <main class="post-main">
   <div class="title" th:text="${post.postTitle}">게시글 제목 내용</div>
 
-  <a class="btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" th:text="|${userName}(click!)|">
+  <a class="custom-button" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" th:text="|${userName}(click!)|">
     작성자 이름(click!)
   </a>
 
@@ -33,6 +33,10 @@
     </div>
   </div>
 
+  <div class="flex">
+    <div class="item">판매/물려주기</div>
+    <div class="item detail" th:text="${post.salesMethod}">판매 또는 물려주기</div>
+  </div>
 
   <div class="flex">
     <div class="item">책 상태</div>
@@ -44,8 +48,12 @@
     <div class = "item">거래 방법</div>
     <div class="item detail" th:text="${post.shippingMethod}">택배</div>
   </div>
+  <div class="photo-price">
+    <img class = "post-photo" src = "../img/ex.png" th:src="${post.book.image}">
+    <div id="sellPrice" class="sellPrice">판매 희망가격(ex: 26000원)</div>
+    <label for="sellPrice" id="sellPriceUnit">원</label>
+  </div>
 
-  <img class = "post-photo" src = "../img/ex.png" th:src="${post.book.image}">
   <p class="post-content" th:text="${post.postContent}">
     글내용글내용글내용글내용글내용글내용글내용글내용글내용글내용글내용글내용글내용글내
     용글내용글내용글내용글내용글내용글내용글내용글내용글내용글내용글내용글내용글내용글
@@ -54,9 +62,16 @@
 
 
 
-  <button class="btn custom-button" type="submit"><a href="">삭제</a></button>
-  <button class="btn custom-button" type="submit"><a href="post.html" th:href="@{/post}">수정</a></button>
-
+  <button class="custom-button" type="submit"><a href="">삭제</a></button>
+  <button class="custom-button" type="submit"><a href="post.html" th:href="@{/post}">수정</a></button>
+  <div class="state-change">
+    <label for="sellState_combo">판매 상태 변경: </label>
+    <select id="sellState_combo">
+      <option value="selling"> 판매중</option>
+      <option value="resevation"> 예약중</option>
+      <option value="sellout"> 판매완료</option>
+    </select>
+  </div>
 
   <div class = "sold mt-3">
     <div>
