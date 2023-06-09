@@ -4,6 +4,7 @@ import dbteam4.booksale.domain.Post;
 import dbteam4.booksale.dto.PostBookDTO;
 import dbteam4.booksale.dto.PostDTO;
 import dbteam4.booksale.dto.BookSearchCond;
+import dbteam4.booksale.dto.ReviewDTO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

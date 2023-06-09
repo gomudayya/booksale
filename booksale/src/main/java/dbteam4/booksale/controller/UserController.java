@@ -36,7 +36,11 @@ public class UserController {
     }
 
     @GetMapping("/login")
-    public String login() { return "user/login";}
+    public String login(HttpServletRequest request, HttpSession session) {
+        String referrer = request.getHeader("Referer");
+        session.setAttribute("previousPage", referrer);
+        return "user/login";
+    }
 
     @GetMapping("/info")
     public String userInfo(@SessionAttribute(name = SessionConst.LOGIN_USER, required = false)User loginUser, Model model) {
@@ -71,7 +75,12 @@ public class UserController {
             HttpSession session = request.getSession();
             //세션에 로그인 회원 정보 보관
             session.setAttribute(SessionConst.LOGIN_USER, loginUser);
-            return "redirect:/";
+
+            String previousPage = (String) session.getAttribute("previousPage");
+            session.removeAttribute("previousPage");
+
+            if (previousPage != null) {return "redirect:" + previousPage;}
+            else {return "redirect:/";}
 
         }
     }

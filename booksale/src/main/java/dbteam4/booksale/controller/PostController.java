@@ -6,9 +6,12 @@ import dbteam4.booksale.domain.User;
 import dbteam4.booksale.dto.BookDTO;
 import dbteam4.booksale.dto.PostBookDTO;
 import dbteam4.booksale.dto.PostDTO;
+import dbteam4.booksale.dto.ReviewDTO;
 import dbteam4.booksale.service.BookApiService;
 import dbteam4.booksale.service.PostService;
+import dbteam4.booksale.service.ReviewService;
 import dbteam4.booksale.service.UserService;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,6 +26,7 @@ public class PostController {
 
     private final PostService postService;
     private final UserService userService;
+    private final ReviewService reviewService;
     private final BookApiService bookApiService;
 
     @GetMapping()
@@ -45,15 +49,33 @@ public class PostController {
         return "redirect:/";
     }
 
+    @PostMapping("/{postId}/save-review")
+    public String saveReview(HttpServletRequest request, @ModelAttribute ReviewDTO reviewDTO,
+                             @SessionAttribute(name = SessionConst.LOGIN_USER) User loginUser) {
+        String referer = request.getHeader("Referer");
+
+        reviewDTO.setUserId(loginUser.getId());
+        reviewDTO.setReviewTime(LocalDateTime.now());
+
+        System.out.println("reviewDTO = " + reviewDTO);
+
+        reviewService.saveReview(reviewDTO);
+
+
+        return "redirect:" + referer;
+    }
+
     @GetMapping("/view/{postId}")
     public String view(@PathVariable Long postId, Model model) {
         PostBookDTO post = postService.findByPostId(postId);
+        ReviewDTO review = reviewService.findByPostId(postId);
 
         Long sellerId = post.getSellerId();
         String userName = userService.findById(sellerId).getUserName();
 
         model.addAttribute("post", post);
         model.addAttribute("userName", userName);
+        model.addAttribute("review", review);
 
         return "postview";
     }
