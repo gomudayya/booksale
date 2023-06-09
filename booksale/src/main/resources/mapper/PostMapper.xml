@@ -9,10 +9,6 @@
         Values (#{ISBN}, #{sellerId}, #{postTime}, #{postTitle}, #{postContent}, #{salesMethod}, #{shippingMethod}, #{bookQuality})
     </insert>
 
-    <select id="findByPostId" resultType="Post">
-        select * from posd where post_id = #{postId};
-    </select>
-
     <resultMap id="postResultMap" type="PostBookDTO">
         <id property="postId" column="post_id" />
         <result property="sellerId" column="seller_id" />
@@ -33,6 +29,18 @@
             <result property="description" column="description" />
         </association>
     </resultMap>
+
+    <select id="findByPostId" resultMap="postResultMap">
+        select * from
+        post p inner join book b on p.book_ISBN = b.ISBN
+        where p.post_id =#{postId};
+    </select>
+
+    <select id="findRecentPost" resultMap="postResultMap">
+        select * from
+        post p inner join book b on p.book_ISBN = b.ISBN
+        order by post_id desc limit #{recentNum}
+    </select>
 
     <select id="findAll"  resultMap="postResultMap">
         select * from

@@ -109,15 +109,15 @@
     <div class ="container border main-box main-list">
 
       <!-- example -->
-      <a href = "" th:each="postList : ${bookPostsDTO.getPostList()}">
+      <a href = "" th:each="post : ${bookPostsDTO.getPostList()}" th:href="@{/post/view/{postId}(postId=${post.postId})}">
         <div class = "content margin-top">
 
           <img class = "book-icon" src = "../img/ex.png" th:src="${bookPostsDTO.image}">
           <div class = "content-info settings">
-            <div th:text="${postList.postTitle}">게시글 제목 ex)책 팔아요</div>
-            <span th:text="|/${postList.salesMethod}/|">판매 or 물려주기</span>
-            <span th:text="|${postList.shippingMethod}/|">택배 or 직거래</span>
-            <span th:text="|책상태 : ${postList.bookQuality}/|">책 품질</span>
+            <div th:text="${post.postTitle}">게시글 제목 ex)책 팔아요</div>
+            <span th:text="|/${post.salesMethod}/|">판매 or 물려주기</span>
+            <span th:text="|${post.shippingMethod}/|">택배 or 직거래</span>
+            <span th:text="|책상태 : ${post.bookQuality}/|">책 품질</span>
           </div>
           <div class = "state">판매중</div>
         </div>
