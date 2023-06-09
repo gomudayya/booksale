@@ -10,6 +10,10 @@ body {
   color: rgb(76, 0, 138);
 }
 
+.btn:hover{
+  opacity: 1;
+}
+
 .account {
   float: right;
 }
@@ -642,15 +646,20 @@ main .content {
   border-radius: 1rem;
 }
 
+.state-change{
+  float: right;
+}
+
 .post-main .form-label {
   width: 5rem;
 }
 
 .custom-button {
   margin: 0.5rem;
-  padding: 0.5rem;
+  padding: 0.3rem;
   background-color: rgb(228, 205, 255);
   border-radius: 0.5rem;
+  border: none;
 }
 
 .post-book {
@@ -702,8 +711,11 @@ main .content {
 
 .post-main .title {
   margin: 1rem;
-  font-size: 1.2rem;
+  font-size: 2rem;
   text-align: left;
+  background-color: rgb(170, 204, 248);
+  padding: 0.5rem;
+  border-radius: 1rem;
 }
 
 .post-photo {
@@ -711,7 +723,24 @@ main .content {
   height: auto;
   margin: 1rem;
 }
-
+.photo-price{
+  position: relative;
+}
+.photo-price .sellPrice{
+  font-size: 2rem;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+  margin-bottom: 0.5rem;
+}
+.photo-price #sellPriceUnit{
+  font-size: 2rem;
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
 .review-text {
   height: 6rem;
   width: 95%;
