@@ -13,7 +13,7 @@
         select * from posd where post_id = #{postId};
     </select>
 
-    <resultMap id="postResultMap" type="Post">
+    <resultMap id="postResultMap" type="PostBookDTO">
         <id property="postId" column="post_id" />
         <result property="sellerId" column="seller_id" />
         <result property="postTitle" column="post_title" />

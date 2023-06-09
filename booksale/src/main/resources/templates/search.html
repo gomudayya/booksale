@@ -11,7 +11,7 @@
 <body>
 
 <!-- 로그인/회원가입 bar -->
-<div th:if="${session.loginUser == null}" th:replace="~{layout/fragment/header :: header}"></div>
+<div th:if="${session.loginUser == null}" th:insert="~{layout/fragment/header :: header}"></div>
 <!-- 헤더 -->
 <header th:replace="~{layout/fragment/search-header :: search-header}"></header>
 <!-- 메인 -->
@@ -20,37 +20,20 @@
     <h1 class="display-5 sub-title" th:text="|'${param.keyword}'에 대한 검색 결과|">'창의적'에 대한 검색 결과</h1>
 
     <div class ="container border main-box">
-
         <!-- example -->
-        <a href = "selected.html" th:href="@{/search/selected}">
+        <a href = "selected.html" th:each="book :${booksWithsPosts}" th:href="@{/search/{bookISBN}(bookISBN=${book.ISBN})}">
             <div class = "content margin-top">
-                <img class = "book-icon" src = "../img/ex.png">
+                <img class = "book-icon" src = "../img/ex.png" th:src="${book.image}">
                 <div class = "content-info settings">
-                    <div>창의적 잠자기</div>
-                    <span>저자</span>
-                    <span>출판사</span>
-                    <span>출판 년도</span>
+                    <div th:text="${book.title}">창의적 잠자기</div>
+                    <span th:text="${book.author}">저자</span>
+                    <span th:text="${book.publisher}">출판사</span>
+                    <span th:text="${book.pubDate}">출판 년도</span>
                 </div>
-                <div class = "state">1건</div>
-            </div>
-        </a>
-
-        <!-- example -->
-        <a href = "selected.html" th:href="@{/search/selected}">
-            <div class = "content margin-top">
-                <img class = "book-icon" src = "../img/ex.png">
-                <div class = "content-info settings">
-                    <div>창의적 숨쉬기</div>
-                    <span>저자</span>
-                    <span>출판사</span>
-                    <span>출판 년도</span>
-                </div>
-                <div class = "state">2건</div>
+                <div class = "state" th:text="|${book.postList.size()}건|">1건</div>
             </div>
         </a>
     </div>
-
-
 </main>
 <!-- 회원 사이드바 -->
 <div th:if="${session.loginUser != null}"  th:insert="~{layout/fragment/login-sidebar :: login-sidebar}"></div>

@@ -19,6 +19,7 @@ public class PostService {
         postMapper.save(postDTO);
     }
 
+
     public List<Post> findPostList(BookSearchCond bookSearchCond) {
         List<Post> postList = postMapper.findAll(bookSearchCond);
         return postList;
