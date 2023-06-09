@@ -11,7 +11,7 @@
 <body>
 
 <!-- 로그인/회원가입 bar -->
-<div th:if="${session.loginUser == null}" th:replace="~{layout/fragment/header :: header}"></div>
+<div th:if="${session.loginUser == null}" th:insert="~{layout/fragment/header :: header}"></div>
 <!-- 헤더 -->
 <header th:replace="~{layout/fragment/search-header :: search-header}"></header>
 <!-- 메인 -->
@@ -52,6 +52,8 @@
 
 
 </main>
+<!-- 검색 사이드바 -->
+<div th:if="${session.loginUser != null}"  th:insert="~{layout/fragment/search-header :: search-header}"></div>
 <!-- 회원 사이드바 -->
 <div th:if="${session.loginUser != null}"  th:insert="~{layout/fragment/login-sidebar :: login-sidebar}"></div>
 
