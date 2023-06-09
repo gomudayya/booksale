@@ -1,15 +1,12 @@
 package dbteam4.booksale.service;
 
 
-import dbteam4.booksale.constant.SessionConst;
 import dbteam4.booksale.domain.User;
 import dbteam4.booksale.dto.RegisterDTO;
 import dbteam4.booksale.repository.UserMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.SessionAttribute;
 
 @Service
 @Slf4j
@@ -20,6 +17,10 @@ public class UserService {
     public void save(RegisterDTO registerDTO) {
         System.out.println("registerDTO = " + registerDTO);
         userMapper.save(registerDTO);
+    }
+
+    public User findById(Long id) {
+        return userMapper.findById(id);
     }
 
     public void update(User user, RegisterDTO registerDTO){

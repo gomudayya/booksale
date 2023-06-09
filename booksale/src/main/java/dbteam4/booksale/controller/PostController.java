@@ -1,11 +1,14 @@
 package dbteam4.booksale.controller;
 
 import dbteam4.booksale.constant.SessionConst;
+import dbteam4.booksale.domain.Post;
 import dbteam4.booksale.domain.User;
 import dbteam4.booksale.dto.BookDTO;
+import dbteam4.booksale.dto.PostBookDTO;
 import dbteam4.booksale.dto.PostDTO;
 import dbteam4.booksale.service.BookApiService;
 import dbteam4.booksale.service.PostService;
+import dbteam4.booksale.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +22,7 @@ import java.time.LocalDateTime;
 public class PostController {
 
     private final PostService postService;
+    private final UserService userService;
     private final BookApiService bookApiService;
 
     @GetMapping()
@@ -42,11 +46,14 @@ public class PostController {
     }
 
     @GetMapping("/view/{postId}")
-    public String view(@PathVariable Long postId) {
+    public String view(@PathVariable Long postId, Model model) {
+        PostBookDTO post = postService.findByPostId(postId);
 
+        Long sellerId = post.getSellerId();
+        String userName = userService.findById(sellerId).getUserName();
 
-        
-
+        model.addAttribute("post", post);
+        model.addAttribute("userName", userName);
 
         return "postview";
     }

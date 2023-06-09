@@ -14,39 +14,39 @@
 <a href="index.html" th:href="@{/}"><h1 class = "title logo"><span>R</span><span>E</span><span>B</span><span>O</span><span>O</span><span>K</span></h1></a>
 
 <main class="post-main">
-  <div class="title">게시글 제목 내용</div>
+  <div class="title" th:text="${post.postTitle}">게시글 제목 내용</div>
 
-  <a class="btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+  <a class="btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" th:text="|${userName}(click!)|">
     작성자 이름(click!)
   </a>
 
 
   <div class = "content margin-top">
 
-    <img class = "book-icon" src = "../img/ex.png">
+    <img class = "book-icon" src = "../img/ex.png" th:src="${post.book.image}">
     <div class = "content-info settings">
-      <div>창의적 숨쉬기</div>
-      <span>저자</span>
-      <span>출판사</span>
-      <span>출판 년도</span>
-      <span>원가</span>
+      <div th:text="${post.book.title}">창의적 숨쉬기</div>
+      <span th:text="${post.book.author}">저자</span>
+      <span th:text="${post.book.publisher}">출판사</span>
+      <span th:text="${post.book.pubDate}">출판 년도</span>
+      <span th:text="${post.book.discount}">원가</span>
     </div>
   </div>
 
 
   <div class="flex">
     <div class="item">책 상태</div>
-    <div class="item detail">상</div>
+    <div class="item detail" th:text="${post.bookQuality}">상</div>
   </div>
 
 
   <div class = "flex">
     <div class = "item">거래 방법</div>
-    <div class="item detail">택배</div>
+    <div class="item detail" th:text="${post.shippingMethod}">택배</div>
   </div>
 
-  <img class = "post-photo" src = "../img/ex.png">(책 사진)
-  <p class="post-content">
+  <img class = "post-photo" src = "../img/ex.png" th:src="${post.book.image}">
+  <p class="post-content" th:text="${post.postContent}">
     글내용글내용글내용글내용글내용글내용글내용글내용글내용글내용글내용글내용글내용글내
     용글내용글내용글내용글내용글내용글내용글내용글내용글내용글내용글내용글내용글내용글
   </p>
@@ -54,8 +54,8 @@
 
 
 
-  <button class="btn custom-button" type="submit"><a href="">삭제(글 주인이 열람시)</a></button>
-  <button class="btn custom-button" type="submit"><a href="post.html" th:href="@{/post}">수정(글 주인이 열람시)</a></button>
+  <button class="btn custom-button" type="submit"><a href="">삭제</a></button>
+  <button class="btn custom-button" type="submit"><a href="post.html" th:href="@{/post}">수정</a></button>
 
 
   <div class = "sold mt-3">

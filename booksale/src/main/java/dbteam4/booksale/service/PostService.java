@@ -1,6 +1,6 @@
 package dbteam4.booksale.service;
 
-import dbteam4.booksale.domain.Post;
+import dbteam4.booksale.dto.PostBookDTO;
 import dbteam4.booksale.dto.PostDTO;
 import dbteam4.booksale.dto.BookSearchCond;
 import dbteam4.booksale.repository.PostMapper;
@@ -19,9 +19,15 @@ public class PostService {
         postMapper.save(postDTO);
     }
 
+    public PostBookDTO findByPostId(Long postId) {
+        return postMapper.findByPostId(postId);
+    }
 
-    public List<Post> findPostList(BookSearchCond bookSearchCond) {
-        List<Post> postList = postMapper.findAll(bookSearchCond);
+    public List<PostBookDTO> findRecentPost(int recentNum) {
+        return postMapper.findRecentPost(recentNum);
+    }
+    public List<PostBookDTO> findPostList(BookSearchCond bookSearchCond) {
+        List<PostBookDTO> postList = postMapper.findAll(bookSearchCond);
         return postList;
     }
 }
