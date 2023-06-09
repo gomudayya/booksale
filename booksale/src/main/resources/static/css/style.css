@@ -15,7 +15,8 @@ body {
 }
 
 .account {
-  float: right;
+  position: absolute;
+  right: 0;
 }
 
 .title {
@@ -522,12 +523,14 @@ main .content {
 
 .header {
   border-bottom: solid 2px rgb(36, 0, 165);
-  height: 5vh;
+  border-top: solid 2px rgb(36, 0, 165);
+  height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
 
 }
+
 
 .search-form {
   width: 576px;
