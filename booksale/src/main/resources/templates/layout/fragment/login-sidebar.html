@@ -2,7 +2,17 @@
     <div class = "member-info" role="group">
         <div class = "member-detail">
             <div th:text="${session.loginUser.userName}">전강욱 님</div>
-            <div>절대신</div>
+            <div>
+                <span th:text="'현재 마일리지: ' + ${session.loginUser.mileage} + '   ('"></span>
+                <span th:if="${session.loginUser.mileage >= 0 && session.loginUser.mileage < 10}">짐승</span>
+                <span th:if="${session.loginUser.mileage >= 10 && session.loginUser.mileage <= 30}">노예</span>
+                <span th:if="${session.loginUser.mileage > 30 && session.loginUser.mileage <= 50}">평민</span>
+                <span th:if="${session.loginUser.mileage > 50 && session.loginUser.mileage <= 70}">귀족</span>
+                <span th:if="${session.loginUser.mileage > 70 && session.loginUser.mileage <= 80}">왕</span>
+                <span th:if="${session.loginUser.mileage > 80 && session.loginUser.mileage <= 90}">신의 대리인</span>
+                <span th:if="${session.loginUser.mileage > 90 && session.loginUser.mileage <= 100}">절대신</span>
+                <span th:text="')'"></span>
+            </div>
             <div class="detail-img">
                 <a href="alarm.html" th:href="@{/alarm}"><img class="bell-image" src="../img/bell2.png"></a>
                 <a href="mail.html" th:href="@{/mail}"><img class="mail-image" src="../img/mail2.png"></a>
