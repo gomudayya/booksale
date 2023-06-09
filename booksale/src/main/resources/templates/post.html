@@ -28,10 +28,25 @@
       <div id="selectedBookInfo" style="display: none;">
         <img id="bookImage" src="" alt="Book Image">
         <h2 id="bookTitle"></h2>
-        <p id="publisher"></p>
-        <p id="author"></p>
-        <p id="pubdate"></p>
-        <p id="price"></p>
+        <div class="book-info-block">
+          <label for="publisher" class="book-info-label">출판사</label>
+          <p id="publisher" class="remove-margin"></p>
+        </div>
+        <div class="book-info-block">
+          <label for="author" class="book-info-label">작가</label>
+          <p id="author" class="remove-margin"></p>
+        </div>
+        <div class="book-info-block">
+          <label for="pubdate" class="book-info-label">출판날짜</label>
+          <p id="pubdate" class="remove-margin"></p>
+        </div>
+        <div class="book-info-block">
+          <label for="price" class="book-info-label">책 정가</label>
+          <p id="price" class="remove-margin"></p>
+        </div>
+
+
+
         <input type="text" id="bookISBN" name="ISBN" readonly>
       </div>
 
@@ -49,20 +64,37 @@
       </div>
     </div>
 
+
     <div class = "flex item">
       <div class="form-label">분류</div>
-      <input class="margin-top" type="radio" id="option1" name="salesMethod" value="판매" checked>
-      <label class="margin-right" for="option1">판매</label>
-
-      <input class="margin-top" type="radio" id="option2" name="salesMethod" value="물려주기">
-      <label for="option2">물려주기</label>
+      <label>
+        <input type="radio" name="salesMethod" value="판매" onclick="toggleInput(this)">
+        판매
+      </label>
+      <label>
+        <input type="radio" name="salesMethod" value="물려주기" onclick="toggleInput(this)">
+        물려주기
+      </label>
     </div>
+    <div id="inputContainer" class="input-container">
+      <input type="text" placeholder="판매 희망가를 입력하세요..">
+    </div>
+    <script>
+      function toggleInput(radioBtn) {
+        var inputContainer = document.getElementById("inputContainer");
 
+        if (radioBtn.value === "판매") {
+          inputContainer.style.display = "block";
+        } else {
+          inputContainer.style.display = "none";
+        }
+      }
+    </script>
 
 
     <div class = "flex item">
       <div class = "form-label">거래 방법</div>
-      <input class="margin-top" type="radio" id="option3" name="shippingMethod" value="택배" checked>
+      <input class="margin-top" type="radio" id="option3" name="shippingMethod" value="택배">
       <label class="margin-right" for="option3">택배</label>
 
       <input class="margin-top" type="radio" id="option4" name="shippingMethod" value="직거래">

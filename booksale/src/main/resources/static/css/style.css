@@ -70,7 +70,35 @@ main .content {
   display: flex;
   margin-bottom: 0.5rem;
 }
-
+.book-info-block{
+  background-color: rgb(170, 204, 248);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+}
+.book-info-label{
+  background-color: rgb(211, 230, 255);
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+#bookISBN{
+  display: none;
+}
+#author{
+  font-weight: bold;
+}
+#publisher{
+  font-weight: bold;
+}
+#pubdate{
+  font-weight: bold;
+}
+#price{
+  font-weight: bold;
+}
+::placeholder{
+  font-size: 0.7rem;
+}
 .book-icon {
   margin: 0.3rem;
   width: auto;
@@ -101,7 +129,9 @@ main .content {
   position: fixed;
   float: right;
 }
-
+.remove-margin{
+  margin-bottom: 0rem;
+}
 .member-info {
   border-radius: 1rem;
   border: rgb(170, 204, 248) 0.4rem solid;
@@ -174,6 +204,10 @@ main .content {
   border-radius: 0.5rem;
   background-color: rgb(170, 204, 248);
   width: 50rem;
+}
+
+.input-container{
+  display: none;
 }
 
 .alarm-detail{
@@ -434,6 +468,7 @@ main .content {
   height: 2.2rem;
   padding: 0.3rem;
   border-radius: 0.3rem;
+  white-space: nowrap;
 }
 
 .sold {
@@ -556,6 +591,7 @@ main .content {
   margin: 0.4rem;
   font-size: 1.1rem;
 }
+
 
 .no-padding {
   padding-left: 0rem;
