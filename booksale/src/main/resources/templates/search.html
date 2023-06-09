@@ -35,6 +35,8 @@
         </a>
     </div>
 </main>
+<!-- 검색 사이드바 -->
+<div th:if="${session.loginUser != null}"  th:insert="~{layout/fragment/search-header :: search-header}"></div>
 <!-- 회원 사이드바 -->
 <div th:if="${session.loginUser != null}"  th:insert="~{layout/fragment/login-sidebar :: login-sidebar}"></div>
 

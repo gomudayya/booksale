@@ -82,6 +82,19 @@ main .content {
   margin: 0.2rem;
 }
 
+.favor-content{
+  background-color: rgb(255, 255, 229);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.favor-content-info {
+  color: rgb(0, 0, 0);
+  margin: 0.2rem;
+}
+
 .account-logined {
   top: 0;
   right: 0;
@@ -101,6 +114,32 @@ main .content {
 .member-detail {
   color: rgb(76, 0, 138);
   margin: 1rem;
+}
+
+.detail-text{
+  float: left;
+
+}
+
+.detail-img{
+  height: 30px;
+  margin-left: 0px;
+  display: flex;
+
+}
+
+
+.bell-image{
+  width: 30px;
+  height: 30px;
+  margin-top: 0.5rem;
+}
+
+.mail-image{
+  width: 30px;
+  height: 30px;
+  margin-top: 0.5rem;
+
 }
 
 .post-button {
@@ -129,7 +168,20 @@ main .content {
 .invisible {
   display: none;
 }
+.alarm-list{
+  margin: 0.4rem;
+  padding: 0.2rem;
+  border-radius: 0.5rem;
+  background-color: rgb(170, 204, 248);
+  width: 50rem;
+}
 
+.alarm-detail{
+  background-color: rgb(211, 230, 255);
+  border-radius: 0.5rem;
+  padding: 0.3rem;
+  font-size: 0.9rem;
+}
 .chat-list {
   margin: 0.4rem;
   padding: 0.2rem;
@@ -143,6 +195,81 @@ main .content {
   border-radius: 0.5rem;
   padding: 0.3rem;
   font-size: 0.9rem;
+}
+
+.chatting-list {
+  margin: 0.4rem;
+  padding: 0.2rem;
+  border-radius: 0.5rem;
+  background-color: rgb(255, 239, 146);
+  width: 50rem;
+}
+
+.chatting-detail {
+  background-color: rgb(255, 255, 229);
+  border-radius: 0.5rem;
+  padding: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.mail_each-head{
+  margin-left: 27%;
+  width: 50vw;
+  border: rgb(0, 0, 0) solid 3px;
+  background-color: rgb(147, 240, 194);
+  padding: 1rem;
+  text-align: center;
+}
+.mail_each-head .backward-icon{
+  width: 10px;
+  height: auto;
+  float: left;
+  margin-top: 5px;
+}
+
+.lastest-chatRecord{
+  float: right;
+}
+
+.lastest-alarmRecord{
+  float: right;
+}
+
+.state-read{
+  position: relative;
+  color:rgb(47, 149, 85);
+  bottom: 1.5rem;
+  left: 7rem;
+}
+
+.state-unread{
+  position: relative;
+  color:rgb(255, 0, 0);
+  bottom: 1.5rem;
+  left: 7rem;
+}
+
+.alarm-checked{
+  position: relative;
+  color:rgb(47, 149, 85);
+  bottom: 1.5rem;
+  left: 9rem;
+}
+
+.alarm-unchecked{
+  position: relative;
+  color:rgb(255, 0, 0);
+  bottom: 1.5rem;
+  left: 9rem;
+}
+
+
+.mail_each-body{
+  margin-left: 27%;
+  width: 50vw;
+  border: rgb(0, 0, 0) solid 3px;
+  background-color: rgb(255, 255, 229);
+  padding: 1rem;
 }
 
 .chat-sent {
@@ -180,6 +307,7 @@ main .content {
   color: gray;
   font-size: 0.8rem;
 }
+
 
 .login-main {
   border: rgb(240, 216, 255) solid 3.5px;
@@ -357,6 +485,7 @@ main .content {
   padding-top: 2rem;
   border-bottom: solid 2px rgb(36, 0, 165);
   height: auto;
+  position: fixed;
   top: 0;
   width: 70rem;
   margin-left: 3rem;
@@ -396,6 +525,7 @@ main .content {
 
 .search-main {
   margin: 1rem;
+  margin-top: 10rem;
   margin-left: 3rem;
   padding: 3rem;
   border-radius: 2rem;
@@ -406,6 +536,7 @@ main .content {
 .sub-title {
   border-left: rgb(36, 0, 165) solid 2px;
   padding-left: 1rem;
+  margin-left: 20px;
   margin-bottom: 1.5rem;
 }
 
@@ -556,3 +687,189 @@ main .content {
   border-top: 2px solid rgb(190, 133, 255);
   padding-top: 1rem;
 }/*# sourceMappingURL=style.css.map */
+
+.trophy-icon{
+  margin: 0.3rem;
+  width: auto;
+  height: 5rem;
+}
+
+.trueGod-group{
+  display: flex;
+}
+
+.godAgent-group{
+  display: flex;
+}
+
+.king-group{
+  display: flex;
+}
+
+.noble-group{
+  display: flex;
+}
+
+.common-group{
+  display: flex;
+}
+
+.slave-group{
+  display: flex;
+}
+
+.beast-group{
+  display: flex;
+}
+
+.trueGod-title{
+  margin: 1.5rem;
+  color:rgb(76, 0, 138);
+  font-family: 'Pacifico', cursive;
+}
+
+.trueGod-member{
+  margin: 1.5rem;
+  background-color: rgb(76, 0, 138);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+  color: rgb(255, 255, 255);
+}
+
+.godAgent-title{
+  margin: 1.5rem;
+  color:rgb(0, 0, 128);
+  font-family: 'Pacifico', cursive;
+}
+
+.godAgent-member{
+  margin: 1.5rem;
+  background-color: rgb(0, 0, 128);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+  color: rgb(255, 255, 255);
+}
+
+.king-title{
+  margin: 1.5rem;
+  color:rgb(0, 0, 255);
+  font-family: 'Pacifico', cursive;
+}
+
+.king-member{
+  margin: 1.5rem;
+  background-color: rgb(0, 0, 255);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+  color: rgb(255, 255, 255);
+}
+
+.king-image{
+  width: 70%;
+  height: 90%;
+}
+
+.noble-title{
+  margin: 1.5rem;
+  color:rgb(0, 255, 0);
+  font-family: 'Pacifico', cursive;
+}
+
+.noble-member{
+  margin: 1.5rem;
+  background-color: rgb(0, 255, 0);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+  color: rgb(255, 255, 255);
+}
+
+.noble-image{
+  width: 50%;
+  height: 90%;
+}
+
+.common-title{
+  margin: 1.5rem;
+  color:rgb(255, 255, 0);
+  font-family: 'Pacifico', cursive;
+}
+
+.common-member{
+  margin: 1.5rem;
+  background-color: rgb(255, 255, 0);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+  color: rgb(0, 0, 0);
+}
+
+.slave-title{
+  margin: 1.5rem;
+  color:rgb(255, 165, 0);
+  font-family: 'Pacifico', cursive;
+}
+
+.slave-member{
+  margin: 1.5rem;
+  background-color: rgb(255, 165, 0);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+  color: rgb(255, 255, 255);
+}
+
+.beast-title{
+  margin: 1.5rem;
+  color:rgb(255, 0, 0);
+  font-family: 'Pacifico', cursive;
+}
+
+.beast-member{
+  margin: 1.5rem;
+  background-color: rgb(255, 0, 0);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+  color: rgb(255, 255, 255);
+}
+
+.memberTier-instruction-box{
+  top: 0;
+  right: 0;
+  position: fixed;
+  float: right;
+  border-radius: 1rem;
+  border: rgb(170, 204, 248) 0.4rem solid;
+  background-color: rgb(211, 230, 255);
+  width: 15rem;
+  height: 18rem;
+  margin-left: 1rem;
+}
+
+.memberTier-instruction-box .memberTier-instruction{
+  margin-top: 10px;
+  margin-left: 25px;
+}
+
+th{
+  background-color:rgb(170, 204, 248);
+  text-align: center;
+  border: 1px solid black;
+}
+
+table, td{
+  text-align: center;
+  border: 1px solid black;
+}
+
+.memberTierList-title{
+  display: inline-block;
+}
+
+.memberTierList-entire{
+  margin-left: 30%;
+}
