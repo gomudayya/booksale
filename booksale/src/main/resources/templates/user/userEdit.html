@@ -12,30 +12,31 @@
     <a href="../index.html" th:href="@{/}"><h1 class = "title logo"><span>R</span><span>E</span><span>B</span><span>O</span><span>O</span><span>K</span></h1></a>
     <div class = "row">
     <main class="member-info-main mx-auto">
+        <form method="post" action="/user/edit" >
         <div class = "member-info-title">
             <h1 class="member-info-text">회원정보</h1>
-            <div class = "edit"><a href = "userInfo.html">완료</a></div>
+            <button class="btn edit" type="submit" >완료</button>
         </div>
         <div class="row">
 
             <div class="col-md-10 member-detail">
                 <div>이름</div>
-                <input type="text" class="form-control rPw" value="홍길동"  th:text="${user.userName}" required>
+                <input type="text" class="form-control rPw" value="홍길동" name="userName" th:value="${user.userName}" required>
             </div>
 
             <div class="col-md-10 member-detail">
                 <div>전화번호</div>
-                <input type="text" class="form-control rPw" value="010-1234-5678" th:value="${user.phoneNumber}" required>
+                <input type="text" class="form-control rPw" value="010-1234-5678" name="phoneNumber" th:value="${user.phoneNumber}" required>
             </div>
 
             <div class="col-md-10 member-detail">
                 <div>아이디</div>
-                <input type="text" class="form-control rPw" value="ID" th:value="${user.userID}" required>
+                <input type="text" class="form-control rPw" value="ID" name="userID" th:value="${user.userID}" required>
             </div>
 
             <div class="col-md-10 member-detail">
                 <div>비밀번호</div>
-                <input type="password" class="form-control rPw" value="aaaaaaaaa" required>
+                <input type="text" class="form-control rPw" value="password" name="password" th:value="${user.userPassword}" required>
             </div>
             
             <div class="col-md-10 member-detail">
@@ -47,9 +48,14 @@
                 <div>학과</div>
                 <input type="text" class="form-control rPw" value="컴공" required>
             </div>
+
+            <div class="col-md-10 member-detail">
+                <div>고유ID</div>
+                <input type="text" class="form-control rPw" value="id" name="id" th:value="${user.id}" required>
+            </div>
         </div>
 
-        
+        </form>
 
 
     </main>

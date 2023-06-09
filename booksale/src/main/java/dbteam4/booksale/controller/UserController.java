@@ -4,6 +4,7 @@ import dbteam4.booksale.constant.SessionConst;
 import dbteam4.booksale.domain.User;
 import dbteam4.booksale.dto.LoginDTO;
 import dbteam4.booksale.dto.RegisterDTO;
+import dbteam4.booksale.repository.UserMapper;
 import dbteam4.booksale.service.SchoolService;
 import dbteam4.booksale.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -25,6 +26,7 @@ public class UserController {
 
     private final SchoolService schoolService;
     private final UserService userService;
+    private final UserMapper userMapper;
 
     @GetMapping("/register")
     public String register(Model model) {
@@ -58,6 +60,7 @@ public class UserController {
     public String login(@ModelAttribute LoginDTO loginDTO, HttpServletRequest request) {
         User loginUser = userService.login(loginDTO.getLoginID(), loginDTO.getPassword());
 
+
         if (loginUser == null) {
             return "user/login";
         }
@@ -75,10 +78,23 @@ public class UserController {
 
     @PostMapping("/logout")
     public String logout(HttpServletRequest request) {
+        String referer = request.getHeader("Referer");
+
         HttpSession session = request.getSession(false);
         if(session != null) {
             session.invalidate();
         }
-        return "redirect:/";
+        return "redirect:" + referer;
+    }
+
+    @PostMapping("/edit")
+    public String userEdit(@SessionAttribute(name = SessionConst.LOGIN_USER, required = false)User loginUser,
+                           @ModelAttribute RegisterDTO registerDTO){
+
+        User user = loginUser;
+
+        userService.update(user, registerDTO);
+
+        return "redirect:/user/info";
     }
 }

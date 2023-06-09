@@ -357,7 +357,6 @@ main .content {
   padding-top: 2rem;
   border-bottom: solid 2px rgb(36, 0, 165);
   height: auto;
-  position: fixed;
   top: 0;
   width: 70rem;
   margin-left: 3rem;
@@ -397,7 +396,6 @@ main .content {
 
 .search-main {
   margin: 1rem;
-  margin-top: 10rem;
   margin-left: 3rem;
   padding: 3rem;
   border-radius: 2rem;

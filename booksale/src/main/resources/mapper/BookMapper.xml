@@ -13,4 +13,56 @@
         select * from book
         where ISBN =#{ISBN};
     </select>
+
+    <select id="findBookWithPostsByISBN" resultMap="bookResultMap">
+        select b.ISBN, b.title, b.author, b.publisher, b.pub_date, b.image, b.discount, b.description,
+               p.post_id, p.seller_id, p.post_time, p.post_content, p.sales_method, p.shipping_method, p.book_quality, p.post_title
+        from
+            book b inner join post p on b.ISBN = p.book_ISBN
+        where b.ISBN = #{ISBN}
+
+    </select>
+
+
+    <resultMap id="bookResultMap" type="BookPostsDTO">
+        <id property="ISBN" column="ISBN" />
+        <result property="title" column="title" />
+        <result property="author" column="author" />
+        <result property="image" column="image" />
+        <result property="discount" column="discount" />
+        <result property="publisher" column="publisher" />
+        <result property="pubDate" column="pub_date" />
+        <result property="description" column="description" />
+        <collection property="postList" ofType="Post">
+            <id property="postId" column="post_id" />
+            <result property="sellerId" column="seller_id" />
+            <result property="postTitle" column="post_title" />
+            <result property="postContent" column="post_content" />
+            <result property="salesMethod" column="sales_method" />
+            <result property="shippingMethod" column="shipping_method" />
+            <result property="bookQuality" column="book_quality" />
+            <result property="postTime" column="post_time" />
+        </collection>
+    </resultMap>
+
+    <select id="findAll" resultMap="bookResultMap">
+        select b.ISBN, b.title, b.author, b.publisher, b.pub_date, b.image, b.discount, b.description,
+        p.post_id, p.seller_id, p.post_time, p.post_content, p.sales_method, p.shipping_method, p.book_quality, p.post_title
+        from book b inner join post p on b.ISBN = p.book_ISBN
+        <where>
+
+            <if test="bookSearchType.name() == 'all'">
+                replace(b.title, ' ', '') like concat('%', #{keyword}, '%') or b.author like concat('%', #{keyword}, '%') or  b.isbn = #{keyword};
+            </if>
+            <if test="bookSearchType.name() == 'bookTitle'">
+                b.title like concat('%', #{keyword}, '%');
+            </if>
+            <if test="bookSearchType.name() == 'ISBN'">
+                b.isbn = #{keyword};
+            </if>
+            <if test="bookSearchType.name() == 'author'">
+                b.author like concat('%', #{keyword}, '%');
+            </if>
+        </where>
+    </select>
 </mapper>
