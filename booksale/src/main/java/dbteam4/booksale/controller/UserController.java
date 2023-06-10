@@ -32,7 +32,6 @@ public class UserController {
     private final PostService postService;
     private final ReviewService reviewService;
     private final UserMapper userMapper;
-    private final PostService postService;
 
 
     @GetMapping("/register")
