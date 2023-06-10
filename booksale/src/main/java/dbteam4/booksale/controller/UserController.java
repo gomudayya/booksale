@@ -2,10 +2,7 @@ package dbteam4.booksale.controller;
 
 import dbteam4.booksale.constant.SessionConst;
 import dbteam4.booksale.domain.User;
-import dbteam4.booksale.dto.LoginDTO;
-import dbteam4.booksale.dto.PostBookDTO;
-import dbteam4.booksale.dto.RegisterDTO;
-import dbteam4.booksale.dto.ReviewDTO;
+import dbteam4.booksale.dto.*;
 import dbteam4.booksale.repository.UserMapper;
 import dbteam4.booksale.service.SchoolService;
 import dbteam4.booksale.service.UserService;
@@ -52,10 +49,10 @@ public class UserController {
 
     @GetMapping("/info")
     public String userInfo(@SessionAttribute(name = SessionConst.LOGIN_USER, required = false)User loginUser, Model model) {
-        List<PostBookDTO> userPosts = userService.findUserPost(loginUser.getId());
+        List<PostBookDTO> userPosts = postService.findUserPost(loginUser.getId());
+        List<PostReviewDTO> userReviews = reviewService.findByWriterId(loginUser.getId());
 
-        System.out.println("userPosts = " + userPosts);
-
+        model.addAttribute("UserReviews", userReviews);
         model.addAttribute("UserPosts", userPosts);
         model.addAttribute("user", loginUser);
         return "user/userInfo";

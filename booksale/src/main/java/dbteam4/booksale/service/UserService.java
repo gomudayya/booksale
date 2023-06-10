@@ -4,6 +4,7 @@ package dbteam4.booksale.service;
 import dbteam4.booksale.domain.User;
 import dbteam4.booksale.dto.PostBookDTO;
 import dbteam4.booksale.dto.RegisterDTO;
+import dbteam4.booksale.repository.PostMapper;
 import dbteam4.booksale.repository.UserMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,6 +18,8 @@ import java.util.List;
 public class UserService {
 
     private final UserMapper userMapper;
+    private final PostMapper postMapper;
+
     public void save(RegisterDTO registerDTO) {
         System.out.println("registerDTO = " + registerDTO);
         userMapper.save(registerDTO);
@@ -34,9 +37,6 @@ public class UserService {
      * @return이 null이면 로그인 실패
      */
 
-    public List<PostBookDTO> findUserPost(Long id){
-        return userMapper.findUserPost(id);
-    }
 
     public User login(String loginID, String password) {
 

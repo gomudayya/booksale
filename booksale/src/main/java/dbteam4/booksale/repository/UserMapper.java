@@ -15,8 +15,6 @@ public interface UserMapper {
 
     void update(@Param("id") Long id, @Param("userForm") RegisterDTO registerDTO);
 
-    List<PostBookDTO> findUserPost(Long id);
-
     User findByLoginID(String userID);
 
     User findById(Long id);
