@@ -96,8 +96,8 @@
         <div th:text="${bookPostsDTO.title}">창의적 숨쉬기</div>
         <span th:text="${bookPostsDTO.author}">저자</span>
         <span th:text="${bookPostsDTO.publisher}">출판사</span>
-        <span th:text="${bookPostsDTO.pubDate}">출판 년도</span>
-
+        <span th:text="|출판 년도 : ${bookPostsDTO.pubDate}|">출판 년도</span>
+        <div th:text="|책 정가 : ${bookPostsDTO.discount}|">정가</div>
       </div>
       <div class = "state" th:text="|${bookPostsDTO.postList.size()}건|">2건</div>
 
@@ -118,6 +118,7 @@
             <span th:text="|/${post.salesMethod}/|">판매 or 물려주기</span>
             <span th:text="|${post.shippingMethod}/|">택배 or 직거래</span>
             <span th:text="|책상태 : ${post.bookQuality}/|">책 품질</span>
+            <div th:text="|판매 가격 : ${post.postPrice}|">판매 가격</div>
           </div>
           <div class = "state">판매중</div>
         </div>
@@ -131,8 +132,6 @@
 
 
 </main>
-<!-- 검색 사이드바 -->
-<div th:if="${session.loginUser != null}"  th:insert="~{layout/fragment/search-header :: search-header}"></div>
 <!-- 회원 사이드바 -->
 <div th:if="${session.loginUser != null}"  th:insert="~{layout/fragment/login-sidebar :: login-sidebar}"></div>
 

@@ -43,6 +43,12 @@
         order by post_id desc limit #{recentNum}
     </select>
 
+    <select id="findUserPost" resultMap="postResultMap">
+        select * from
+            post p inner join book b on p.book_ISBN = b.ISBN
+        where p.seller_id = #{id}
+    </select>
+
     <select id="findAll"  resultMap="postResultMap">
         select * from
         post p inner join book b on p.book_ISBN = b.ISBN
@@ -61,4 +67,5 @@
             </if>
         </where>
     </select>
+
 </mapper>

@@ -14,7 +14,7 @@ public interface PostMapper {
 
     void save(PostDTO postDTO);
     PostBookDTO findByPostId(Long postId);
-
+    List<PostBookDTO> findUserPost(Long id);
     List<PostBookDTO> findRecentPost(int recentNum);
     List<PostBookDTO> findAll(BookSearchCond bookSearchCond);
 }
