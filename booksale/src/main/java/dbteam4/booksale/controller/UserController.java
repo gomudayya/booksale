@@ -4,6 +4,7 @@ import dbteam4.booksale.constant.SessionConst;
 import dbteam4.booksale.domain.User;
 import dbteam4.booksale.dto.*;
 import dbteam4.booksale.repository.UserMapper;
+import dbteam4.booksale.service.PostService;
 import dbteam4.booksale.service.SchoolService;
 import dbteam4.booksale.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -31,6 +32,7 @@ public class UserController {
     private final PostService postService;
     private final ReviewService reviewService;
     private final UserMapper userMapper;
+    private final PostService postService;
 
 
     @GetMapping("/register")
@@ -49,12 +51,16 @@ public class UserController {
 
     @GetMapping("/info")
     public String userInfo(@SessionAttribute(name = SessionConst.LOGIN_USER, required = false)User loginUser, Model model) {
+
+
+        List<PostBookDTO> interestPostList = postService.findInterestPost(loginUser.getId());
         List<PostBookDTO> userPosts = postService.findUserPost(loginUser.getId());
         List<PostReviewDTO> userReviews = reviewService.findByWriterId(loginUser.getId());
 
+        model.addAttribute("user", loginUser);
+        model.addAttribute("interestPostList", interestPostList);
         model.addAttribute("UserReviews", userReviews);
         model.addAttribute("UserPosts", userPosts);
-        model.addAttribute("user", loginUser);
         return "user/userInfo";
     }
 
