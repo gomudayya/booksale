@@ -113,6 +113,7 @@
                     <div class = "sold">
                         <div>
                             <div class = "date"> 2023-06-04</div>
+                            <div class = "reviewer">리뷰어닉네임</div>
                             <div>
                                 믿고 거래했습니다.<br>
                                 판매자가 재밌고 책이 친절해요
@@ -132,8 +133,8 @@
                 <text>▼</text> 작성 리뷰
             </div>
             <div class = "post-list invisible">
-
                 <div class = "post-block"> <!-- example-->
+
                     <div class = "content">
                         <a th:each="post : ${UserReviews}" th:href="@{/post/view/{postId}(postId=${post.postId}) }">
                             <div class = "content">
@@ -152,6 +153,7 @@
                             <div class = "date" th:text="${review.reviewTime}"> 2023-06-04</div>
                             <div class = "reviewer" th:text="${user.userName}">리뷰어닉네임</div>
                             <div th:text="${review.reviewContent}">
+                            <div>
                                 믿고 거래했습니다.<br>
                                 판매자가 재밌고 책이 친절해요
                             </div>
