@@ -43,6 +43,13 @@
         order by post_id desc limit #{recentNum}
     </select>
 
+    <select id="findInterestPost" resultMap="postResultMap">
+        select * from interest i
+                          inner join post p on i.post_id = p.post_id
+                          inner join book b on b.ISBN = p.book_ISBN
+        where i.user_id = #{userId};
+    </select>
+
     <select id="findAll"  resultMap="postResultMap">
         select * from
         post p inner join book b on p.book_ISBN = b.ISBN

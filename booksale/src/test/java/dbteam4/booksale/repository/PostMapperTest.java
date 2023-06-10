@@ -33,4 +33,13 @@ class PostMapperTest {
 
 
     }
+
+    @Test
+    void findInterestPost() {
+        List<PostBookDTO> postBookDTOList = postMapper.findInterestPost(25L);
+
+        for (PostBookDTO postBookDTO : postBookDTOList) {
+            System.out.println("postBookDTO = " + postBookDTO);
+        }
+    }
 }

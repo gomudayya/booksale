@@ -3,8 +3,10 @@ package dbteam4.booksale.controller;
 import dbteam4.booksale.constant.SessionConst;
 import dbteam4.booksale.domain.User;
 import dbteam4.booksale.dto.LoginDTO;
+import dbteam4.booksale.dto.PostBookDTO;
 import dbteam4.booksale.dto.RegisterDTO;
 import dbteam4.booksale.repository.UserMapper;
+import dbteam4.booksale.service.PostService;
 import dbteam4.booksale.service.SchoolService;
 import dbteam4.booksale.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -28,6 +30,7 @@ public class UserController {
     private final SchoolService schoolService;
     private final UserService userService;
     private final UserMapper userMapper;
+    private final PostService postService;
 
     @GetMapping("/register")
     public String register(Model model) {
@@ -45,7 +48,11 @@ public class UserController {
 
     @GetMapping("/info")
     public String userInfo(@SessionAttribute(name = SessionConst.LOGIN_USER, required = false)User loginUser, Model model) {
+
+        List<PostBookDTO> interestPostList = postService.findInterestPost(loginUser.getId());
+
         model.addAttribute("user", loginUser);
+        model.addAttribute("interestPostList", interestPostList);
         return "user/userInfo";
     }
 

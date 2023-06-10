@@ -3,14 +3,8 @@ package dbteam4.booksale.controller;
 import dbteam4.booksale.constant.SessionConst;
 import dbteam4.booksale.domain.Post;
 import dbteam4.booksale.domain.User;
-import dbteam4.booksale.dto.BookDTO;
-import dbteam4.booksale.dto.PostBookDTO;
-import dbteam4.booksale.dto.PostDTO;
-import dbteam4.booksale.dto.ReviewDTO;
-import dbteam4.booksale.service.BookApiService;
-import dbteam4.booksale.service.PostService;
-import dbteam4.booksale.service.ReviewService;
-import dbteam4.booksale.service.UserService;
+import dbteam4.booksale.dto.*;
+import dbteam4.booksale.service.*;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -29,6 +23,7 @@ public class PostController {
     private final UserService userService;
     private final ReviewService reviewService;
     private final BookApiService bookApiService;
+    private final InterestService interestService;
 
     @GetMapping()
     public String post(@SessionAttribute(name = SessionConst.LOGIN_USER) User loginUser) {
@@ -51,10 +46,12 @@ public class PostController {
     }
 
     @GetMapping("/view/{postId}")
-    public String view(@PathVariable Long postId, Model model) {
+    public String view(@PathVariable Long postId, Model model,
+                       @SessionAttribute(name = SessionConst.LOGIN_USER, required = false) User loginUser) {
         PostBookDTO post = postService.findByPostId(postId);
         ReviewDTO review = reviewService.findByPostId(postId);
         List<ReviewDTO> sellerReviewList = reviewService.findBySellerId(post.getSellerId());
+
 
         Long sellerId = post.getSellerId();
         String userName = userService.findById(sellerId).getUserName();
@@ -63,6 +60,14 @@ public class PostController {
         model.addAttribute("userName", userName);
         model.addAttribute("review", review);
         model.addAttribute("sellerReviewList", sellerReviewList);
+
+        if (loginUser != null) {
+            InterestDTO interestDTO = interestService.findByPostIdAndUserId(postId, loginUser.getId());
+            if (interestDTO != null) {
+                model.addAttribute("isAlreadyInterest", true);
+            }
+        }
+
 
         return "postview";
     }
