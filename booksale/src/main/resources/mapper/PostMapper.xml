@@ -61,4 +61,9 @@
             </if>
         </where>
     </select>
+
+    <select id="findAllPost" resultMap="postResultMap">
+        select * from
+        post p inner join user u on p.post_id = u.id
+    </select>
 </mapper>

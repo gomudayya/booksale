@@ -3,7 +3,9 @@ package dbteam4.booksale.controller;
 import dbteam4.booksale.constant.SessionConst;
 import dbteam4.booksale.domain.User;
 import dbteam4.booksale.dto.LoginDTO;
+import dbteam4.booksale.dto.PostBookDTO;
 import dbteam4.booksale.dto.RegisterDTO;
+import dbteam4.booksale.dto.ReviewDTO;
 import dbteam4.booksale.repository.UserMapper;
 import dbteam4.booksale.service.SchoolService;
 import dbteam4.booksale.service.UserService;
@@ -14,6 +16,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import dbteam4.booksale.service.PostService;
+import dbteam4.booksale.service.ReviewService;
 
 import java.util.HashMap;
 import java.util.List;
@@ -27,7 +31,10 @@ public class UserController {
 
     private final SchoolService schoolService;
     private final UserService userService;
+    private final PostService postService;
+    private final ReviewService reviewService;
     private final UserMapper userMapper;
+
 
     @GetMapping("/register")
     public String register(Model model) {
@@ -45,6 +52,11 @@ public class UserController {
 
     @GetMapping("/info")
     public String userInfo(@SessionAttribute(name = SessionConst.LOGIN_USER, required = false)User loginUser, Model model) {
+        List<PostBookDTO> userPosts = userService.findUserPost(loginUser.getId());
+
+        System.out.println("userPosts = " + userPosts);
+
+        model.addAttribute("UserPosts", userPosts);
         model.addAttribute("user", loginUser);
         return "user/userInfo";
     }
@@ -107,4 +119,5 @@ public class UserController {
 
         return "redirect:/user/info";
     }
+
 }

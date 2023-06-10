@@ -83,27 +83,19 @@
                 <text>▼</text> 판매 내역
             </div>
             <div class = "post-list invisible">
-
-                <div class = "post-block"> <!-- example-->
+                <div class = "post-block">
+                    <a th:each="post : ${UserPosts}" th:href="@{post/view/{postId}(postId=${post.postId}) }">
                     <div class = "content"> 
-                        <img class = "book-icon" src = "../img/ex.png">
+                        <img class = "book-icon" src = "../img/ex.png" th:src="${post.book.image}">
                         <div class = "content-info">
-                            <div>알고리즘 및 실습</div>
-                            <div>출판사, 지은이, 출판년도</div>
-                            <div>가격, 사용감</div>
-                            <div>학교, 판매방식</div>
+                            <div th:text="${post.book.title}">알고리즘 및 실습</div>
+                            <div th:text="|${post.book.publisher} / ${post.book.author} / ${post.book.pubDate}|">출판사, 지은이, 출판년도</div>
+                            <div th:text="|${post.postPrice} / ${post.bookQuality}|">가격, 사용감</div>
+                            <div th:text="|${user.university} / ${post.salesMethod}|">학교, 판매방식</div>
                         </div>
                         <div class = "state">거래중</div>
                     </div>
-                    <!-- <div class = "sold">
-                        <div>
-                            <div>
-                                믿고 거래했습니다.<br>
-                                판매자가 재밌고 책이 친절해요
-                            </div>
-                        </div>
-                        <div class = "state">별점: 5</div>
-                    </div> -->
+                    </a>
                 </div>
 
 
