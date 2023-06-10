@@ -127,7 +127,7 @@
 
 
         <!-- 작성 리뷰 -->
-        <div class = "posts-container"> 
+        <div class = "posts-container">
             <div class = "view-posts-button btn">
                 <text>▼</text> 작성 리뷰
             </div>
@@ -150,6 +150,7 @@
                         <a th:each="review : ${UserReviews}">
                         <div>
                             <div class = "date" th:text="${review.reviewTime}"> 2023-06-04</div>
+                            <div class = "reviewer" th:text="${user.userName}">리뷰어닉네임</div>
                             <div th:text="${review.reviewContent}">
                                 믿고 거래했습니다.<br>
                                 판매자가 재밌고 책이 친절해요
@@ -162,7 +163,7 @@
                         </a>
                     </div>
                 </div>
-                
+
             </div>
         </div>
 
