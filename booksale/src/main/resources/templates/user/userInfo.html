@@ -49,31 +49,19 @@
             </div>
             <div class = "post-list invisible">
 
+                <a th:each="interestPost : ${interestPostList}" th:href="@{/post/view/{postId}(postId=${interestPost.postId})}">
                 <div class = "post-block"> <!-- example-->
                     <div class = "favor-content">
-                        <img class = "book-icon" src = "../img/ex.png">
+                        <img class = "book-icon" src = "../img/ex.png" th:src="${interestPost.book.image}">
                         <div class = "favor-content-info">
-                            <div>알고리즘 및 실습</div>
-                            <div>출판사, 지은이, 출판년도</div>
-                            <div>가격, 사용감</div>
-                            <div>학교, 판매방식</div>
+                            <div th:text="${interestPost.book.title}">알고리즘 및 실습</div>
+                            <div th:text="${interestPost.postTitle}">출판사, 지은이, 출판년도</div>
+                            <div th:text="|판매가격 : ${interestPost.postPrice}|">가격, 사용감</div>
+                            <div th:text="|${interestPost.salesMethod}/${interestPost.shippingMethod}|">학교, 판매방식</div>
                         </div>
                     </div>
                 </div>
-
-
-                <div class = "post-block"> <!-- example-->
-                    <div class = "favor-content">
-                        <img class = "book-icon" src = "../img/ex.png">
-                        <div class = "favor-content-info">
-                            <div>알고리즘 및 실습</div>
-                            <div>출판사, 지은이, 출판년도</div>
-                            <div>가격, 사용감</div>
-                            <div>학교, 판매방식</div>
-                        </div>
-                    </div>
-                </div>
-
+                </a>
             </div>
         </div>
 

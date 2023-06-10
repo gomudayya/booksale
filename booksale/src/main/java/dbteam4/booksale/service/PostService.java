@@ -27,6 +27,11 @@ public class PostService {
     public List<PostBookDTO> findRecentPost(int recentNum) {
         return postMapper.findRecentPost(recentNum);
     }
+
+    public List<PostBookDTO> findInterestPost(Long userId) {
+        return postMapper.findInterestPost(userId);
+    }
+
     public List<PostBookDTO> findPostList(BookSearchCond bookSearchCond) {
         List<PostBookDTO> postList = postMapper.findAll(bookSearchCond);
         return postList;
