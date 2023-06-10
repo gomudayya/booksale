@@ -10,8 +10,13 @@ body {
   color: rgb(76, 0, 138);
 }
 
+.btn:hover{
+  opacity: 1;
+}
+
 .account {
-  float: right;
+  position: absolute;
+  right: 0;
 }
 
 .title {
@@ -517,15 +522,15 @@ main .content {
 }
 
 .header {
-  padding-top: 2rem;
   border-bottom: solid 2px rgb(36, 0, 165);
-  height: auto;
-  position: fixed;
-  top: 0;
-  width: 70rem;
-  margin-left: 3rem;
-  background-color: white;
+  border-top: solid 2px rgb(36, 0, 165);
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
+
 
 .search-form {
   width: 576px;
@@ -541,7 +546,7 @@ main .content {
 }
 
 .search-select {
-  border: 0px solid rgb(36, 0, 165);
+  border: 2px solid rgb(36, 0, 165);
   text-align: center;
   /*background-color: lighten($color, 40%);*/
   border-radius: 2rem;
@@ -560,8 +565,7 @@ main .content {
 
 .search-main {
   margin: 1rem;
-  margin-top: 10rem;
-  margin-left: 3rem;
+  margin-left: 25rem;
   padding: 3rem;
   border-radius: 2rem;
   padding-left: 15rem;
@@ -640,19 +644,35 @@ main .content {
   background-color: rgb(211, 230, 255);
   padding: 1rem;
   border-radius: 1rem;
+  margin-left: 30rem;
+}
+
+.state-change{
+  float: right;
 }
 
 .post-main .form-label {
   width: 5rem;
+  margin-top: 0.5rem;
+  white-space: nowrap;
 }
 
 .custom-button {
   margin: 0.5rem;
-  padding: 0.5rem;
+  padding: 0.3rem;
   background-color: rgb(228, 205, 255);
   border-radius: 0.5rem;
+  border: none;
 }
-
+.submit-button{
+  margin: 0.5rem;
+  padding: 1rem;
+  background-color: rgb(228, 205, 255);
+  border-radius: 0.5rem;
+  border: none;
+  margin-left: 50rem;
+  width: 6rem;
+}
 .post-book {
   margin-top: 1rem;
   padding-top: 0.5rem;
@@ -702,8 +722,11 @@ main .content {
 
 .post-main .title {
   margin: 1rem;
-  font-size: 1.2rem;
+  font-size: 2rem;
   text-align: left;
+  background-color: rgb(170, 204, 248);
+  padding: 0.5rem;
+  border-radius: 1rem;
 }
 
 .post-photo {
@@ -711,7 +734,24 @@ main .content {
   height: auto;
   margin: 1rem;
 }
-
+.photo-price{
+  position: relative;
+}
+.photo-price .sellPrice{
+  font-size: 2rem;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+  margin-bottom: 0.5rem;
+}
+.photo-price #sellPriceUnit{
+  font-size: 2rem;
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
 .review-text {
   height: 6rem;
   width: 95%;

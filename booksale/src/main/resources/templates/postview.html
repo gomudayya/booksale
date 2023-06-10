@@ -11,17 +11,26 @@
   <link rel="stylesheet" href="../css/style.css" th:href="@{/css/style.css}">
 </head>
 <body>
+
+<div th:if="${session.loginUser == null}" th:insert="~{/layout/fragment/header :: header}"></div>
+<div th:if="${session.loginUser != null}"  th:insert="~{layout/fragment/login-sidebar :: login-sidebar}"></div>
+
 <a href="index.html" th:href="@{/}"><h1 class = "title logo"><span>R</span><span>E</span><span>B</span><span>O</span><span>O</span><span>K</span></h1></a>
+
+
 
 <main class="post-main">
   <div class="title" th:text="${post.postTitle}">게시글 제목 내용</div>
 
-  <a class="btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" th:text="|${userName}(click!)|">
+  <a class="custom-button" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" th:text="|${userName}(click!)|">
     작성자 이름(click!)
   </a>
 
 
   <div class = "content margin-top">
+
+
+
 
     <img class = "book-icon" src = "../img/ex.png" th:src="${post.book.image}">
     <div class = "content-info settings">
@@ -33,6 +42,10 @@
     </div>
   </div>
 
+  <div class="flex">
+    <div class="item">판매/물려주기</div>
+    <div class="item detail" th:text="${post.salesMethod}">판매 또는 물려주기</div>
+  </div>
 
   <div class="flex">
     <div class="item">책 상태</div>
@@ -44,8 +57,12 @@
     <div class = "item">거래 방법</div>
     <div class="item detail" th:text="${post.shippingMethod}">택배</div>
   </div>
+  <div class="photo-price">
+    <img class = "post-photo" src = "../img/ex.png" th:src="${post.book.image}">
+    <div id="sellPrice" class="sellPrice">판매 희망가격(ex: 26000원)</div>
+    <label for="sellPrice" id="sellPriceUnit">원</label>
+  </div>
 
-  <img class = "post-photo" src = "../img/ex.png" th:src="${post.book.image}">
   <p class="post-content" th:text="${post.postContent}">
     글내용글내용글내용글내용글내용글내용글내용글내용글내용글내용글내용글내용글내용글내
     용글내용글내용글내용글내용글내용글내용글내용글내용글내용글내용글내용글내용글내용글
@@ -54,15 +71,32 @@
 
 
 
-  <button class="btn custom-button" type="submit"><a href="">삭제</a></button>
-  <button class="btn custom-button" type="submit"><a href="post.html" th:href="@{/post}">수정</a></button>
+  <button class="custom-button" type="submit"><a href="">삭제</a></button>
+  <button class="custom-button" type="submit"><a href="post.html" th:href="@{/post}">수정</a></button>
+  <div class="state-change">
+    <label for="sellState_combo">판매 상태 변경: </label>
+    <select id="sellState_combo">
+      <option value="selling"> 판매중</option>
+      <option value="resevation"> 예약중</option>
+      <option value="sellout"> 판매완료</option>
+    </select>
+  </div>
+
+  <div class="item top-border" th:if="${session.loginUser != null} and ${review == null}">리뷰 작성
+    <form th:method="post" th:action="@{/review/save}">
+      <textarea class = "review-text" style="overflow-y: scroll; resize: vertical;" name="reviewContent"></textarea>
+      <input type="hidden" name="postId" th:value="${post.postId} ">
+      <input type="hidden" name="sellerId" th:value="${post.sellerId}">
+      <button class="btn custom-button" type="submit">등록</button>
+    </form>
+  </div>
 
 
-  <div class = "sold mt-3">
+  <div class = "sold mt-3" th:if="${review != null}">
+    <div class = "date" th:text="${#temporals.format(review.reviewTime, 'yyyy-MM-dd HH:mm')}"> 2023-06-04</div>
     <div>
-      <div class = "date"> 2023-06-04</div>
-      <div>
-        믿고 거래했습니다.<br>
+      <div th:text="${review.reviewContent}">
+        믿고 거래했습니다.
         판매자가 재밌고 책이 친절해요
       </div>
     </div>
@@ -94,25 +128,10 @@
   <div class="offcanvas-body">
 
     <!-- example -->
-    <div class = "sold">
+    <div class = "sold margin-top" th:each="sellerReview : ${sellerReviewList}">
       <div>
-        <div class = "date"> 2023-06-04</div>
-        <div>
-          믿고 거래했습니다.<br>
-          판매자가 재밌고 책이 친절해요
-        </div>
-      </div>
-      <div class = "right">
-        <div class = "state">별점: 5</div>
-      </div>
-    </div>
-
-
-    <!-- example -->
-    <div class = "sold margin-top">
-      <div>
-        <div class = "date"> 2023-06-04</div>
-        <div>
+        <div class = "date" th:text="${#temporals.format(sellerReview.reviewTime, 'yyyy-MM-dd HH:mm')}"> 2023-06-04</div>
+        <div th:text="${sellerReview.reviewContent}">
           믿고 거래했습니다.<br>
           판매자가 재밌고 책이 친절해요
         </div>
