@@ -546,7 +546,7 @@ main .content {
 }
 
 .search-select {
-  border: 2px solid rgb(36, 0, 165);
+  border: 2px solid rgb(151, 190, 241);
   text-align: center;
   /*background-color: lighten($color, 40%);*/
   border-radius: 2rem;
@@ -644,7 +644,7 @@ main .content {
   background-color: rgb(211, 230, 255);
   padding: 1rem;
   border-radius: 1rem;
-  margin-left: 30rem;
+  margin-left: 15rem;
 }
 
 .state-change{
@@ -659,10 +659,10 @@ main .content {
 
 .custom-button {
   margin: 0.5rem;
-  padding: 0.3rem;
-  background-color: rgb(228, 205, 255);
+  padding: 0.4rem;
+  background-color: rgb(240, 247, 255);
+  border: 3px solid rgb(151, 190, 241);
   border-radius: 0.5rem;
-  border: none;
 }
 .submit-button{
   margin: 0.5rem;
@@ -670,7 +670,6 @@ main .content {
   background-color: rgb(228, 205, 255);
   border-radius: 0.5rem;
   border: none;
-  margin-left: 50rem;
   width: 6rem;
 }
 .post-book {
@@ -721,13 +720,15 @@ main .content {
 }
 
 .post-main .title {
-  margin: 1rem;
+  margin: 0.2rem;
   font-size: 2rem;
   text-align: left;
   background-color: rgb(170, 204, 248);
   padding: 0.5rem;
   border-radius: 1rem;
 }
+
+
 
 .post-photo {
   width: 40%;
@@ -756,7 +757,7 @@ main .content {
   height: 6rem;
   width: 95%;
   margin: 0.4rem;
-  margin-left: 0.7rem;
+  margin-left: 0.3rem;
 }
 
 .top-border {
@@ -948,4 +949,23 @@ table, td{
 
 .memberTierList-entire{
   margin-left: 30%;
+}
+.flex_right{
+  display: flex;
+  justify-content: flex-end;
+}
+.half-size{
+  display: inline-block;
+  width:50%;
+}
+.raiting{
+  margin-left: 1rem;
+  width:3rem;
+}
+.reviewer{
+  font-size: 0.9rem;
+  border-bottom: 1px solid white;
+}
+.margin-left{
+  margin-left: 1rem;
 }
