@@ -37,6 +37,7 @@
         <a href="mail_each.html" th:href="@{/mail/maileach}"><div class="lastest-chatting">데.베.설</div></a>
     </div>
 </div>
+
 <!-- 회원 사이드바 -->
 <div th:if="${session.loginUser != null}"  th:insert="~{layout/fragment/login-sidebar :: login-sidebar}"></div>
 
