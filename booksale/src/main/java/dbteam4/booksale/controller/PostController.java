@@ -18,6 +18,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Controller
 @RequestMapping("/post")
@@ -49,26 +50,11 @@ public class PostController {
         return "redirect:/";
     }
 
-    @PostMapping("/{postId}/save-review")
-    public String saveReview(HttpServletRequest request, @ModelAttribute ReviewDTO reviewDTO,
-                             @SessionAttribute(name = SessionConst.LOGIN_USER) User loginUser) {
-        String referer = request.getHeader("Referer");
-
-        reviewDTO.setUserId(loginUser.getId());
-        reviewDTO.setReviewTime(LocalDateTime.now());
-
-        System.out.println("reviewDTO = " + reviewDTO);
-
-        reviewService.saveReview(reviewDTO);
-
-
-        return "redirect:" + referer;
-    }
-
     @GetMapping("/view/{postId}")
     public String view(@PathVariable Long postId, Model model) {
         PostBookDTO post = postService.findByPostId(postId);
         ReviewDTO review = reviewService.findByPostId(postId);
+        List<ReviewDTO> sellerReviewList = reviewService.findBySellerId(post.getSellerId());
 
         Long sellerId = post.getSellerId();
         String userName = userService.findById(sellerId).getUserName();
@@ -76,6 +62,7 @@ public class PostController {
         model.addAttribute("post", post);
         model.addAttribute("userName", userName);
         model.addAttribute("review", review);
+        model.addAttribute("sellerReviewList", sellerReviewList);
 
         return "postview";
     }

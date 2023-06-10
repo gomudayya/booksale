@@ -12,7 +12,8 @@ import java.time.LocalDateTime;
 public class ReviewDTO {
     private Long reviewId;
     private Long postId;
-    private Long userId;
+    private Long writerId;
+    private Long sellerId;
     private String reviewContent;
     private LocalDateTime reviewTime;
 }

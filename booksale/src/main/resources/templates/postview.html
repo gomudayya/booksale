@@ -67,10 +67,12 @@
   <button class="btn custom-button" type="submit"><a href="post.html" th:href="@{/post}">수정</a></button>
 
 
-  <div class="item top-border" th:if="${session.loginUser != null}">리뷰 작성
-    <form th:method="post" th:action="@{/post/{postId}/save-review (postId=${post.postId}) }">
+  <div class="item top-border" th:if="${session.loginUser != null} and ${review == null}">리뷰 작성
+    <form th:method="post" th:action="@{/review/save}">
       <textarea class = "review-text" style="overflow-y: scroll; resize: vertical;" name="reviewContent"></textarea>
-      <button class="btn custom-button" type="submit"><a href="">등록</a></button>
+      <input type="hidden" name="postId" th:value="${post.postId} ">
+      <input type="hidden" name="sellerId" th:value="${post.sellerId}">
+      <button class="btn custom-button" type="submit">등록</button>
     </form>
   </div>
 
@@ -111,25 +113,10 @@
   <div class="offcanvas-body">
 
     <!-- example -->
-    <div class = "sold">
+    <div class = "sold margin-top" th:each="sellerReview : ${sellerReviewList}">
       <div>
-        <div class = "date"> 2023-06-04</div>
-        <div>
-          믿고 거래했습니다.<br>
-          판매자가 재밌고 책이 친절해요
-        </div>
-      </div>
-      <div class = "right">
-        <div class = "state">별점: 5</div>
-      </div>
-    </div>
-
-
-    <!-- example -->
-    <div class = "sold margin-top">
-      <div>
-        <div class = "date"> 2023-06-04</div>
-        <div>
+        <div class = "date" th:text="${#temporals.format(sellerReview.reviewTime, 'yyyy-MM-dd HH:mm')}"> 2023-06-04</div>
+        <div th:text="${sellerReview.reviewContent}">
           믿고 거래했습니다.<br>
           판매자가 재밌고 책이 친절해요
         </div>
