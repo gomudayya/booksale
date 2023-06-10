@@ -25,15 +25,13 @@
 
 
   <div class = "content margin-top">
-
-
     <img class = "book-icon" src = "../img/ex.png" th:src="${post.book.image}">
     <div class = "content-info settings mt-3">
       <div th:text="${post.book.title}">창의적 숨쉬기</div>
       <span th:text="${post.book.author}">저자</span>
       <span th:text="${post.book.publisher}">출판사</span>
-      <span th:text="${post.book.pubDate}">출판 년도</span>
-      <span th:text="${post.book.discount}">원가</span>
+      <span th:text="|출판 년도 : ${post.book.pubDate}|">출판 년도</span>
+      <div th:text="|책 정가 : ${post.book.discount}|">원가</div>
     </div>
   </div>
 
@@ -71,7 +69,7 @@
 
   <div class="photo-price">
     <img class = "post-photo" src = "../img/ex.png" th:src="${post.book.image}">
-    <div id="sellPrice" class="sellPrice">판매 희망가격(ex: 26000원)</div>
+    <div id="sellPrice" class="sellPrice" th:text="|판매 가격 : ${post.postPrice}|">판매 희망가격(ex: 26000원)</div>
     <label for="sellPrice" id="sellPriceUnit">원</label>
   </div>
 

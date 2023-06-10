@@ -2,9 +2,7 @@ package dbteam4.booksale.controller;
 
 import dbteam4.booksale.constant.SessionConst;
 import dbteam4.booksale.domain.User;
-import dbteam4.booksale.dto.LoginDTO;
-import dbteam4.booksale.dto.PostBookDTO;
-import dbteam4.booksale.dto.RegisterDTO;
+import dbteam4.booksale.dto.*;
 import dbteam4.booksale.repository.UserMapper;
 import dbteam4.booksale.service.PostService;
 import dbteam4.booksale.service.SchoolService;
@@ -16,6 +14,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import dbteam4.booksale.service.PostService;
+import dbteam4.booksale.service.ReviewService;
 
 import java.util.HashMap;
 import java.util.List;
@@ -29,8 +29,11 @@ public class UserController {
 
     private final SchoolService schoolService;
     private final UserService userService;
+    private final PostService postService;
+    private final ReviewService reviewService;
     private final UserMapper userMapper;
     private final PostService postService;
+
 
     @GetMapping("/register")
     public String register(Model model) {
@@ -49,10 +52,15 @@ public class UserController {
     @GetMapping("/info")
     public String userInfo(@SessionAttribute(name = SessionConst.LOGIN_USER, required = false)User loginUser, Model model) {
 
+
         List<PostBookDTO> interestPostList = postService.findInterestPost(loginUser.getId());
+        List<PostBookDTO> userPosts = postService.findUserPost(loginUser.getId());
+        List<PostReviewDTO> userReviews = reviewService.findByWriterId(loginUser.getId());
 
         model.addAttribute("user", loginUser);
         model.addAttribute("interestPostList", interestPostList);
+        model.addAttribute("UserReviews", userReviews);
+        model.addAttribute("UserPosts", userPosts);
         return "user/userInfo";
     }
 
@@ -114,4 +122,5 @@ public class UserController {
 
         return "redirect:/user/info";
     }
+
 }

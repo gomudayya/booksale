@@ -36,4 +36,9 @@ public class PostService {
         List<PostBookDTO> postList = postMapper.findAll(bookSearchCond);
         return postList;
     }
+
+    public List<PostBookDTO> findUserPost(Long id) {
+        List<PostBookDTO> postList = postMapper.findUserPost(id);
+        return postList;
+    }
 }

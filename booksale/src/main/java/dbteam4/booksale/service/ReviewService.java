@@ -1,5 +1,6 @@
 package dbteam4.booksale.service;
 
+import dbteam4.booksale.dto.PostReviewDTO;
 import dbteam4.booksale.dto.ReviewDTO;
 import dbteam4.booksale.repository.ReviewMapper;
 import lombok.RequiredArgsConstructor;
@@ -28,4 +29,6 @@ public class ReviewService {
     public List<ReviewDTO> findBySellerId(Long sellerId) {
         return reviewMapper.findBySellerId(sellerId);
     }
+
+    public List<PostReviewDTO> findByWriterId(Long writerId) {return reviewMapper.findByWriterId(writerId);}
 }
