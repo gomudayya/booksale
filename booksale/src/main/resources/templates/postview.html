@@ -109,25 +109,11 @@
   <div class="offcanvas-body">
 
     <!-- example -->
-    <div class = "sold">
-      <div>
-        <div class = "date"> 2023-06-04</div>
-        <div>
-          믿고 거래했습니다.<br>
-          판매자가 재밌고 책이 친절해요
-        </div>
-      </div>
-      <div class = "right">
-        <div class = "state">별점: 5</div>
-      </div>
-    </div>
-
-
-    <!-- example -->
-    <div class = "sold margin-top">
-      <div>
-        <div class = "date"> 2023-06-04</div>
-        <div>
+    <div class = "sold margin-top" th:each="sellerReview : ${sellerReviewList}">
+      <div class="left">
+        <div class = "date" th:text="${#temporals.format(sellerReview.reviewTime, 'yyyy-MM-dd HH:mm')}"> 2023-06-04</div>
+        <div class = "reviewer">리뷰어닉네임</div>
+        <div th:text="${sellerReview.reviewContent}">
           믿고 거래했습니다.<br>
           판매자가 재밌고 책이 친절해요
         </div>
