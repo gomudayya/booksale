@@ -16,7 +16,7 @@
 
     <select id="findBookWithPostsByISBN" resultMap="bookResultMap">
         select b.ISBN, b.title, b.author, b.publisher, b.pub_date, b.image, b.discount, b.description,
-               p.post_id, p.seller_id, p.post_time, p.post_content, p.sales_method, p.post_price, p.shipping_method, p.book_quality, p.post_title
+               p.post_id, p.seller_id, p.post_time, p.post_content, p.sales_method, p.post_price, p.shipping_method, p.book_quality, p.post_title, p.post_status
         from
             book b inner join post p on b.ISBN = p.book_ISBN
         where b.ISBN = #{ISBN}
@@ -41,6 +41,7 @@
             <result property="salesMethod" column="sales_method" />
             <result property="postPrice" column="post_price" />
             <result property="shippingMethod" column="shipping_method" />
+            <result property="postStatus" column="post_status"/>
             <result property="bookQuality" column="book_quality" />
             <result property="postTime" column="post_time" />
         </collection>

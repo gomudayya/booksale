@@ -4,8 +4,8 @@
 
 <mapper namespace="dbteam4.booksale.repository.ReviewMapper">
     <insert id="save" useGeneratedKeys="true" keyProperty="reviewId">
-        insert into review (review_id, post_id, writer_id, seller_id,review_content, review_time)
-            VALUE (#{reviewId}, #{postId}, #{writerId}, #{sellerId},#{reviewContent}, #{reviewTime})
+        insert into review (review_id, post_id, writer_id, seller_id,review_content, review_time, rating)
+            VALUE (#{reviewId}, #{postId}, #{writerId}, #{sellerId},#{reviewContent}, #{reviewTime}, #{rating})
     </insert>
 
     <select id="findByPostId" resultType="ReviewDTO">

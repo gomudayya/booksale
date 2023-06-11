@@ -14,6 +14,7 @@ public class ReviewDTO {
     private Long postId;
     private Long writerId;
     private Long sellerId;
+    private int rating;
     private String reviewContent;
     private LocalDateTime reviewTime;
 }

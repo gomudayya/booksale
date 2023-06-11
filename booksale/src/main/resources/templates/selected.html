@@ -120,7 +120,7 @@
             <span th:text="|책상태 : ${post.bookQuality}/|">책 품질</span>
             <div th:text="|판매 가격 : ${post.postPrice}|">판매 가격</div>
           </div>
-          <div class = "state">판매중</div>
+          <div class = "state" th:text="${post.postStatus}">판매중</div>
         </div>
       </a>
 
