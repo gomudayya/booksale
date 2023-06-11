@@ -3,7 +3,6 @@ package dbteam4.booksale.service;
 import dbteam4.booksale.constant.BookSearchType;
 import dbteam4.booksale.domain.Post;
 import dbteam4.booksale.dto.BookSearchCond;
-import dbteam4.booksale.dto.PostBookDTO;
 import dbteam4.booksale.repository.PostMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +22,7 @@ class PostServiceTest {
         bookSearchCond.setKeyword("마리오");
         bookSearchCond.setBookSearchType(BookSearchType.author);
 
-        List<PostBookDTO> postList = postMapper.findAll(bookSearchCond);
+        List<Post> postList = postMapper.findAll(bookSearchCond);
 
         System.out.println("postList = " + postList);
     }

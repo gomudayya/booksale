@@ -2,31 +2,61 @@
     <div class = "member-info" role="group">
         <div class = "member-detail">
             <div th:text="${session.loginUser.userName}">전강욱 님</div>
-            <div>
-                <span th:text="'현재 마일리지: ' + ${session.loginUser.mileage} + '   ('"></span>
-                <span th:if="${session.loginUser.mileage >= 0 && session.loginUser.mileage < 10}">짐승</span>
-                <span th:if="${session.loginUser.mileage >= 10 && session.loginUser.mileage <= 30}">노예</span>
-                <span th:if="${session.loginUser.mileage > 30 && session.loginUser.mileage <= 50}">평민</span>
-                <span th:if="${session.loginUser.mileage > 50 && session.loginUser.mileage <= 70}">귀족</span>
-                <span th:if="${session.loginUser.mileage > 70 && session.loginUser.mileage <= 80}">왕</span>
-                <span th:if="${session.loginUser.mileage > 80 && session.loginUser.mileage <= 90}">신의 대리인</span>
-                <span th:if="${session.loginUser.mileage > 90 && session.loginUser.mileage <= 100}">절대신</span>
-                <span th:text="')'"></span>
-            </div>
-            <div class="detail-img">
-                <a href="alarm.html" th:href="@{/alarm}"><img class="bell-image" src="../img/bell2.png" th:src="@{/img/bell2.png}"></a>
-                <a href="mail.html" th:href="@{/mail}"><img class="mail-image" src="../img/mail2.png" th:src="@{/img/mail2.png}"></a>
-            </div>
+            <div>절대신</div>
         </div>
         <div class = "member-detail">
-            <span class = "col"><a class="black" href = "user/userInfo.html" th:href="@{/user/info}">회원정보</a></span>
-            <span class = "col"><a class="black" href="#" onclick="document.getElementById('logout').submit();">로그아웃</a></span>
+            <span class = "col"><a href = "user/userInfo.html" th:href="@{/user/info}">회원정보</a></span>
+            <span class = "col"><a href="#" onclick="document.getElementById('logout').submit();">로그아웃</a></span>
         </div>
     </div>
 
-    <a th:href="@{/post}"><div class = "post-button black">판매글 작성하기</div></a>
-    <a th:href="@{/membertier}"><div class="post-button black">회원 등급 보기</div></a>
+    <a th:href="@{/post}"><div class = "post-button">판매글 작성하기</div></a>
+    <div class = "chat">
+        <div class = "chat-button btn">
+            ▼ 대화내역
+        </div>
+        <div class = "chat-list invisible">
+            
+            <div class = "chat-block">
+                <div class = "chat-name btn">박병욱</div>
+                <div class = "chat-detail invisible">
+                    <div class = "chat-sent">
+                        <span class = "time">01:23</span>
+                        <span class = "message">디자인 빨리 끝내</span>
+                    </div>
+                    <div class = "chat-sent">
+                        <span class = "time">01:23</span>
+                        <span class = "message">대답.</span>
+                    </div>
 
+                    <div class = "chat-received">
+                        <span class = "message">ㅇㅇ</span>
+                        <span class = "time">01:23</span>
+                    </div>
+                    <form>
+                        <input class = "input-message">
+                    </form>
+                </div>
+            </div>
+            <div class = "chat-block">
+                <div class = "chat-name btn">전강옥</div>
+                <div class = "chat-detail invisible">
+                    <div class = "chat-sent">
+                        <span class = "time">01:23</span>
+                        <span class = "message">데베설 A+ 받는 방법? 줄 바 꿈 테 스 트</span>
+                    </div>
+
+                    <div class = "chat-received">
+                        <span class = "message">있겠냐?</span>
+                        <span class = "time">01:23</span>
+                    </div>
+                    <form>
+                        <input class = "input-message">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <form id="logout" th:action="@{/user/logout}" method="POST">
         <input name="${_csrf.parameterName}" type="hidden" value="${_csrf.token}"/>
     </form>

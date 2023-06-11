@@ -28,61 +28,41 @@
       <div id="selectedBookInfo" style="display: none;">
         <img id="bookImage" src="" alt="Book Image">
         <h2 id="bookTitle"></h2>
-        <div class="book-info-block">
-          <label for="publisher" class="book-info-label">출판사</label>
-          <p id="publisher" class="remove-margin"></p>
-        </div>
-        <div class="book-info-block">
-          <label for="author" class="book-info-label">작가</label>
-          <p id="author" class="remove-margin"></p>
-        </div>
-        <div class="book-info-block">
-          <label for="pubdate" class="book-info-label">출판날짜</label>
-          <p id="pubdate" class="remove-margin"></p>
-        </div>
-        <div class="book-info-block">
-          <label for="price" class="book-info-label">책 정가</label>
-          <p id="price" class="remove-margin"></p>
-        </div>
-
-
-
+        <p id="publisher"></p>
+        <p id="author"></p>
+        <p id="pubdate"></p>
+        <p id="price"></p>
         <input type="text" id="bookISBN" name="ISBN" readonly>
       </div>
 
     </div>
 
+    <div class = "content margin-top">
+
+      <img class = "book-icon" src = "../img/ex.png">
+      <div class = "content-info settings">
+        <div>창의적 숨쉬기(책 선택 완료시 표시)</div>
+        <span>저자</span>
+        <span>출판사</span>
+        <span>출판 년도</span>
+        <span>원가</span>
+      </div>
+    </div>
+
     <div class = "flex item">
       <div class="form-label">분류</div>
-      <label>
-        <input type="radio" name="salesMethod" value="판매" onclick="toggleInput(this)">
-        판매
-      </label>
-      <label>
-        <input type="radio" name="salesMethod" value="물려주기" onclick="toggleInput(this)">
-        물려주기
-      </label>
-    </div>
-    <div id="inputContainer" class="input-container">
-      <label for="inputPrice" class="form-label">판매 희망가</label>
-      <input id="inputPrice" type="text" placeholder="판매 희망가를 입력하세요.." name="postPrice">
-    </div>
-    <script>
-      function toggleInput(radioBtn) {
-        var inputContainer = document.getElementById("inputContainer");
+      <input class="margin-top" type="radio" id="option1" name="salesMethod" value="판매" checked>
+      <label class="margin-right" for="option1">판매</label>
 
-        if (radioBtn.value === "판매") {
-          inputContainer.style.display = "block";
-        } else {
-          inputContainer.style.display = "none";
-        }
-      }
-    </script>
+      <input class="margin-top" type="radio" id="option2" name="salesMethod" value="물려주기">
+      <label for="option2">물려주기</label>
+    </div>
+
 
 
     <div class = "flex item">
       <div class = "form-label">거래 방법</div>
-      <input class="margin-top" type="radio" id="option3" name="shippingMethod" value="택배">
+      <input class="margin-top" type="radio" id="option3" name="shippingMethod" value="택배" checked>
       <label class="margin-right" for="option3">택배</label>
 
       <input class="margin-top" type="radio" id="option4" name="shippingMethod" value="직거래">
@@ -113,7 +93,7 @@
     <input class = "" type="file" id="directory_upload">
 
     <div class="">
-      <button class="submit-button" type="submit"><strong>등록</strong></button>
+      <button class="btn custom-button" type="submit">등록</button>
     </div>
   </form>
 </main>

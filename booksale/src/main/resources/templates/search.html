@@ -28,15 +28,13 @@
                     <div th:text="${book.title}">창의적 잠자기</div>
                     <span th:text="${book.author}">저자</span>
                     <span th:text="${book.publisher}">출판사</span>
-                    <span th:text="|출판 년도 : ${book.pubDate}|">출판 년도</span>
-                    <div th:text="|책 정가 : ${book.discount}|">정가</div>
+                    <span th:text="${book.pubDate}">출판 년도</span>
                 </div>
                 <div class = "state" th:text="|${book.postList.size()}건|">1건</div>
             </div>
         </a>
     </div>
 </main>
-
 <!-- 회원 사이드바 -->
 <div th:if="${session.loginUser != null}"  th:insert="~{layout/fragment/login-sidebar :: login-sidebar}"></div>
 

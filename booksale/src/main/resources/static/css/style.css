@@ -3,20 +3,15 @@ html {
 }
 
 body {
-  background-image: url("../img/background.png");
+  background-color: rgb(245, 255, 247);
 }
 
 .account .btn {
-  color: rgb(72, 17, 0);
-}
-
-.btn:hover{
-  opacity: 1;
+  color: rgb(76, 0, 138);
 }
 
 .account {
-  position: absolute;
-  right: 0;
+  float: right;
 }
 
 .title {
@@ -26,29 +21,28 @@ body {
 }
 
 .title span:nth-child(1) {
-  color: rgb(100, 48, 0);
+  color: rgb(63, 134, 249);
 }
 
 .title span:nth-child(2) {
-  color: rgb(141, 68, 0);
+  color: rgb(247, 82, 53);
 }
 
 .title span:nth-child(3) {
-  color: rgb(165, 80, 1);
+  color: rgb(255, 183, 2);
 }
 
 .title span:nth-child(4) {
-  color: rgb(197, 97, 4);
+  color: rgb(63, 134, 249);
 }
 
 .title span:nth-child(5) {
-  color: rgb(211, 105, 6);
+  color: rgb(47, 149, 85);
 }
 
 .title span:nth-child(6) {
-  color: rgb(221, 107, 7);
+  color: rgb(247, 82, 53);
 }
-
 
 .main-search-bar {
   width: 35rem;
@@ -59,53 +53,24 @@ main {
 }
 
 main .recent {
-  color: rgb(77, 42, 11);
+  color: rgb(76, 0, 138);
   margin: 0.5rem;
 }
 
 main .contents-container {
-  background-color: rgb(179, 118, 69);
+  background-color: rgb(240, 216, 255);
   padding: 0.5rem;
   border-radius: 1.3rem;
 }
 
 main .content {
-  background-color: rgb(218, 161, 108);
+  background-color: rgb(170, 204, 248);
   padding: 0.5rem;
   border-radius: 1rem;
   display: flex;
   margin-bottom: 0.5rem;
 }
 
-.book-info-block{
-  background-color: rgb(218, 161, 108);
-  padding: 0.5rem;
-  border-radius: 1rem;
-  margin-bottom: 0.5rem;
-}
-.book-info-label{
-  background-color: rgb(179, 118, 69);
-  padding: 0.5rem;
-  border-radius: 1rem;
-}
-#bookISBN{
-  display: none;
-}
-#author{
-  font-weight: bold;
-}
-#publisher{
-  font-weight: bold;
-}
-#pubdate{
-  font-weight: bold;
-}
-#price{
-  font-weight: bold;
-}
-::placeholder{
-  font-size: 0.7rem;
-}
 .book-icon {
   margin: 0.3rem;
   width: auto;
@@ -113,20 +78,7 @@ main .content {
 }
 
 .content-info {
-  color: rgb(77, 42, 11);
-  margin: 0.2rem;
-}
-
-.favor-content{
-  background-color: rgb(255, 255, 229);
-  padding: 0.5rem;
-  border-radius: 1rem;
-  display: flex;
-  margin-bottom: 0.5rem;
-}
-
-.favor-content-info {
-  color: rgb(0, 0, 0);
+  color: rgb(76, 0, 138);
   margin: 0.2rem;
 }
 
@@ -136,57 +88,29 @@ main .content {
   position: fixed;
   float: right;
 }
-.remove-margin{
-  margin-bottom: 0rem;
-}
+
 .member-info {
   border-radius: 1rem;
-  border: #a5784e 0.4rem solid;
-  background-color: #cca374;
+  border: rgb(170, 204, 248) 0.4rem solid;
+  background-color: rgb(211, 230, 255);
   width: 15rem;
   height: 9rem;
   margin: 1rem;
 }
 
 .member-detail {
-  color: rgb(77, 42, 11);
+  color: rgb(76, 0, 138);
   margin: 1rem;
-}
-
-.detail-text{
-  float: left;
-
-}
-
-.detail-img{
-  height: 30px;
-  margin-left: 0px;
-  display: flex;
-
-}
-
-
-.bell-image{
-  width: 30px;
-  height: 30px;
-  margin-top: 0.5rem;
-}
-
-.mail-image{
-  width: 30px;
-  height: 30px;
-  margin-top: 0.5rem;
-
 }
 
 .post-button {
   border-radius: 1rem;
-  border: #cca374 0.3rem solid;
-  background-color: #a5784e;
+  border: rgb(211, 230, 255) 0.3rem solid;
+  background-color: rgb(170, 204, 248);
   margin: 1rem;
   text-align: center;
   padding: 0.2rem;
-  color: rgb(95, 60, 8);
+  color: rgb(36, 0, 165);
 }
 
 .chat {
@@ -205,24 +129,7 @@ main .content {
 .invisible {
   display: none;
 }
-.alarm-list{
-  margin: 0.4rem;
-  padding: 0.2rem;
-  border-radius: 0.5rem;
-  background-color: rgb(170, 204, 248);
-  width: 50rem;
-}
 
-.input-container{
-  display: none;
-}
-
-.alarm-detail{
-  background-color: rgb(211, 230, 255);
-  border-radius: 0.5rem;
-  padding: 0.3rem;
-  font-size: 0.9rem;
-}
 .chat-list {
   margin: 0.4rem;
   padding: 0.2rem;
@@ -236,81 +143,6 @@ main .content {
   border-radius: 0.5rem;
   padding: 0.3rem;
   font-size: 0.9rem;
-}
-
-.chatting-list {
-  margin: 0.4rem;
-  padding: 0.2rem;
-  border-radius: 0.5rem;
-  background-color: rgb(255, 239, 146);
-  width: 50rem;
-}
-
-.chatting-detail {
-  background-color: rgb(255, 255, 229);
-  border-radius: 0.5rem;
-  padding: 0.3rem;
-  font-size: 0.9rem;
-}
-
-.mail_each-head{
-  margin-left: 27%;
-  width: 50vw;
-  border: rgb(0, 0, 0) solid 3px;
-  background-color: rgb(147, 240, 194);
-  padding: 1rem;
-  text-align: center;
-}
-.mail_each-head .backward-icon{
-  width: 10px;
-  height: auto;
-  float: left;
-  margin-top: 5px;
-}
-
-.lastest-chatRecord{
-  float: right;
-}
-
-.lastest-alarmRecord{
-  float: right;
-}
-
-.state-read{
-  position: relative;
-  color:rgb(47, 149, 85);
-  bottom: 1.5rem;
-  left: 7rem;
-}
-
-.state-unread{
-  position: relative;
-  color:rgb(255, 0, 0);
-  bottom: 1.5rem;
-  left: 7rem;
-}
-
-.alarm-checked{
-  position: relative;
-  color:rgb(47, 149, 85);
-  bottom: 1.5rem;
-  left: 9rem;
-}
-
-.alarm-unchecked{
-  position: relative;
-  color:rgb(255, 0, 0);
-  bottom: 1.5rem;
-  left: 9rem;
-}
-
-
-.mail_each-body{
-  margin-left: 27%;
-  width: 50vw;
-  border: rgb(0, 0, 0) solid 3px;
-  background-color: rgb(255, 255, 229);
-  padding: 1rem;
 }
 
 .chat-sent {
@@ -349,9 +181,8 @@ main .content {
   font-size: 0.8rem;
 }
 
-
 .login-main {
-  border: rgb(179, 118, 69) solid 3.5px;
+  border: rgb(240, 216, 255) solid 3.5px;
   border-radius: 2rem;
   padding: 6rem;
   height: 25rem;
@@ -372,14 +203,14 @@ main .content {
 .login-text {
   margin: 1rem;
   padding-left: 1rem;
-  border-left: 3px solid rgb(179, 118, 69);
+  border-left: 3px solid rgb(240, 216, 255);
 }
 
 .login-button {
-  background-color: rgb(211, 126, 47);
-  border: rgb(95, 60, 8) 1px solid;
+  background-color: rgb(190, 133, 255);
+  border: rgb(36, 0, 165) 1px solid;
+  color: rgb(36, 0, 165);
   font-weight: 500;
-  color: rgb(95, 60, 8);
 }
 
 .logo {
@@ -392,7 +223,7 @@ main .content {
 
 .register-main {
   background-color: white;
-  border: rgb(77, 42, 11) solid 3.5px;
+  border: rgb(76, 0, 138) solid 3.5px;
   border-radius: 2rem;
   padding: 4rem;
   height: auto;
@@ -410,11 +241,11 @@ main .content {
   margin: -2rem;
   margin-bottom: 1.5rem;
   font-size: 27px;
-  color: rgb(95, 60, 8);
+  color: rgb(36, 0, 165);
 }
 
 .register-button {
-  background-color: rgb(211, 126, 47);
+  background-color: rgb(190, 133, 255);
   border: none;
   margin-top: 2.7rem;
 }
@@ -430,7 +261,7 @@ main .content {
 
 .member-info-main {
   background-color: white;
-  border-left: rgb(77, 42, 11) solid 3.5px;
+  border-left: rgb(76, 0, 138) solid 3.5px;
   padding: 4rem;
   height: auto;
   width: 40vw;
@@ -440,7 +271,7 @@ main .content {
   margin: -2rem;
   margin-bottom: 1.5rem;
   font-size: 27px;
-  color: rgb(95, 60, 8);
+  color: rgb(36, 0, 165);
 }
 
 .member-detail {
@@ -455,12 +286,12 @@ main .content {
 
 .view-posts-button {
   border-radius: 1rem;
-  border: #a5784e 0.3rem solid;
-  background-color: #cca374;
+  border: rgb(211, 230, 255) 0.3rem solid;
+  background-color: rgb(170, 204, 248);
   margin: 1rem;
   text-align: center;
   padding: 0.2rem;
-  color: rgb(95, 60, 8);
+  color: rgb(36, 0, 165);
 }
 
 .flex-space-between {
@@ -471,16 +302,14 @@ main .content {
 .content .state {
   margin: 0.5rem;
   margin-left: auto;
-  background-color: rgba(255, 219, 190, 0.76);
+  background-color: rgb(211, 230, 255);
   height: 2.2rem;
   padding: 0.3rem;
   border-radius: 0.3rem;
-  white-space: nowrap;
-  color:black;
 }
 
 .sold {
-  background-color: rgb(164, 107, 55);
+  background-color: rgb(190, 133, 255);
   padding: 0.7rem;
   border-radius: 1rem;
   display: flex;
@@ -491,18 +320,18 @@ main .content {
 .sold .state {
   margin: 0.5rem;
   margin-left: auto;
-  background-color: #cca374;
+  background-color: rgb(240, 216, 255);
   height: 2.2rem;
   padding: 0.3rem;
   border-radius: 0.3rem;
-  color: black;
+  color: rgb(190, 133, 255);
 }
 
 .sold .delete {
   text-align: center;
   margin: 0.5rem;
   margin-left: auto;
-  background-color: rgb(179, 118, 69);
+  background-color: rgb(240, 216, 255);
   height: 2.2rem;
   padding: 0.3rem;
   border-radius: 0.3rem;
@@ -514,7 +343,7 @@ main .content {
 }
 
 .post-block {
-  background-color: rgb(179, 118, 69);
+  background-color: rgb(240, 216, 255);
   border-radius: 2rem;
   margin-bottom: 1.5rem;
 }
@@ -526,14 +355,13 @@ main .content {
 
 .header {
   padding-top: 2rem;
-  border-bottom: solid 2px rgb(87, 35, 11);
-  height: 12vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(255, 225, 209, 0.76);
+  border-bottom: solid 2px rgb(36, 0, 165);
+  height: auto;
+  top: 0;
+  width: 70rem;
+  margin-left: 3rem;
+  background-color: white;
 }
-
 
 .search-form {
   width: 576px;
@@ -544,12 +372,12 @@ main .content {
 }
 
 .search-input {
-  border: solid 2px rgb(87, 35, 11);
+  border: solid 2px rgb(36, 0, 165);
   border-radius: 2rem;
 }
 
 .search-select {
-  border: 0px solid rgb(87, 35, 11);
+  border: 0px solid rgb(36, 0, 165);
   text-align: center;
   /*background-color: lighten($color, 40%);*/
   border-radius: 2rem;
@@ -557,7 +385,7 @@ main .content {
 }
 
 .search-button {
-  background-color: #6e2c0e;
+  background-color: #2a00bf;
   border-radius: 1rem;
   color: white;
 }
@@ -568,7 +396,7 @@ main .content {
 
 .search-main {
   margin: 1rem;
-  margin-left: 8rem;
+  margin-left: 3rem;
   padding: 3rem;
   border-radius: 2rem;
   padding-left: 15rem;
@@ -576,9 +404,8 @@ main .content {
 }
 
 .sub-title {
-  border-left: rgb(95, 60, 8) solid 2px;
+  border-left: rgb(36, 0, 165) solid 2px;
   padding-left: 1rem;
-  margin-left: 20px;
   margin-bottom: 1.5rem;
 }
 
@@ -586,7 +413,6 @@ main .content {
   border-radius: 1.5rem;
   padding-bottom: 0.4rem;
   height: auto;
-  background-color: rgba(252, 233, 223, 0.66);
 }
 
 .book {
@@ -600,7 +426,6 @@ main .content {
   font-size: 1.1rem;
 }
 
-
 .no-padding {
   padding-left: 0rem;
 }
@@ -613,7 +438,6 @@ main .content {
 .filter {
   width: 18rem;
   padding-left: 1.5rem;
-  color:white;
 }
 
 .filter-item {
@@ -623,12 +447,12 @@ main .content {
 
 .filter-search-button {
   margin-top: 0.5rem;
-  background-color: rgba(95, 60, 8, 0.93);
+  background-color: rgb(36, 0, 165);
   color: white;
 }
 
 .filter {
-  background-color: rgb(179, 118, 69);
+  background-color: rgb(211, 230, 255);
   padding: 1rem;
   margin: 1rem;
   border-radius: 1rem;
@@ -636,7 +460,7 @@ main .content {
 
 .filter-item {
   padding-left: 0.5rem;
-  border-left: 1px solid rgb(211, 126, 47);
+  border-left: 1px solid rgb(190, 133, 255);
 }
 
 .main-list {
@@ -646,40 +470,22 @@ main .content {
 .post-main {
   margin: 1rem;
   width: 50vw;
-  background-color: rgb(161, 140, 116);
+  background-color: rgb(211, 230, 255);
   padding: 1rem;
   border-radius: 1rem;
-  margin-left: 15rem;
-}
-
-.state-change{
-  float: right;
 }
 
 .post-main .form-label {
   width: 5rem;
-  margin-top: 0.5rem;
-  white-space: nowrap;
 }
 
 .custom-button {
   margin: 0.5rem;
-  padding: 0.4rem;
-  background-color: rgb(255, 226, 204);
+  padding: 0.5rem;
+  background-color: rgb(228, 205, 255);
   border-radius: 0.5rem;
-  color: black;
 }
-.black{
-  color:black;
-}
-.submit-button{
-  margin: 0.5rem;
-  padding: 1rem;
-  background-color: rgb(247 227 207);
-  border-radius: 0.5rem;
-  border: none;
-  width: 6rem;
-}
+
 .post-book {
   margin-top: 1rem;
   padding-top: 0.5rem;
@@ -689,12 +495,11 @@ main .content {
 .post-main .buttons {
   margin-top: 1rem;
   padding-bottom: 0.4rem;
-  border-bottom: 1px solid rgb(248, 193, 170);
+  border-bottom: 1px solid rgb(170, 204, 248);
 }
 
 .post-main .item {
   margin: 0.4rem;
-  color:white;
 }
 
 .margin-right {
@@ -714,267 +519,40 @@ main .content {
 
 .post-content {
   width: 100%;
-  background-color: rgb(232, 214, 188);
+  background-color: rgb(255, 255, 229);
   padding: 0.5rem;
   border-radius: 0.8rem;
   margin-top: 0.8rem;
 }
 
 .post-main .detail {
-  background-color: #cca374;
-  color: black;
+  background-color: rgb(170, 204, 248);
+  color: white;
   border-radius: 0.5rem;
   padding-left: 0.7rem;
   padding-right: 0.7rem;
 }
 
 .post-main .title {
-  margin: 0.2rem;
-  font-size: 2rem;
+  margin: 1rem;
+  font-size: 1.2rem;
   text-align: left;
-  background-color: #cca374;
-  padding: 0.5rem;
-  border-radius: 1rem;
 }
-
-
 
 .post-photo {
   width: 40%;
   height: auto;
   margin: 1rem;
 }
-.photo-price{
-  position: relative;
-}
-.photo-price .sellPrice{
-  font-size: 2rem;
-  font-weight: bold;
-  position: absolute;
-  bottom: 0;
-  right: 5%;
-  margin-bottom: 0.5rem;
-}
-.photo-price #sellPriceUnit{
-  font-size: 2rem;
-  font-weight: bold;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-}
+
 .review-text {
   height: 6rem;
   width: 95%;
   margin: 0.4rem;
-  margin-left: 0.3rem;
+  margin-left: 0.7rem;
 }
 
 .top-border {
-  border-top: 2px solid rgb(255, 155, 133);
+  border-top: 2px solid rgb(190, 133, 255);
   padding-top: 1rem;
 }/*# sourceMappingURL=style.css.map */
-
-.trophy-icon{
-  margin: 0.3rem;
-  width: auto;
-  height: 5rem;
-}
-
-.trueGod-group{
-  display: flex;
-}
-
-.godAgent-group{
-  display: flex;
-}
-
-.king-group{
-  display: flex;
-}
-
-.noble-group{
-  display: flex;
-}
-
-.common-group{
-  display: flex;
-}
-
-.slave-group{
-  display: flex;
-}
-
-.beast-group{
-  display: flex;
-}
-
-.trueGod-title{
-  margin: 1.5rem;
-  color:rgb(76, 0, 138);
-  font-family: 'Pacifico', cursive;
-}
-
-.trueGod-member{
-  margin: 1.5rem;
-  background-color: rgb(76, 0, 138);
-  padding: 0.5rem;
-  border-radius: 1rem;
-  margin-bottom: 0.5rem;
-  color: rgb(255, 255, 255);
-}
-
-.godAgent-title{
-  margin: 1.5rem;
-  color:rgb(0, 0, 128);
-  font-family: 'Pacifico', cursive;
-}
-
-.godAgent-member{
-  margin: 1.5rem;
-  background-color: rgb(0, 0, 128);
-  padding: 0.5rem;
-  border-radius: 1rem;
-  margin-bottom: 0.5rem;
-  color: rgb(255, 255, 255);
-}
-
-.king-title{
-  margin: 1.5rem;
-  color:rgb(0, 0, 255);
-  font-family: 'Pacifico', cursive;
-}
-
-.king-member{
-  margin: 1.5rem;
-  background-color: rgb(0, 0, 255);
-  padding: 0.5rem;
-  border-radius: 1rem;
-  margin-bottom: 0.5rem;
-  color: rgb(255, 255, 255);
-}
-
-.king-image{
-  width: 70%;
-  height: 90%;
-}
-
-.noble-title{
-  margin: 1.5rem;
-  color:rgb(0, 255, 0);
-  font-family: 'Pacifico', cursive;
-}
-
-.noble-member{
-  margin: 1.5rem;
-  background-color: rgb(0, 255, 0);
-  padding: 0.5rem;
-  border-radius: 1rem;
-  margin-bottom: 0.5rem;
-  color: rgb(255, 255, 255);
-}
-
-.noble-image{
-  width: 50%;
-  height: 90%;
-}
-
-.common-title{
-  margin: 1.5rem;
-  color:rgb(255, 255, 0);
-  font-family: 'Pacifico', cursive;
-}
-
-.common-member{
-  margin: 1.5rem;
-  background-color: rgb(255, 255, 0);
-  padding: 0.5rem;
-  border-radius: 1rem;
-  margin-bottom: 0.5rem;
-  color: rgb(0, 0, 0);
-}
-
-.slave-title{
-  margin: 1.5rem;
-  color:rgb(255, 165, 0);
-  font-family: 'Pacifico', cursive;
-}
-
-.slave-member{
-  margin: 1.5rem;
-  background-color: rgb(255, 165, 0);
-  padding: 0.5rem;
-  border-radius: 1rem;
-  margin-bottom: 0.5rem;
-  color: rgb(255, 255, 255);
-}
-
-.beast-title{
-  margin: 1.5rem;
-  color:rgb(255, 0, 0);
-  font-family: 'Pacifico', cursive;
-}
-
-.beast-member{
-  margin: 1.5rem;
-  background-color: rgb(255, 0, 0);
-  padding: 0.5rem;
-  border-radius: 1rem;
-  margin-bottom: 0.5rem;
-  color: rgb(255, 255, 255);
-}
-
-.memberTier-instruction-box{
-  top: 0;
-  right: 0;
-  position: fixed;
-  float: right;
-  border-radius: 1rem;
-  border: rgb(170, 204, 248) 0.4rem solid;
-  background-color: rgb(211, 230, 255);
-  width: 15rem;
-  height: 18rem;
-  margin-left: 1rem;
-}
-
-.memberTier-instruction-box .memberTier-instruction{
-  margin-top: 10px;
-  margin-left: 25px;
-}
-
-th{
-  background-color:rgb(170, 204, 248);
-  text-align: center;
-  border: 1px solid black;
-}
-
-table, td{
-  text-align: center;
-  border: 1px solid black;
-}
-
-.memberTierList-title{
-  display: inline-block;
-}
-
-.memberTierList-entire{
-  margin-left: 30%;
-}
-.flex_right{
-  display: flex;
-  justify-content: flex-end;
-}
-.half-size{
-  display: inline-block;
-  width:50%;
-}
-.raiting{
-  margin-left: 1rem;
-  width:3rem;
-}
-.reviewer{
-  font-size: 0.9rem;
-  border-bottom: 1px solid white;
-}
-.margin-left{
-  margin-left: 1rem;
-}

@@ -2,9 +2,7 @@ package dbteam4.booksale.controller;
 
 import dbteam4.booksale.constant.SessionConst;
 import dbteam4.booksale.domain.User;
-import dbteam4.booksale.dto.PostBookDTO;
 import dbteam4.booksale.repository.UserMapper;
-import dbteam4.booksale.service.PostService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
@@ -15,13 +13,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
-import java.util.List;
-
 @Controller
 @RequiredArgsConstructor
 public class HomeController {
 
-    private final PostService postService;
 //    @GetMapping("/")
 //    public String homeLogin(@SessionAttribute(name = SessionConst.LOGIN_USER, required = false)User loginUser, Model model) {
 //
@@ -36,13 +31,7 @@ public class HomeController {
 //    }
 
     @GetMapping("/")
-    public String home(Model model) {
-        List<PostBookDTO> recentPosts = postService.findRecentPost(3);
-
-        model.addAttribute("recentPosts", recentPosts);
-
-
-
+    public String home() {
         return "index";
     }
 }

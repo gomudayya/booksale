@@ -1,18 +1,17 @@
 package dbteam4.booksale.controller;
 
 import dbteam4.booksale.constant.SessionConst;
-import dbteam4.booksale.domain.Post;
 import dbteam4.booksale.domain.User;
-import dbteam4.booksale.dto.*;
-import dbteam4.booksale.service.*;
-import jakarta.servlet.http.HttpServletRequest;
+import dbteam4.booksale.dto.BookDTO;
+import dbteam4.booksale.dto.PostDTO;
+import dbteam4.booksale.service.BookApiService;
+import dbteam4.booksale.service.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Controller
 @RequestMapping("/post")
@@ -20,10 +19,7 @@ import java.util.List;
 public class PostController {
 
     private final PostService postService;
-    private final UserService userService;
-    private final ReviewService reviewService;
     private final BookApiService bookApiService;
-    private final InterestService interestService;
 
     @GetMapping()
     public String post(@SessionAttribute(name = SessionConst.LOGIN_USER) User loginUser) {
@@ -46,27 +42,10 @@ public class PostController {
     }
 
     @GetMapping("/view/{postId}")
-    public String view(@PathVariable Long postId, Model model,
-                       @SessionAttribute(name = SessionConst.LOGIN_USER, required = false) User loginUser) {
-        PostBookDTO post = postService.findByPostId(postId);
-        ReviewDTO review = reviewService.findByPostId(postId);
-        List<ReviewDTO> sellerReviewList = reviewService.findBySellerId(post.getSellerId());
+    public String view(@PathVariable Long postId) {
 
 
-        Long sellerId = post.getSellerId();
-        String userName = userService.findById(sellerId).getUserName();
-
-        model.addAttribute("post", post);
-        model.addAttribute("userName", userName);
-        model.addAttribute("review", review);
-        model.addAttribute("sellerReviewList", sellerReviewList);
-
-        if (loginUser != null) {
-            InterestDTO interestDTO = interestService.findByPostIdAndUserId(postId, loginUser.getId());
-            if (interestDTO != null) {
-                model.addAttribute("isAlreadyInterest", true);
-            }
-        }
+        
 
 
         return "postview";
@@ -74,15 +53,4 @@ public class PostController {
 
     @GetMapping("/otherview")
     public String otherview(){return "postviewothers";}
-
-    @PostMapping("/view/status")
-    public String status(@RequestParam("postId") Long postId,
-                         @RequestParam("postStatus") String postStatus,
-                         HttpServletRequest request){
-        String referer = request.getHeader("referer");
-
-        postService.updateST(postId, postStatus);
-
-        return "redirect:" + referer;
-    }
 }

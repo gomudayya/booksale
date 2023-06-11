@@ -17,9 +17,7 @@ public class PostBookDTO {
     private String postTitle;
     private String postContent;
     private String salesMethod;
-    private int postPrice;
     private String shippingMethod;
-    private String postStatus;
     private String bookQuality;
     private LocalDateTime postTime;
 }

@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <div th:if="${session.loginUser == null}" th:insert="~{/layout/fragment/header :: header}"></div>
-
+    <div th:if="${session.loginUser == null}" th:insert="~{layout/fragment/header :: header}"></div>
     <br>
 
     <h1 class = "title"><span>R</span><span>E</span><span>B</span><span>O</span><span>O</span><span>K</span></h1>
@@ -28,16 +27,34 @@
         <div class = "recent">recent</div>
         <div class = "contents-container">
 
-        <a th:each="post : ${recentPosts}" th:href="@{/post/view/{postId}(postId=${post.postId}) }">
           <div class = "content"> <!-- example-->
-            <img class = "book-icon" src = "../img/ex.png" th:src="${post.book.image}">
+            <img class = "book-icon" src = "../img/ex.png">
             <div class = "content-info">
-              <div th:text="${post.postTitle}">알고리즘 및 실습</div>
-              <div th:text="|${post.book.publisher} / ${post.book.author} |">출판사, 지은이, 출판년도</div>
-              <div th:text="|가격 : ${post.postPrice}|">가격</div>
+              <div>알고리즘 및 실습</div>
+              <div>출판사, 지은이, 출판년도</div>
+              <div>가격</div>
             </div>
           </div>
-        </a>
+
+          <div class = "content"> <!-- example-->
+            <img class = "book-icon" src = "../img/ex.png">
+            <div class = "content-info">
+              <div>알고리즘 및 실습</div>
+              <div>출판사, 지은이, 출판년도</div>
+              <div>가격</div>
+            </div>
+          </div>
+
+          <div class = "content"> <!-- example-->
+            <img class = "book-icon" src = "../img/ex.png">
+            <div class = "content-info">
+              <div>알고리즘 및 실습</div>
+              <div>출판사, 지은이, 출판년도</div>
+              <div>가격</div>
+            </div>
+          </div>
+
+
         </div>
     </main>
     <script src = "../js/chat.js"></script>

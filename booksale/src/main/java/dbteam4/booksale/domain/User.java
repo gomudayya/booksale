@@ -13,7 +13,6 @@ public class User {
     private String phoneNumber;
     private String userID;
     private String userPassword;
-    private String university; //대학
+    private String university;
     private String department; // 학과
-    private int mileage; // 마일리지
 }
