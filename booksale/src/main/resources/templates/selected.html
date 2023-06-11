@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.css" th:href="@{/css/style.css}">
 </head>
 <body>
 
 <!-- 로그인/회원가입 bar -->
-<div th:if="${session.loginUser == null}" th:replace="~{layout/fragment/header :: header}"></div>
+<div th:if="${session.loginUser == null}" th:insert="~{layout/fragment/header :: header}"></div>
 <!-- 헤더 -->
 <header th:replace="~{/layout/fragment/search-header :: search-header}"></header>
 
@@ -96,8 +96,8 @@
         <div th:text="${bookPostsDTO.title}">창의적 숨쉬기</div>
         <span th:text="${bookPostsDTO.author}">저자</span>
         <span th:text="${bookPostsDTO.publisher}">출판사</span>
-        <span th:text="${bookPostsDTO.pubDate}">출판 년도</span>
-
+        <span th:text="|출판 년도 : ${bookPostsDTO.pubDate}|">출판 년도</span>
+        <div th:text="|책 정가 : ${bookPostsDTO.discount}|">정가</div>
       </div>
       <div class = "state" th:text="|${bookPostsDTO.postList.size()}건|">2건</div>
 
@@ -109,15 +109,16 @@
     <div class ="container border main-box main-list">
 
       <!-- example -->
-      <a href = "" th:each="postList : ${bookPostsDTO.getPostList()}">
+      <a href = "" th:each="post : ${bookPostsDTO.getPostList()}" th:href="@{/post/view/{postId}(postId=${post.postId})}">
         <div class = "content margin-top">
 
           <img class = "book-icon" src = "../img/ex.png" th:src="${bookPostsDTO.image}">
           <div class = "content-info settings">
-            <div th:text="${postList.postTitle}">게시글 제목 ex)책 팔아요</div>
-            <span th:text="|/${postList.salesMethod}/|">판매 or 물려주기</span>
-            <span th:text="|${postList.shippingMethod}/|">택배 or 직거래</span>
-            <span th:text="|책상태 : ${postList.bookQuality}/|">책 품질</span>
+            <div th:text="${post.postTitle}">게시글 제목 ex)책 팔아요</div>
+            <span th:text="|/${post.salesMethod}/|">판매 or 물려주기</span>
+            <span th:text="|${post.shippingMethod}/|">택배 or 직거래</span>
+            <span th:text="|책상태 : ${post.bookQuality}/|">책 품질</span>
+            <div th:text="|판매 가격 : ${post.postPrice}|">판매 가격</div>
           </div>
           <div class = "state">판매중</div>
         </div>
