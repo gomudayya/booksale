@@ -404,6 +404,12 @@ main .content {
   margin-top: 1.2rem;
 }
 
+.register-input .form-label{
+  width: 5rem;
+  margin-top: 0.5rem;
+  white-space: nowrap;
+}
+
 .register-text {
   margin: -2rem;
   margin-bottom: 1.5rem;
@@ -509,6 +515,11 @@ main .content {
 .sold .right {
   margin-left: auto;
 }
+
+.sold #review-items{
+  display: flex;
+}
+
 
 .post-block {
   background-color: rgb(240, 216, 255);
@@ -765,38 +776,71 @@ main .content {
   padding-top: 1rem;
 }/*# sourceMappingURL=style.css.map */
 
+.membertierPage{
+  background-image: url("../img/background1.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.row-mt{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.6rem;
+}
 .trophy-icon{
   margin: 0.3rem;
   width: auto;
   height: 5rem;
 }
-
+.memberTier-image{
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  margin-left: auto;
+  width: 50%;
+}
 .trueGod-group{
   display: flex;
+  border-bottom: rgb(76, 0, 138) solid 6px;
+  width: 508px;
+  height: 440px;
 }
-
 .godAgent-group{
   display: flex;
+  border-bottom: rgb(0, 0, 128) solid 6px;
 }
 
 .king-group{
   display: flex;
+  border-bottom: rgb(0, 0, 255) solid 6px;
+  width: 508px;
+  height: 440px;
 }
 
 .noble-group{
   display: flex;
+  border-bottom: rgb(0, 255, 0) solid 6px;
+  width: 508px;
+  height: 440px;
 }
 
 .common-group{
   display: flex;
+  border-bottom: rgb(255, 255, 0) solid 6px;
+  width: 508px;
+  height: 440px;
 }
 
 .slave-group{
   display: flex;
+  border-bottom: rgb(255, 165, 0) solid 6px;
+  width: 508px;
+  height: 440px;
 }
 
 .beast-group{
   display: flex;
+  border-bottom: rgb(255, 0, 0) solid 6px;
+  width: 508px;
+  height: 440px;
 }
 
 .trueGod-title{
@@ -844,11 +888,6 @@ main .content {
   color: rgb(255, 255, 255);
 }
 
-.king-image{
-  width: 70%;
-  height: 90%;
-}
-
 .noble-title{
   margin: 1.5rem;
   color:rgb(0, 255, 0);
@@ -862,11 +901,6 @@ main .content {
   border-radius: 1rem;
   margin-bottom: 0.5rem;
   color: rgb(255, 255, 255);
-}
-
-.noble-image{
-  width: 50%;
-  height: 90%;
 }
 
 .common-title{
@@ -945,10 +979,14 @@ table, td{
 
 .memberTierList-title{
   display: inline-block;
+  font-size: 40px;
+  font-weight: bold;
 }
 
 .memberTierList-entire{
-  margin-left: 30%;
+  margin-left: 40%;
+  background: rgba(245, 255, 247, 0.5);
+  width: 500px;
 }
 .flex_right{
   display: flex;
