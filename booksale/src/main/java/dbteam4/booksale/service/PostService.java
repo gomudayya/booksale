@@ -19,6 +19,10 @@ public class PostService {
     public void savePost(PostDTO postDTO) {
         postMapper.save(postDTO);
     }
+    public void updateST(Long postId, String postStatus) {
+
+        postMapper.updateST(postId, postStatus);
+    }
 
     public PostBookDTO findByPostId(Long postId) {
         return postMapper.findByPostId(postId);

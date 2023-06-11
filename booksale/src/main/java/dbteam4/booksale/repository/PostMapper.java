@@ -13,6 +13,7 @@ import java.util.List;
 public interface PostMapper {
 
     void save(PostDTO postDTO);
+    void updateST(Long postId, String postStatus);
     PostBookDTO findByPostId(Long postId);
 
     List<PostBookDTO> findInterestPost(Long userId);

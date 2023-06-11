@@ -74,4 +74,15 @@ public class PostController {
 
     @GetMapping("/otherview")
     public String otherview(){return "postviewothers";}
+
+    @PostMapping("/view/status")
+    public String status(@RequestParam("postId") Long postId,
+                         @RequestParam("postStatus") String postStatus,
+                         HttpServletRequest request){
+        String referer = request.getHeader("referer");
+
+        postService.updateST(postId, postStatus);
+
+        return "redirect:" + referer;
+    }
 }
