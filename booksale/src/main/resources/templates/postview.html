@@ -160,7 +160,7 @@
 
     <!-- example -->
     <div class = "sold margin-top" th:each="sellerReview : ${sellerReviewList}">
-      <div>
+      <div class="left">
         <div class = "date" th:text="${#temporals.format(sellerReview.reviewTime, 'yyyy-MM-dd HH:mm')}"> 2023-06-04</div>
         <div class = "reviewer">익명</div>
         <div th:text="${sellerReview.reviewContent}">
