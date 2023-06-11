@@ -384,11 +384,8 @@ main .content{
     border-bottom: solid 2px $border;
     height: auto;
     // background-color: white;
-    //position:fixed;
-    top:0;
     width: 70rem;
     margin-left: 3rem;
-    background-color: white;
 }
 
 
@@ -446,6 +443,7 @@ main .content{
 
 .search-main{
     margin: 1rem;
+    margin-top: 10rem;
     margin-left: 3rem;
     // background-color: white;
     padding: 3rem;
@@ -560,6 +558,7 @@ main .content{
 
 .post-main .item{
     margin:0.4rem;
+    color:white;
 }
 
 .margin-right{
@@ -609,17 +608,7 @@ main .content{
     margin:0.4rem;
     margin-left: 0.7rem;
 }
-.top-border {
+.top-border{
     border-top: 2px solid $bright2;
     padding-top: 1rem;
 }
-
-
-
-//post페이지
-
-.post-book {
-    cursor: pointer;
-}
-
-
