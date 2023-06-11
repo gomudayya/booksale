@@ -65,6 +65,9 @@ public class UserController {
 
     @GetMapping("/edit")
     public String userEdit(@SessionAttribute(name = SessionConst.LOGIN_USER, required = false)User loginUser, Model model) {
+        HashMap<String, List<String>> allSchoolByMap = schoolService.findAllSchoolByMap();
+        model.addAttribute("schoolMajorMap", allSchoolByMap);
+
         model.addAttribute("user", loginUser);
         return "user/userEdit";
     }
