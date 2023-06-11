@@ -85,8 +85,8 @@
       <button th:if="${session.loginUser != null} and ${isAlreadyInterest}" class="custom-button"
               onclick="document.getElementById('deleteInterest').submit();"><a href="#">관심 해제</a></button>
 
-      <button class="custom-button" type="submit"><a href="">삭제</a></button>
-      <button class="custom-button" type="submit"><a href="post.html" th:href="@{/post}">수정</a></button>
+      <button class="custom-button" type="submit"><a class="black" href="">삭제</a></button>
+      <button class="custom-button" type="submit"><a class="black" href="post.html" th:href="@{/post}">수정</a></button>
     </div>
     <div class="half-size">
       <form class="flex_right" method="post" action="/post/view/status">
@@ -97,7 +97,7 @@
           <option value="예약중"> 예약중</option>
           <option value="판매완료"> 판매완료</option>
         </select>
-        <button class="custom-button" type="submit"><a href="">변경</a></button>
+        <button class="custom-button" type="submit"><a class="black" href="">변경</a></button>
       </form>
     </div>
   </div>

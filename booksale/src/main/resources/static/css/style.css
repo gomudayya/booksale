@@ -3,11 +3,11 @@ html {
 }
 
 body {
-  background-color: rgb(245, 255, 247);
+  background-image: url("../img/background.png");
 }
 
 .account .btn {
-  color: rgb(76, 0, 138);
+  color: rgb(72, 17, 0);
 }
 
 .btn:hover{
@@ -26,28 +26,29 @@ body {
 }
 
 .title span:nth-child(1) {
-  color: rgb(63, 134, 249);
+  color: rgb(100, 48, 0);
 }
 
 .title span:nth-child(2) {
-  color: rgb(247, 82, 53);
+  color: rgb(141, 68, 0);
 }
 
 .title span:nth-child(3) {
-  color: rgb(255, 183, 2);
+  color: rgb(165, 80, 1);
 }
 
 .title span:nth-child(4) {
-  color: rgb(63, 134, 249);
+  color: rgb(197, 97, 4);
 }
 
 .title span:nth-child(5) {
-  color: rgb(47, 149, 85);
+  color: rgb(211, 105, 6);
 }
 
 .title span:nth-child(6) {
-  color: rgb(247, 82, 53);
+  color: rgb(221, 107, 7);
 }
+
 
 .main-search-bar {
   width: 35rem;
@@ -58,31 +59,32 @@ main {
 }
 
 main .recent {
-  color: rgb(76, 0, 138);
+  color: rgb(77, 42, 11);
   margin: 0.5rem;
 }
 
 main .contents-container {
-  background-color: rgb(240, 216, 255);
+  background-color: rgb(179, 118, 69);
   padding: 0.5rem;
   border-radius: 1.3rem;
 }
 
 main .content {
-  background-color: rgb(170, 204, 248);
+  background-color: rgb(218, 161, 108);
   padding: 0.5rem;
   border-radius: 1rem;
   display: flex;
   margin-bottom: 0.5rem;
 }
+
 .book-info-block{
-  background-color: rgb(170, 204, 248);
+  background-color: rgb(218, 161, 108);
   padding: 0.5rem;
   border-radius: 1rem;
   margin-bottom: 0.5rem;
 }
 .book-info-label{
-  background-color: rgb(211, 230, 255);
+  background-color: rgb(179, 118, 69);
   padding: 0.5rem;
   border-radius: 1rem;
 }
@@ -111,7 +113,7 @@ main .content {
 }
 
 .content-info {
-  color: rgb(76, 0, 138);
+  color: rgb(77, 42, 11);
   margin: 0.2rem;
 }
 
@@ -139,15 +141,15 @@ main .content {
 }
 .member-info {
   border-radius: 1rem;
-  border: rgb(170, 204, 248) 0.4rem solid;
-  background-color: rgb(211, 230, 255);
+  border: #a5784e 0.4rem solid;
+  background-color: #cca374;
   width: 15rem;
   height: 9rem;
   margin: 1rem;
 }
 
 .member-detail {
-  color: rgb(76, 0, 138);
+  color: rgb(77, 42, 11);
   margin: 1rem;
 }
 
@@ -179,12 +181,12 @@ main .content {
 
 .post-button {
   border-radius: 1rem;
-  border: rgb(211, 230, 255) 0.3rem solid;
-  background-color: rgb(170, 204, 248);
+  border: #cca374 0.3rem solid;
+  background-color: #a5784e;
   margin: 1rem;
   text-align: center;
   padding: 0.2rem;
-  color: rgb(36, 0, 165);
+  color: rgb(95, 60, 8);
 }
 
 .chat {
@@ -349,7 +351,7 @@ main .content {
 
 
 .login-main {
-  border: rgb(240, 216, 255) solid 3.5px;
+  border: rgb(179, 118, 69) solid 3.5px;
   border-radius: 2rem;
   padding: 6rem;
   height: 25rem;
@@ -370,14 +372,14 @@ main .content {
 .login-text {
   margin: 1rem;
   padding-left: 1rem;
-  border-left: 3px solid rgb(240, 216, 255);
+  border-left: 3px solid rgb(179, 118, 69);
 }
 
 .login-button {
-  background-color: rgb(190, 133, 255);
-  border: rgb(36, 0, 165) 1px solid;
-  color: rgb(36, 0, 165);
+  background-color: rgb(211, 126, 47);
+  border: rgb(95, 60, 8) 1px solid;
   font-weight: 500;
+  color: rgb(95, 60, 8);
 }
 
 .logo {
@@ -390,7 +392,7 @@ main .content {
 
 .register-main {
   background-color: white;
-  border: rgb(76, 0, 138) solid 3.5px;
+  border: rgb(77, 42, 11) solid 3.5px;
   border-radius: 2rem;
   padding: 4rem;
   height: auto;
@@ -408,11 +410,11 @@ main .content {
   margin: -2rem;
   margin-bottom: 1.5rem;
   font-size: 27px;
-  color: rgb(36, 0, 165);
+  color: rgb(95, 60, 8);
 }
 
 .register-button {
-  background-color: rgb(190, 133, 255);
+  background-color: rgb(211, 126, 47);
   border: none;
   margin-top: 2.7rem;
 }
@@ -428,7 +430,7 @@ main .content {
 
 .member-info-main {
   background-color: white;
-  border-left: rgb(76, 0, 138) solid 3.5px;
+  border-left: rgb(77, 42, 11) solid 3.5px;
   padding: 4rem;
   height: auto;
   width: 40vw;
@@ -438,7 +440,7 @@ main .content {
   margin: -2rem;
   margin-bottom: 1.5rem;
   font-size: 27px;
-  color: rgb(36, 0, 165);
+  color: rgb(95, 60, 8);
 }
 
 .member-detail {
@@ -453,12 +455,12 @@ main .content {
 
 .view-posts-button {
   border-radius: 1rem;
-  border: rgb(211, 230, 255) 0.3rem solid;
-  background-color: rgb(170, 204, 248);
+  border: #a5784e 0.3rem solid;
+  background-color: #cca374;
   margin: 1rem;
   text-align: center;
   padding: 0.2rem;
-  color: rgb(36, 0, 165);
+  color: rgb(95, 60, 8);
 }
 
 .flex-space-between {
@@ -469,15 +471,16 @@ main .content {
 .content .state {
   margin: 0.5rem;
   margin-left: auto;
-  background-color: rgb(211, 230, 255);
+  background-color: rgba(255, 219, 190, 0.76);
   height: 2.2rem;
   padding: 0.3rem;
   border-radius: 0.3rem;
   white-space: nowrap;
+  color:black;
 }
 
 .sold {
-  background-color: rgb(190, 133, 255);
+  background-color: rgb(164, 107, 55);
   padding: 0.7rem;
   border-radius: 1rem;
   display: flex;
@@ -488,18 +491,18 @@ main .content {
 .sold .state {
   margin: 0.5rem;
   margin-left: auto;
-  background-color: rgb(240, 216, 255);
+  background-color: #cca374;
   height: 2.2rem;
   padding: 0.3rem;
   border-radius: 0.3rem;
-  color: rgb(190, 133, 255);
+  color: black;
 }
 
 .sold .delete {
   text-align: center;
   margin: 0.5rem;
   margin-left: auto;
-  background-color: rgb(240, 216, 255);
+  background-color: rgb(179, 118, 69);
   height: 2.2rem;
   padding: 0.3rem;
   border-radius: 0.3rem;
@@ -511,7 +514,7 @@ main .content {
 }
 
 .post-block {
-  background-color: rgb(240, 216, 255);
+  background-color: rgb(179, 118, 69);
   border-radius: 2rem;
   margin-bottom: 1.5rem;
 }
@@ -522,13 +525,13 @@ main .content {
 }
 
 .header {
-  border-bottom: solid 2px rgb(36, 0, 165);
-  border-top: solid 2px rgb(36, 0, 165);
-  height: 10vh;
+  padding-top: 2rem;
+  border-bottom: solid 2px rgb(87, 35, 11);
+  height: 12vh;
   display: flex;
   justify-content: center;
   align-items: center;
-
+  background-color: rgba(255, 225, 209, 0.76);
 }
 
 
@@ -541,12 +544,12 @@ main .content {
 }
 
 .search-input {
-  border: solid 2px rgb(36, 0, 165);
+  border: solid 2px rgb(87, 35, 11);
   border-radius: 2rem;
 }
 
 .search-select {
-  border: 2px solid rgb(151, 190, 241);
+  border: 0px solid rgb(87, 35, 11);
   text-align: center;
   /*background-color: lighten($color, 40%);*/
   border-radius: 2rem;
@@ -554,7 +557,7 @@ main .content {
 }
 
 .search-button {
-  background-color: #2a00bf;
+  background-color: #6e2c0e;
   border-radius: 1rem;
   color: white;
 }
@@ -565,7 +568,7 @@ main .content {
 
 .search-main {
   margin: 1rem;
-  margin-left: 25rem;
+  margin-left: 8rem;
   padding: 3rem;
   border-radius: 2rem;
   padding-left: 15rem;
@@ -573,7 +576,7 @@ main .content {
 }
 
 .sub-title {
-  border-left: rgb(36, 0, 165) solid 2px;
+  border-left: rgb(95, 60, 8) solid 2px;
   padding-left: 1rem;
   margin-left: 20px;
   margin-bottom: 1.5rem;
@@ -583,6 +586,7 @@ main .content {
   border-radius: 1.5rem;
   padding-bottom: 0.4rem;
   height: auto;
+  background-color: rgba(252, 233, 223, 0.66);
 }
 
 .book {
@@ -609,6 +613,7 @@ main .content {
 .filter {
   width: 18rem;
   padding-left: 1.5rem;
+  color:white;
 }
 
 .filter-item {
@@ -618,12 +623,12 @@ main .content {
 
 .filter-search-button {
   margin-top: 0.5rem;
-  background-color: rgb(36, 0, 165);
+  background-color: rgba(95, 60, 8, 0.93);
   color: white;
 }
 
 .filter {
-  background-color: rgb(211, 230, 255);
+  background-color: rgb(179, 118, 69);
   padding: 1rem;
   margin: 1rem;
   border-radius: 1rem;
@@ -631,7 +636,7 @@ main .content {
 
 .filter-item {
   padding-left: 0.5rem;
-  border-left: 1px solid rgb(190, 133, 255);
+  border-left: 1px solid rgb(211, 126, 47);
 }
 
 .main-list {
@@ -641,7 +646,7 @@ main .content {
 .post-main {
   margin: 1rem;
   width: 50vw;
-  background-color: rgb(211, 230, 255);
+  background-color: rgb(161, 140, 116);
   padding: 1rem;
   border-radius: 1rem;
   margin-left: 15rem;
@@ -660,14 +665,17 @@ main .content {
 .custom-button {
   margin: 0.5rem;
   padding: 0.4rem;
-  background-color: rgb(240, 247, 255);
-  border: 3px solid rgb(151, 190, 241);
+  background-color: rgb(255, 226, 204);
   border-radius: 0.5rem;
+  color: black;
+}
+.black{
+  color:black;
 }
 .submit-button{
   margin: 0.5rem;
   padding: 1rem;
-  background-color: rgb(228, 205, 255);
+  background-color: rgb(247 227 207);
   border-radius: 0.5rem;
   border: none;
   width: 6rem;
@@ -681,11 +689,12 @@ main .content {
 .post-main .buttons {
   margin-top: 1rem;
   padding-bottom: 0.4rem;
-  border-bottom: 1px solid rgb(170, 204, 248);
+  border-bottom: 1px solid rgb(248, 193, 170);
 }
 
 .post-main .item {
   margin: 0.4rem;
+  color:white;
 }
 
 .margin-right {
@@ -705,15 +714,15 @@ main .content {
 
 .post-content {
   width: 100%;
-  background-color: rgb(255, 255, 229);
+  background-color: rgb(232, 214, 188);
   padding: 0.5rem;
   border-radius: 0.8rem;
   margin-top: 0.8rem;
 }
 
 .post-main .detail {
-  background-color: rgb(170, 204, 248);
-  color: white;
+  background-color: #cca374;
+  color: black;
   border-radius: 0.5rem;
   padding-left: 0.7rem;
   padding-right: 0.7rem;
@@ -723,7 +732,7 @@ main .content {
   margin: 0.2rem;
   font-size: 2rem;
   text-align: left;
-  background-color: rgb(170, 204, 248);
+  background-color: #cca374;
   padding: 0.5rem;
   border-radius: 1rem;
 }
@@ -761,7 +770,7 @@ main .content {
 }
 
 .top-border {
-  border-top: 2px solid rgb(190, 133, 255);
+  border-top: 2px solid rgb(255, 155, 133);
   padding-top: 1rem;
 }/*# sourceMappingURL=style.css.map */
 
