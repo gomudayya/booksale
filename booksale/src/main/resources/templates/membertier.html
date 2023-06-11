@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="/css/style.css" th:href="@{/css/style.css}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Pacifico&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="membertierPage">
 <a href="index_logined.html" th:href="@{/}"><h1 class = "title logo"><span>R</span><span>E</span><span>B</span><span>O</span><span>O</span><span>K</span></h1></a>
 <div class="memberTier-instruction-box">
   <div class="memberTier-instruction">
@@ -57,14 +57,14 @@
 
   <div class="row">
     <div class="memberTierList-title">
-      <img class="trophy-icon" src="../img/trophy.png">
-      <h1 class="memberTierList-title">회원 등급 리스트</h1>
-      <img class="trophy-icon" src="../img/trophy.png">
+      <img class="trophy-icon" src="../img/trophy2.png">
+      <span class="memberTierList-title">회원 등급 리스트</span>
+      <img class="trophy-icon" src="../img/trophy2.png">
     </div>
 
   </div>
 
-  <div class="row">
+  <div class="row-mt">
     <div class="trueGod-group">
       <div class="trueGod-text">
         <div class="trueGod-font">
@@ -73,11 +73,11 @@
         <div class="trueGod-members">
         </div>
       </div>
-      <img class="trueGod-image" src="../img/trueGod.png">
+      <img id="trueGod-image" class="memberTier-image" src="../img/trueGod.png">
     </div>
   </div>
 
-  <div class="row">
+  <div class="row-mt">
     <div class="godAgent-group">
       <div class="godAgent-text">
         <div class="godAgent-font">
@@ -86,11 +86,11 @@
         <div class="godAgent-members">
         </div>
       </div>
-      <img class="godAgent-image" src="../img/godAgent.png">
+      <img id="godAgent-image" class="memberTier-image" src="../img/godAgent.png">
     </div>
   </div>
 
-  <div class="row">
+  <div class="row-mt">
     <div class="king-group">
       <div class="king-text">
         <div class="king-font">
@@ -99,11 +99,11 @@
         <div class="king-members">
         </div>
       </div>
-      <img class="king-image" src="../img/king.png">
+      <img id="king-image" class="memberTier-image" src="../img/king.png">
     </div>
   </div>
 
-  <div class="row">
+  <div class="row-mt">
     <div class="noble-group">
       <div class="noble-text">
         <div class="noble-font">
@@ -112,11 +112,11 @@
         <div class="noble-members">
         </div>
       </div>
-      <img class="noble-image" src="../img/noble.png">
+      <img id="noble-image" class="memberTier-image" src="../img/noble.png">
     </div>
   </div>
 
-  <div class="row">
+  <div class="row-mt">
     <div class="common-group">
       <div class="common-text">
         <div class="common-font">
@@ -125,11 +125,11 @@
         <div class="common-members">
         </div>
       </div>
-      <img class="common-image" src="../img/common.png">
+      <img id="common-image" class="memberTier-image" src="../img/common.png">
     </div>
   </div>
 
-  <div class="row">
+  <div class="row-mt">
     <div class="slave-group">
       <div class="slave-text">
         <div class="slave-font">
@@ -138,11 +138,11 @@
         <div class="slave-members">
         </div>
       </div>
-      <img class="slave-image" src="../img/slave.png">
+      <img id="slave-image" class="memberTier-image" src="../img/slave.png">
     </div>
   </div>
 
-  <div class="row">
+  <div class="row-mt">
     <div class="beast-group">
       <div class="beast-text">
         <div class="beast-font">
@@ -151,7 +151,7 @@
         <div class="beast-members">
         </div>
       </div>
-      <img class="beast-image" src="../img/beast.png">
+      <img id="beast-image" class="memberTier-image" src="../img/beast.png">
     </div>
   </div>
 </div>
