@@ -92,6 +92,7 @@
       <form class="flex_right" method="post" action="/post/view/status">
         <input type="hidden" name="postId" th:value="${post.postId} ">
         <select class="search-select" id="sellState_combo" name="postStatus">
+          <option value="현재 상태" th:text="${post.postStatus}"></option>
           <option value="판매중"> 판매중</option>
           <option value="예약중"> 예약중</option>
           <option value="판매완료"> 판매완료</option>

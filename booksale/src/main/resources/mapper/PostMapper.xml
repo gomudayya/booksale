@@ -23,6 +23,7 @@
         <result property="salesMethod" column="sales_method" />
         <result property="postPrice" column="post_price" />
         <result property="shippingMethod" column="shipping_method" />
+        <result property="postStatus" column="post_status"/>
         <result property="bookQuality" column="book_quality" />
         <result property="postTime" column="post_time" />
         <association property="book" javaType="Book">

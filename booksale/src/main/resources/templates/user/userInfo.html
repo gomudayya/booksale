@@ -81,7 +81,7 @@
                             <div th:text="|판매 가격 : ${post.postPrice} / ${post.bookQuality}|">가격, 사용감</div>
                             <div th:text="|${user.university} / ${post.salesMethod}|">학교, 판매방식</div>
                         </div>
-                        <div class = "state">거래중</div>
+                        <div class = "state" th:text="${post.postStatus}">거래중</div>
                     </div>
                     </a>
                 </div>
@@ -106,7 +106,7 @@
                                     <div th:text="${post.book.title}">알고리즘 및 실습</div>
                                     <div th:text="|${post.book.publisher} / ${post.book.author} / ${post.book.pubDate}|">출판사, 지은이, 출판년도</div>
                                 </div>
-                                <div class = "state">거래완료</div>
+                                <div class = "state" th:text="${post.post.postStatus}">거래완료</div>
                             </div>
                         </a>
                     </div>

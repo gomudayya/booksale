@@ -18,6 +18,7 @@ public class Post {
     private String salesMethod;
     private int postPrice;
     private String shippingMethod;
+    private String postStatus;
     private String bookQuality;
     private LocalDateTime postTime;
 }
