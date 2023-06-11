@@ -29,6 +29,8 @@ public class UserController {
     private final UserService userService;
     private final UserMapper userMapper;
 
+
+
     @GetMapping("/register")
     public String register(Model model) {
         HashMap<String, List<String>> allSchoolByMap = schoolService.findAllSchoolByMap();

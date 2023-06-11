@@ -516,6 +516,11 @@ main .content {
   margin-left: auto;
 }
 
+.sold #review-items{
+  display: flex;
+}
+
+
 .post-block {
   background-color: rgb(240, 216, 255);
   border-radius: 2rem;
@@ -770,38 +775,71 @@ main .content {
   padding-top: 1rem;
 }/*# sourceMappingURL=style.css.map */
 
+.membertierPage{
+  background-image: url("../img/background1.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.row-mt{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.6rem;
+}
 .trophy-icon{
   margin: 0.3rem;
   width: auto;
   height: 5rem;
 }
-
+.memberTier-image{
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  margin-left: auto;
+  width: 50%;
+}
 .trueGod-group{
   display: flex;
+  border-bottom: rgb(76, 0, 138) solid 6px;
+  width: 508px;
+  height: 440px;
 }
-
 .godAgent-group{
   display: flex;
+  border-bottom: rgb(0, 0, 128) solid 6px;
 }
 
 .king-group{
   display: flex;
+  border-bottom: rgb(0, 0, 255) solid 6px;
+  width: 508px;
+  height: 440px;
 }
 
 .noble-group{
   display: flex;
+  border-bottom: rgb(0, 255, 0) solid 6px;
+  width: 508px;
+  height: 440px;
 }
 
 .common-group{
   display: flex;
+  border-bottom: rgb(255, 255, 0) solid 6px;
+  width: 508px;
+  height: 440px;
 }
 
 .slave-group{
   display: flex;
+  border-bottom: rgb(255, 165, 0) solid 6px;
+  width: 508px;
+  height: 440px;
 }
 
 .beast-group{
   display: flex;
+  border-bottom: rgb(255, 0, 0) solid 6px;
+  width: 508px;
+  height: 440px;
 }
 
 .trueGod-title{
@@ -849,11 +887,6 @@ main .content {
   color: rgb(255, 255, 255);
 }
 
-.king-image{
-  width: 70%;
-  height: 90%;
-}
-
 .noble-title{
   margin: 1.5rem;
   color:rgb(0, 255, 0);
@@ -867,11 +900,6 @@ main .content {
   border-radius: 1rem;
   margin-bottom: 0.5rem;
   color: rgb(255, 255, 255);
-}
-
-.noble-image{
-  width: 50%;
-  height: 90%;
 }
 
 .common-title{
@@ -950,8 +978,34 @@ table, td{
 
 .memberTierList-title{
   display: inline-block;
+  font-size: 40px;
+  font-weight: bold;
 }
 
 .memberTierList-entire{
-  margin-left: 30%;
+  margin-left: 40%;
+  background: rgba(245, 255, 247, 0.5);
+  width: 500px;
+}
+.flex_right{
+  display: flex;
+  justify-content: flex-end;
+}
+.half-size{
+  display: inline-block;
+  width:50%;
+}
+.raiting{
+  margin-left: 1rem;
+  width:3rem;
+}
+.reviewer{
+  font-size: 0.9rem;
+  border-bottom: 1px solid white;
+}
+.review-text-box{
+  width: 550px;
+}
+.margin-left{
+  margin-left: 1rem;
 }
