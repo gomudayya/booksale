@@ -4,6 +4,7 @@
             <div th:text="${session.loginUser.userName}">전강욱 님</div>
             <div title="">
                 <span th:text="'현재 마일리지: ' + ${session.loginUser.mileage} + '   ('"></span>
+                <a class="black" data-bs-toggle="offcanvas" href="#grade_offcanvas" role="button" aria-controls="offcanvasExample">
                 <span th:if="${session.loginUser.mileage < 10}">짐승</span>
                 <span th:if="${session.loginUser.mileage >= 10 && session.loginUser.mileage <= 30}">노예</span>
                 <span th:if="${session.loginUser.mileage > 30 && session.loginUser.mileage <= 50}">평민</span>
@@ -11,8 +12,55 @@
                 <span th:if="${session.loginUser.mileage > 70 && session.loginUser.mileage <= 80}">왕</span>
                 <span th:if="${session.loginUser.mileage > 80 && session.loginUser.mileage <= 90}">신의 대리인</span>
                 <span th:if="${session.loginUser.mileage > 90 && session.loginUser.mileage <= 100}">절대신</span>
+                </a>
                 <span th:text="')'"></span>
             </div>
+
+
+
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="grade_offcanvas" aria-labelledby="offcanvasExampleLabel">
+
+                <div class="offcanvas-body">
+                    <div class="memberTier-instruction">
+                        <h3><strong>회원 등급 기준</strong></h3>
+                        <table>
+                            <tr>
+                                <th scope="col">신뢰도 점수</th>
+                                <th scope="col">회원 등급</th>
+                            </tr>
+                            <tr>
+                                <td>100~80</td>
+                                <td>다이아몬드</td>
+                            </tr>
+                            <tr>
+                                <td>80~60</td>
+                                <td>플래티넘</td>
+                            </tr>
+                            <tr>
+                                <td>60~40</td>
+                                <td>골드</td>
+                            </tr>
+                            <tr>
+                                <td>40~20</td>
+                                <td>실버</td>
+                            </tr>
+                            <tr>
+                                <td>20~0</td>
+                                <td>브론즈</td>
+                            </tr>
+
+                        </table>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+
+
+
             <div class="detail-img">
                 <a href="alarm.html" th:href="@{/alarm}"><img class="bell-image" src="../img/bell2.png" th:src="@{/img/bell2.png}"></a>
                 <a href="mail.html" th:href="@{/chat}"><img class="mail-image" src="../img/mail2.png" th:src="@{/img/mail2.png}"></a>
