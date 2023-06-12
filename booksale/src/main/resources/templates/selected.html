@@ -21,54 +21,57 @@
     <div class = filter-button><text>▼</text> 필터</div>
     <div class = "filter-list invisible">
 
-      <form>
+      <form method="get" th:action="@{/search/{bookISBN} (bookISBN=${book.ISBN} ) }">
         <div class = "filter-item">판매가</div>
-        <select class="form-select search-select">
-          <option selected>선택안함</option>
-          <option value="1">1만원 이하</option>
-          <option value="2">2만원 이하</option>
-          <option value="3">3만원 이하</option>
-          <option value="4">4만원 이하</option>
+        <select class="form-select search-select" name="underPrice">
+          <option selected value="">선택안함</option>
+          <option value="10000">1만원 이하</option>
+          <option value="20000">2만원 이하</option>
+          <option value="30000">3만원 이하</option>
+          <option value="40000">4만원 이하</option>
         </select>
 
         <div class = "filter-item">할인율</div>
-        <select class="form-select search-select">
-          <option selected>선택안함</option>
-          <option value="1">30% 이상</option>
-          <option value="2">50% 이상</option>
-          <option value="3">70% 이상</option>
+        <select class="form-select search-select" name="discountRate">
+          <option selected value="">선택안함</option>
+          <option value="30">30% 이상</option>
+          <option value="50">50% 이상</option>
+          <option value="70">70% 이상</option>
         </select>
 
         <div class = "filter-item">거래상태</div>
-        <input type="checkbox" id="checkbox1" name="checkbox1" value="value1">
-        <label for="checkbox1">예약</label>
+        <input type="checkbox" id="checkbox1" name="onSale" value="true">
+        <label for="checkbox1">판매중</label>
         <br>
-        <input type="checkbox" id="checkbox2" name="checkbox2" value="value2">
-        <label for="checkbox2">판매완료</label>
+        <input type="checkbox" id="checkbox2" name="reserved" value="true">
+        <label for="checkbox2">예약중</label>
+        <br>
+        <input type="checkbox" id="checkbox3" name="sold" value="true">
+        <label for="checkbox3">판매완료</label>
 
 
-        <div class = "filter-item">지역</div>
-        <input type="radio" id="option1" name="A-options" value="option1" checked>
-        <label for="option1">전체</label>
-        <br>
-        <input type="radio" id="option2" name="A-options" value="option2">
-        <label for="option2">우리학교</label>
-        <br>
-        <input type="radio" id="option3" name="A-options" value="option3">
-        <label for="option3">우리지역</label>
+<!--        <div class = "filter-item">지역</div>-->
+<!--        <input type="radio" id="option1" name="A-options" value="option1" checked>-->
+<!--        <label for="option1">전체</label>-->
+<!--        <br>-->
+<!--        <input type="radio" id="option2" name="A-options" value="option2">-->
+<!--        <label for="option2">우리학교</label>-->
+<!--        <br>-->
+<!--        <input type="radio" id="option3" name="A-options" value="option3">-->
+<!--        <label for="option3">우리지역</label>-->
 
 
         <div class = "filter-item">거래방법</div>
-        <input type="radio" id="option4" name="B-options" value="option1" checked>
+        <input type="radio" id="option4" name="shippingMethod" value="전체" checked>
         <label for="option4">전체</label>
         <br>
-        <input type="radio" id="option5" name="B-options" value="option2">
+        <input type="radio" id="option5" name="shippingMethod" value="직거래">
         <label for="option5">직거래</label>
         <br>
-        <input type="radio" id="option6" name="B-options" value="option3">
+        <input type="radio" id="option6" name="shippingMethod" value="택배">
         <label for="option6">택배</label>
 
-        <div><input type="button" class="btn filter-search-button" value="검색"></div>
+        <div><input type="submit" class="btn filter-search-button" value="검색"></div>
       </form>
 
     </div>
@@ -91,16 +94,17 @@
   <div class ="container main-box">
     <div class = "content margin-top">
 
-      <img class = "book-icon" src = "../img/ex.png" th:src="${bookPostsDTO.image}">
+      <img class = "book-icon" src = "../img/ex.png" th:src="${book.image}">
       <div class = "content-info settings">
-        <div th:text="${bookPostsDTO.title}">창의적 숨쉬기</div>
-        <span th:text="${bookPostsDTO.author}">저자</span>
-        <span th:text="${bookPostsDTO.publisher}">출판사</span>
-        <span th:text="|출판 년도 : ${bookPostsDTO.pubDate}|">출판 년도</span>
-        <div th:text="|책 정가 : ${bookPostsDTO.discount}|">정가</div>
+        <div th:text="${book.title}">창의적 숨쉬기</div>
+        <span th:text="${book.author}">저자</span>
+        <span th:text="${book.publisher}">출판사</span>
+        <span th:text="|출판 년도 : ${book.pubDate}|">출판 년도</span>
+        <div th:text="|책 정가 : ${book.discount}|">정가</div>
       </div>
-      <div class = "state" th:text="|${bookPostsDTO.postList.size()}건|">2건</div>
-
+      <th:block th:unless="${bookPostsDTO == null}">
+        <div class="state" th:text="${bookPostsDTO.postList != null ? bookPostsDTO.postList.size() + '건' : '0건'}">2건</div>
+      </th:block>
     </div>
 
 
@@ -109,6 +113,8 @@
     <div class ="container border main-box main-list">
 
       <!-- example -->
+      <th:block th:unless="${bookPostsDTO == null}">
+
       <a href = "" th:each="post : ${bookPostsDTO.getPostList()}" th:href="@{/post/view/{postId}(postId=${post.postId})}">
         <div class = "content margin-top">
 
@@ -123,7 +129,7 @@
           <div class = "state" th:text="${post.postStatus}">판매중</div>
         </div>
       </a>
-
+      </th:block>
     </div>
   </div>
 
