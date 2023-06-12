@@ -650,7 +650,7 @@ main .content {
 .post-main {
   margin: 1rem;
   width: 50vw;
-  background-color: #b9895d;
+  background-color: #bb8b68;
   padding: 1rem;
   border-radius: 1rem;
   margin-left: 15rem;
@@ -944,7 +944,21 @@ main .content {
   margin-top: 10px;
   margin-left: 25px;
 }
+div[title]:hover::after {
+  content:"100~80: 다이아몬드           80 ~60: 플래티넘　           60 ~40: 골드　　　           40 ~20: 실버　　　           20 ~ 0: 브론즈　　";
+  /*line-height:80px;*/
+  padding: 10px;
+  text-align:center;
+  z-index:0;
+  position: absolute;
+  right: 25%;
+  top: 100%;
+  width:180px;
+  background-color: white;
+  border: 1px solid #a67b48;
+  border-radius: 0.7rem;
 
+}
 th{
   background-color:rgb(170, 204, 248);
   text-align: center;
