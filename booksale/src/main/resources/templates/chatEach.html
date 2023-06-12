@@ -20,12 +20,12 @@
     <div id="chatMessages" class="chat-content">
         <th:block th:each="message : ${messages}">
             <div class = "chat-sent" th:if="${message.senderId} == ${session.loginUser.id}">
-                <span class = "time" >01:23</span>
+                <span class = "time" th:text="${#temporals.format(message.sendTime, 'HH:mm')}">01:23</span>
                 <span class = "message"  th:text="${message.messageContent}">끝말잇기 하자</span>
             </div>
             <div class = "chat-received" th:unless="${message.receiverId} == ${otherUserId}">
                 <span class = "message" th:text="${message.messageContent}">름셈부르크</span>
-                <span class = "time">01:25</span>
+                <span class = "time" th:text="${#temporals.format(message.sendTime, 'HH:mm')}">01:25</span>
             </div>
         </th:block>
     </div>
