@@ -85,23 +85,21 @@
       <button th:if="${session.loginUser != null} and ${isAlreadyInterest}" class="custom-button"
               onclick="document.getElementById('deleteInterest').submit();"><a href="#">관심 해제</a></button>
 
-      <button class="custom-button" type="submit"><a class="black" href="">삭제</a></button>
-      <button class="custom-button" type="submit"><a class="black" href="post.html" th:href="@{/post}">수정</a></button>
+      <button class="custom-button" th:if="${session.loginUser != null} and ${session.loginUser.id == post.sellerId}" type="submit"><a class="black" href="">삭제</a></button>
+      <button class="custom-button" th:if="${session.loginUser != null} and ${session.loginUser.id == post.sellerId}" type="submit"><a class="black" href="post.html" th:href="@{/post}">수정</a></button>
     </div>
     <div class="half-size">
       <form class="flex_right" method="post" action="/post/view/status">
         <input type="hidden" name="postId" th:value="${post.postId} ">
-        <select class="search-select" id="sellState_combo" name="postStatus">
-          <option value="현재 상태" th:text="${post.postStatus}"></option>
-          <option value="판매중"> 판매중</option>
-          <option value="예약중"> 예약중</option>
-          <option value="판매완료"> 판매완료</option>
+        <select class="search-select" id="sellState_combo" name="postStatus" th:disabled="${session.loginUser == null} or ${session.loginUser.id != post.sellerId}">
+          <option value="판매중" th:selected="${post.postStatus == '판매중'}"> 판매중</option>
+          <option value="예약중" th:selected="${post.postStatus == '예약중'}"> 예약중</option>
+          <option value="판매완료" th:selected="${post.postStatus == '판매완료'}"> 판매완료</option>
         </select>
-        <button class="custom-button" type="submit"><a class="black" href="">변경</a></button>
+        <button class="custom-button" type="submit" th:if="${session.loginUser != null} and ${session.loginUser.id == post.sellerId}"><a class="black">변경</a></button>
       </form>
     </div>
   </div>
-
 
 
 
