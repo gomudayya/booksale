@@ -107,7 +107,7 @@
 
   <form th:method="post" th:action="@{/review/save}">
     <div class="item top-border mt-3" th:if="${session.loginUser != null} and ${review == null}">리뷰 작성
-      <select class="search-select raiting">
+      <select class="search-select raiting" name="rating">
         <option value="5" selected>5</option>
         <option value="4">4</option>
         <option value="3">3</option>
@@ -125,14 +125,14 @@
   <div class = "sold mt-3" th:if="${review != null}">
     <div>
       <div class = "date" th:text="${#temporals.format(review.reviewTime, 'yyyy-MM-dd HH:mm')}"> 2023-06-04</div>
-      <div class = "reviewer">리뷰어닉네임</div>
+      <div class = "reviewer" >익명</div>
       <div th:text="${review.reviewContent}">
         믿고 거래했습니다.
         판매자가 재밌고 책이 친절해요
       </div>
     </div>
     <div class = "right">
-      <div class = "state">별점: 5</div>
+      <div class = "state" th:text="|별점 : ${review.rating}|">별점: 5</div>
     </div>
   </div>
 
@@ -160,16 +160,16 @@
 
     <!-- example -->
     <div class = "sold margin-top" th:each="sellerReview : ${sellerReviewList}">
-      <div>
+      <div class="left">
         <div class = "date" th:text="${#temporals.format(sellerReview.reviewTime, 'yyyy-MM-dd HH:mm')}"> 2023-06-04</div>
-        <div class = "reviewer">리뷰어닉네임</div>
+        <div class = "reviewer">익명</div>
         <div th:text="${sellerReview.reviewContent}">
           믿고 거래했습니다.<br>
           판매자가 재밌고 책이 친절해요
         </div>
       </div>
       <div class = "right">
-        <div class = "state">별점: 5</div>
+        <div class = "state" th:text="|별점 : ${sellerReview.rating}|">별점: 5</div>
       </div>
     </div>
 

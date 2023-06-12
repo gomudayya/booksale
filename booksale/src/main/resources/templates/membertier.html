@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="/css/style.css" th:href="@{/css/style.css}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Pacifico&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="membertierPage">
 <a href="index_logined.html" th:href="@{/}"><h1 class = "title logo"><span>R</span><span>E</span><span>B</span><span>O</span><span>O</span><span>K</span></h1></a>
 <div class="memberTier-instruction-box">
   <div class="memberTier-instruction">
@@ -57,169 +57,101 @@
 
   <div class="row">
     <div class="memberTierList-title">
-      <img class="trophy-icon" src="../img/trophy.png">
-      <h1 class="memberTierList-title">회원 등급 리스트</h1>
-      <img class="trophy-icon" src="../img/trophy.png">
+      <img class="trophy-icon" src="../img/trophy2.png">
+      <span class="memberTierList-title">회원 등급 리스트</span>
+      <img class="trophy-icon" src="../img/trophy2.png">
     </div>
 
   </div>
 
-  <div class="row">
+  <div class="row-mt">
     <div class="trueGod-group">
       <div class="trueGod-text">
         <div class="trueGod-font">
           <h2 class="trueGod-title">절대신</h2>
         </div>
         <div class="trueGod-members">
-          <div class="trueGod-member">
-            <div>회원ID: helloworld1234</div>
-            <div>신뢰도 점수: 98점</div>
-          </div>
-          <div class="trueGod-member">
-            <div>회원ID: 데베설좋아</div>
-            <div>신뢰도 점수: 95점</div>
-          </div>
         </div>
       </div>
-      <img class="trueGod-image" src="../img/trueGod.png">
+      <img id="trueGod-image" class="memberTier-image" src="../img/trueGod.png">
     </div>
   </div>
 
-  <div class="row">
+  <div class="row-mt">
     <div class="godAgent-group">
       <div class="godAgent-text">
         <div class="godAgent-font">
           <h2 class="godAgent-title">신의 대리인</h2>
         </div>
         <div class="godAgent-members">
-          <div class="godAgent-member">
-            <div>회원ID: helloworld1234</div>
-            <div>신뢰도 점수: 86점</div>
-          </div>
-          <div class="godAgent-member">
-            <div>회원ID: 데베설좋아</div>
-            <div>신뢰도 점수: 82점</div>
-          </div>
         </div>
       </div>
-      <img class="godAgent-image" src="../img/godAgent.png">
+      <img id="godAgent-image" class="memberTier-image" src="../img/godAgent.png">
     </div>
   </div>
 
-  <div class="row">
+  <div class="row-mt">
     <div class="king-group">
       <div class="king-text">
         <div class="king-font">
           <h2 class="king-title">왕</h2>
         </div>
         <div class="king-members">
-          <div class="king-member">
-            <div>회원ID: helloworld1234</div>
-            <div>신뢰도 점수: 79점</div>
-          </div>
-          <div class="king-member">
-            <div>회원ID: 데베설좋아</div>
-            <div>신뢰도 점수: 76점</div>
-          </div>
         </div>
       </div>
-      <img class="king-image" src="../img/king.png">
+      <img id="king-image" class="memberTier-image" src="../img/king.png">
     </div>
   </div>
 
-  <div class="row">
+  <div class="row-mt">
     <div class="noble-group">
       <div class="noble-text">
         <div class="noble-font">
           <h2 class="noble-title">귀족</h2>
         </div>
         <div class="noble-members">
-          <div class="noble-member">
-            <div>회원ID: helloworld1234</div>
-            <div>신뢰도 점수: 64점</div>
-          </div>
-          <div class="noble-member">
-            <div>회원ID: 데베설좋아</div>
-            <div>신뢰도 점수: 60점</div>
-          </div>
-          <div class="noble-member">
-            <div>회원ID: 데베설싫어</div>
-            <div>신뢰도 점수: 51점</div>
-          </div>
         </div>
       </div>
-      <img class="noble-image" src="../img/noble.png">
+      <img id="noble-image" class="memberTier-image" src="../img/noble.png">
     </div>
   </div>
 
-  <div class="row">
+  <div class="row-mt">
     <div class="common-group">
       <div class="common-text">
         <div class="common-font">
           <h2 class="common-title">평민</h2>
         </div>
         <div class="common-members">
-          <div class="common-member">
-            <div>회원ID: helloworld1234</div>
-            <div>신뢰도 점수: 44점</div>
-          </div>
-          <div class="common-member">
-            <div>회원ID: 데베설좋아</div>
-            <div>신뢰도 점수: 39점</div>
-          </div>
-          <div class="common-member">
-            <div>회원ID: 데베설싫어</div>
-            <div>신뢰도 점수: 31점</div>
-          </div>
         </div>
       </div>
-      <img class="common-image" src="../img/common.png">
+      <img id="common-image" class="memberTier-image" src="../img/common.png">
     </div>
   </div>
 
-  <div class="row">
+  <div class="row-mt">
     <div class="slave-group">
       <div class="slave-text">
         <div class="slave-font">
           <h2 class="slave-title">노예</h2>
         </div>
         <div class="slave-members">
-          <div class="slave-member">
-            <div>회원ID: helloworld1234</div>
-            <div>신뢰도 점수: 24점</div>
-          </div>
-          <div class="slave-member">
-            <div>회원ID: 데베설좋아</div>
-            <div>신뢰도 점수: 19점</div>
-          </div>
-          <div class="slave-member">
-            <div>회원ID: 데베설싫어</div>
-            <div>신뢰도 점수: 11점</div>
-          </div>
         </div>
       </div>
-      <img class="slave-image" src="../img/slave.png">
+      <img id="slave-image" class="memberTier-image" src="../img/slave.png">
     </div>
   </div>
 
-  <div class="row">
+  <div class="row-mt">
     <div class="beast-group">
       <div class="beast-text">
         <div class="beast-font">
           <h2 class="beast-title">짐승</h2>
         </div>
         <div class="beast-members">
-          <div class="beast-member">
-            <div>회원ID: helloworld1234</div>
-            <div>신뢰도 점수: 4점</div>
-          </div>
-          <div class="beast-member">
-            <div>회원ID: 데베설좋아</div>
-            <div>신뢰도 점수: 0점</div>
-          </div>
         </div>
       </div>
-      <img class="beast-image" src="../img/beast.png">
+      <img id="beast-image" class="memberTier-image" src="../img/beast.png">
     </div>
   </div>
 </div>
