@@ -123,6 +123,11 @@ public class UserController {
 
         userService.update(user, registerDTO);
 
+        //임시
+        loginUser.setUserName(registerDTO.getUserName());
+        loginUser.setPhoneNumber(registerDTO.getPhoneNumber());
+        loginUser.setUserID(registerDTO.getUserID());
+
         return "redirect:/user/info";
     }
 
