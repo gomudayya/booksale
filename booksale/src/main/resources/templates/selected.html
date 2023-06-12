@@ -19,7 +19,7 @@
 <main class="container search-main no-padding flex">
   <div class = "filter">
     <div class = filter-button><text>▼</text> 필터</div>
-    <div class = "filter-list invisible">
+    <div class = "filter-list">
 
       <form method="get" th:action="@{/search/{bookISBN} (bookISBN=${book.ISBN} ) }">
         <div class = "filter-item">판매가</div>
