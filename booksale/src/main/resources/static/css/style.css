@@ -87,6 +87,10 @@ main .content {
   background-color: rgb(255, 235, 216);
   padding: 0.3rem;
   border-radius: 1rem;
+  margin-left: 0.7rem;
+}
+#bookImage{
+  margin:1rem;
 }
 #bookISBN{
   display: none;
@@ -111,6 +115,7 @@ main .content {
   width: auto;
   height: 5rem;
 }
+
 
 .content-info {
   color: rgb(77, 42, 11);
@@ -1020,3 +1025,4 @@ table, td{
   border-radius: 0.7rem;
   background: #ffebda;
 }
+
