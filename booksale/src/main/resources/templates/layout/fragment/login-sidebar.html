@@ -3,7 +3,7 @@
         <div class = "member-detail">
             <div th:text="${session.loginUser.userName}">전강욱 님</div>
             <div title="">
-                <span th:text="'현재 마일리지: ' + ${session.loginUser.mileage} + '   ('"></span>
+                <span th:text="'신뢰도: ' + ${session.loginUser.mileage} + '   ('"></span>
                 <span th:if="${session.loginUser.mileage < 20}">브론즈</span>
                 <span th:if="${session.loginUser.mileage >= 20 && session.loginUser.mileage <= 40}">실버</span>
                 <span th:if="${session.loginUser.mileage > 40 && session.loginUser.mileage <= 60}">골드</span>

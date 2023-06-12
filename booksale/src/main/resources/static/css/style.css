@@ -82,11 +82,10 @@ main .content {
   padding: 0.5rem;
   border-radius: 1rem;
   margin-bottom: 0.5rem;
-  height:3.5rem;
 }
 .book-info-label{
   background-color: rgb(255, 235, 216);
-  padding: 0.5rem;
+  padding: 0.3rem;
   border-radius: 1rem;
 }
 #bookISBN{
@@ -139,6 +138,7 @@ main .content {
 }
 .remove-margin{
   margin-bottom: 0rem;
+  margin-right: 1rem;
 }
 .member-info {
   border-radius: 1rem;
