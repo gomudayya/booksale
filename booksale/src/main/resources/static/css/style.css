@@ -78,13 +78,14 @@ main .content {
 }
 
 .book-info-block{
-  background-color: rgb(218, 161, 108);
+  background-color: rgb(255, 209, 166);
   padding: 0.5rem;
   border-radius: 1rem;
   margin-bottom: 0.5rem;
+  height:3.5rem;
 }
 .book-info-label{
-  background-color: rgb(179, 118, 69);
+  background-color: rgb(255, 235, 216);
   padding: 0.5rem;
   border-radius: 1rem;
 }
@@ -984,4 +985,14 @@ table, td{
 
 .msg{
   margin-left: 0;
+}
+.white{
+  color: white;
+}
+
+#bookTitle{
+  margin:0.5rem;
+  padding:0.8rem;
+  border-radius: 0.7rem;
+  background: #ffebda;
 }
