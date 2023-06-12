@@ -3,6 +3,7 @@ package dbteam4.booksale.controller;
 import dbteam4.booksale.constant.SessionConst;
 import dbteam4.booksale.domain.User;
 import dbteam4.booksale.dto.MessageDTO;
+import dbteam4.booksale.dto.MessageUserDTO;
 import dbteam4.booksale.service.MessageService;
 import dbteam4.booksale.service.UserService;
 import org.springframework.ui.Model;
@@ -13,7 +14,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequiredArgsConstructor
@@ -23,9 +26,12 @@ public class ChatController {
     private final MessageService messageService;
     private final UserService userService;
     @GetMapping()
-    public String chat(@SessionAttribute(name = SessionConst.LOGIN_USER) User loginUser){
+    public String chat(@SessionAttribute(name = SessionConst.LOGIN_USER) User loginUser, Model model){
+        List<MessageUserDTO> lastMessageList = messageService.findLastMessageList(loginUser.getId());
 
 
+
+        model.addAttribute("lastMessageList", lastMessageList);
 
         return "chat";
     }

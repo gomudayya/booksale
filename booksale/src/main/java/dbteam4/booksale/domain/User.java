@@ -1,6 +1,7 @@
 package dbteam4.booksale.domain;
 
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

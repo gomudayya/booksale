@@ -49,6 +49,13 @@ public class ChatSocketHandler extends TextWebSocketHandler {
         messageDTO.setReceiverId(receiverId);
         messageDTO.setSendTime(LocalDateTime.now());
 
+        String fair = senderId < receiverId ? String.valueOf(senderId) + ":" + String.valueOf(receiverId)
+                                            : String.valueOf(receiverId) + ":" + String.valueOf(senderId);
+
+        System.out.println("fair = " + fair);
+        messageDTO.setUserFair(fair);
+
+
         messageService.save(messageDTO);
     }
 
