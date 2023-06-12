@@ -37,7 +37,7 @@
 
   <div class="flex">
     <div class="item">판매자</div>
-    <a class="item detail" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" th:text="|${userName}(click!)|">
+    <a class="item detail" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" th:text="|${userName}|">
       작성자 이름(click!)
     </a>
   </div>
@@ -81,7 +81,7 @@
   <div class="flex">
     <div class="half-size">
       <button th:if="${session.loginUser != null}" th:unless="${isAlreadyInterest}" class="custom-button"
-              onclick="document.getElementById('saveInterest').submit();"><a href="#">관심 등록</a></button>
+              onclick="document.getElementById('saveInterest').submit();"><a class = "black" href="#">관심 등록</a></button>
       <button th:if="${session.loginUser != null} and ${isAlreadyInterest}" class="custom-button"
               onclick="document.getElementById('deleteInterest').submit();"><a href="#">관심 해제</a></button>
 

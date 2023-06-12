@@ -64,13 +64,13 @@ main .recent {
 }
 
 main .contents-container {
-  background-color: rgb(179, 118, 69);
+  background-color: rgb(208, 145, 95);
   padding: 0.5rem;
   border-radius: 1.3rem;
 }
 
 main .content {
-  background-color: rgb(218, 161, 108);
+  background-color: #eec3a1;
   padding: 0.5rem;
   border-radius: 1rem;
   display: flex;
@@ -141,8 +141,8 @@ main .content {
 }
 .member-info {
   border-radius: 1rem;
-  border: #a5784e 0.4rem solid;
-  background-color: #cca374;
+  border: #a5784e 2px solid;
+  background-color: #ffebda;
   width: 15rem;
   height: 9rem;
   margin: 1rem;
@@ -155,14 +155,12 @@ main .content {
 
 .detail-text{
   float: left;
-
 }
 
 .detail-img{
   height: 30px;
   margin-left: 0px;
   display: flex;
-
 }
 
 
@@ -176,17 +174,16 @@ main .content {
   width: 30px;
   height: 30px;
   margin-top: 0.5rem;
-
 }
 
 .post-button {
   border-radius: 1rem;
-  border: #cca374 0.3rem solid;
-  background-color: #a5784e;
+  border: #a67b48 2px solid;
+    background-color: #ffebda;
   margin: 1rem;
   text-align: center;
   padding: 0.2rem;
-  color: rgb(95, 60, 8);
+  color: rgb(56, 39, 7);
 }
 
 .chat {
@@ -491,8 +488,9 @@ main .content {
 .sold .state {
   margin: 0.5rem;
   margin-left: auto;
-  background-color: #cca374;
+  background-color: #eec695;
   height: 2.2rem;
+  width: 4rem;
   padding: 0.3rem;
   border-radius: 0.3rem;
   color: black;
@@ -721,7 +719,7 @@ main .content {
 }
 
 .post-main .detail {
-  background-color: #cca374;
+  background-color: #ccc3b1;
   color: black;
   border-radius: 0.5rem;
   padding-left: 0.7rem;
@@ -732,7 +730,7 @@ main .content {
   margin: 0.2rem;
   font-size: 2rem;
   text-align: left;
-  background-color: #cca374;
+  background-color: #d3caba;
   padding: 0.5rem;
   border-radius: 1rem;
 }
