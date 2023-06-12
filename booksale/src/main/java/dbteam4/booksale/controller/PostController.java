@@ -53,6 +53,8 @@ public class PostController {
         List<ReviewDTO> sellerReviewList = reviewService.findBySellerId(post.getSellerId());
 
 
+
+
         Long sellerId = post.getSellerId();
         String userName = userService.findById(sellerId).getUserName();
 
