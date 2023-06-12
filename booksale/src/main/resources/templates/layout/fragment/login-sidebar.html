@@ -2,7 +2,7 @@
     <div class = "member-info" role="group">
         <div class = "member-detail">
             <div th:text="${session.loginUser.userName}">전강욱 님</div>
-            <div>
+            <div title="">
                 <span th:text="'현재 마일리지: ' + ${session.loginUser.mileage} + '   ('"></span>
                 <span th:if="${session.loginUser.mileage < 20}">브론즈</span>
                 <span th:if="${session.loginUser.mileage >= 20 && session.loginUser.mileage <= 40}">실버</span>
@@ -23,7 +23,6 @@
     </div>
 
     <a th:href="@{/post}"><div class = "post-button black">판매글 작성하기</div></a>
-    <a th:href="@{/membertier}"><div class="post-button black">회원 등급 보기</div></a>
 
     <form id="logout" th:action="@{/user/logout}" method="POST">
         <input name="${_csrf.parameterName}" type="hidden" value="${_csrf.token}"/>
