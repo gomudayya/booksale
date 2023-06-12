@@ -19,10 +19,47 @@
                p.post_id, p.seller_id, p.post_time, p.post_content, p.sales_method, p.post_price, p.shipping_method, p.book_quality, p.post_title, p.post_status
         from
             book b inner join post p on b.ISBN = p.book_ISBN
-        where b.ISBN = #{ISBN}
-
+        <where>
+            b.ISBN = #{ISBN}
+            <if test="cond.underPrice != null">
+                and p.post_price &lt;= #{cond.underPrice}
+            </if>
+            <if test="cond.discountRate !=null">
+                and ((b.discount - p.post_price) / b.discount * 100) &gt;= #{cond.discountRate}
+            </if>
+            <if test="cond.onSale != null or cond.reserved != null or cond.sold != null">
+                and (
+                <choose>
+                    <when test="cond.reserved != null">
+                        <if test="cond.onSale != null or cond.sold != null">
+                            (p.post_status ='예약중' or
+                        </if>
+                        <if test="cond.onSale != null">
+                            (p.post_status ='예약중')
+                        </if>
+                        <if test="cond.sold != null">
+                            (p.post_status ='예약중')
+                        </if>
+                    </when>
+                    <when test="cond.onSale != null">
+                        <if test="cond.sold != null">
+                            (p.post_status = '판매중' or
+                        </if>
+                        <if test="cond.sold == null">
+                            (p.post_status = '판매중')
+                        </if>
+                    </when>
+                    <when test="cond.sold != null">
+                        (p.post_status ='판매완료')
+                    </when>
+                </choose>
+                )
+            </if>
+            <if test="cond.shippingMethod != null and cond.shippingMethod !='' and cond.shippingMethod != '전체'">
+                and p.shipping_method = #{cond.shippingMethod}
+            </if>
+        </where>
     </select>
-
 
     <resultMap id="bookResultMap" type="BookPostsDTO">
         <id property="ISBN" column="ISBN" />

@@ -5,6 +5,7 @@ import dbteam4.booksale.domain.Book;
 import dbteam4.booksale.domain.Post;
 import dbteam4.booksale.dto.BookPostsDTO;
 import dbteam4.booksale.dto.BookSearchCond;
+import dbteam4.booksale.dto.PostSearchCond;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,11 +46,21 @@ class BookMapperTest {
     }
     @Test
     void findBookWithPostsByISBN() {
-        BookPostsDTO bookPostsDTO = bookMapper.findBookWithPostsByISBN("9791162242025");// 모던 자바 인 액션
+        PostSearchCond postSearchCond = new PostSearchCond();
+        postSearchCond.setUnderPrice(20000L);
+        postSearchCond.setReserved(true);
+        postSearchCond.setShippingMethod("직거래");
 
-        System.out.println(bookPostsDTO.getTitle());
+        BookPostsDTO bookPostsDTO = bookMapper.findBookWithPostsByISBN("9791162242025", postSearchCond);
+        System.out.println("postSearchCond = " + postSearchCond);
+
         List<Post> postList = bookPostsDTO.getPostList();
-        printPost(postList);
+
+        for (Post post : postList) {
+            System.out.println("post = " + post);
+        }
+
+        //printPost(postList);
     }
 
     private void printPost(List<Post>  postList) {
