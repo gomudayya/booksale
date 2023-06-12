@@ -17,7 +17,7 @@
 </div>
 
 <div class="mail_each-body">
-    <div id="chatMessages">
+    <div id="chatMessages" class="chat-content">
         <th:block th:each="message : ${messages}">
             <div class = "chat-sent" th:if="${message.senderId} == ${session.loginUser.id}">
                 <span class = "time" >01:23</span>
@@ -55,9 +55,11 @@
 
     sendMessageButton.addEventListener('click', function() {
         let message = document.getElementById('message-input').value;
-        socket.send(message);
-        addSentMessage(message, getCurrentTime())
-        input.value=""
+        if (message != "") {
+            socket.send(message);
+            addSentMessage(message, getCurrentTime())
+            input.value=""
+        }
     });
 
 

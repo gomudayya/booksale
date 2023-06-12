@@ -32,6 +32,7 @@ public class ChatSocketHandler extends TextWebSocketHandler {
     @Override
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
         String payload = message.getPayload();
+        if (payload.isEmpty()) return;
 
         Long senderId = (Long) session.getAttributes().get("userId");
         Long receiverId = (Long) session.getAttributes().get("receiverId");

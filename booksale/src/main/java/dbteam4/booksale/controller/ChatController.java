@@ -33,6 +33,8 @@ public class ChatController {
     @GetMapping("/each/{otherUserId}")
     public String eachChat(@PathVariable Long otherUserId, Model model,
                            @SessionAttribute(name = SessionConst.LOGIN_USER) User loginUser){
+        if ( otherUserId == loginUser.getId()) {return "redirect:/chat";}
+
         List<MessageDTO> messages = messageService.findByTwoId(loginUser.getId(), otherUserId);
 
         String otheUserName = userService.findById(otherUserId).getUserName();
