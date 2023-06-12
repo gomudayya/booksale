@@ -14,4 +14,5 @@ public class RegisterDTO {
     private String password;
     private String university;
     private String department; // 학과
+    private int mileage;
 }

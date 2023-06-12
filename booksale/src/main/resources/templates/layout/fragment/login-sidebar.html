@@ -4,7 +4,7 @@
             <div th:text="${session.loginUser.userName}">전강욱 님</div>
             <div>
                 <span th:text="'현재 마일리지: ' + ${session.loginUser.mileage} + '   ('"></span>
-                <span th:if="${session.loginUser.mileage >= 0 && session.loginUser.mileage < 10}">짐승</span>
+                <span th:if="${session.loginUser.mileage < 10}">짐승</span>
                 <span th:if="${session.loginUser.mileage >= 10 && session.loginUser.mileage <= 30}">노예</span>
                 <span th:if="${session.loginUser.mileage > 30 && session.loginUser.mileage <= 50}">평민</span>
                 <span th:if="${session.loginUser.mileage > 50 && session.loginUser.mileage <= 70}">귀족</span>

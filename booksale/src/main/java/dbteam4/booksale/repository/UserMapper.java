@@ -15,6 +15,8 @@ public interface UserMapper {
 
     void update(@Param("id") Long id, @Param("userForm") RegisterDTO registerDTO);
 
+    void plusMileage(Long id, int mileage);
+
     User findByLoginID(String userID);
 
     User findById(Long id);

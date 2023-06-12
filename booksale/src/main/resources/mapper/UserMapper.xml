@@ -23,7 +23,8 @@
         set user_name = #{userForm.userName},
             phone_number = #{userForm.phoneNumber},
             user_id = #{userForm.userID},
-            user_password = #{userForm.password}
+            user_password = #{userForm.password},
+            mileage = #{userForm.mileage}
         where id = #{id};
     </update>
 
@@ -37,5 +38,11 @@
     <select id="findById" resultType="User">
         select * from user where id=#{id};
     </select>
+
+    <update id="plusMileage">
+        update user
+        set mileage = mileage + #{mileage}
+        where id = #{id}
+    </update>
 
 </mapper>
