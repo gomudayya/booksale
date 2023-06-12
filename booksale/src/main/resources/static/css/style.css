@@ -981,3 +981,7 @@ table, td{
 .margin-left{
   margin-left: 1rem;
 }
+
+.msg{
+  margin-left: 0;
+}
