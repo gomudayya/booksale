@@ -4,8 +4,8 @@
             <div th:text="${session.loginUser.userName}">전강욱 님</div>
             <div>
                 <span th:text="'현재 마일리지: ' + ${session.loginUser.mileage} + '   ('"></span>
-                <span th:if="${session.loginUser.mileage < 10}">브론즈</span>
-                <span th:if="${session.loginUser.mileage >= 10 && session.loginUser.mileage <= 40}">실버</span>
+                <span th:if="${session.loginUser.mileage < 20}">브론즈</span>
+                <span th:if="${session.loginUser.mileage >= 20 && session.loginUser.mileage <= 40}">실버</span>
                 <span th:if="${session.loginUser.mileage > 40 && session.loginUser.mileage <= 60}">골드</span>
                 <span th:if="${session.loginUser.mileage > 60 && session.loginUser.mileage <= 80}">플래티넘</span>
                 <span th:if="${session.loginUser.mileage > 80}">다이아몬드</span>
