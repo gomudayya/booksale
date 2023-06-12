@@ -644,7 +644,7 @@ main .content {
 .post-main {
   margin: 1rem;
   width: 50vw;
-  background-color: rgb(161, 140, 116);
+  background-color: #b9895d;
   padding: 1rem;
   border-radius: 1rem;
   margin-left: 15rem;
@@ -719,7 +719,7 @@ main .content {
 }
 
 .post-main .detail {
-  background-color: #ccc3b1;
+  background-color: #eaccb6;
   color: black;
   border-radius: 0.5rem;
   padding-left: 0.7rem;
@@ -730,7 +730,7 @@ main .content {
   margin: 0.2rem;
   font-size: 2rem;
   text-align: left;
-  background-color: #d3caba;
+  background-color: #eaccb6;
   padding: 0.5rem;
   border-radius: 1rem;
 }
