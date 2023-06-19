@@ -28,31 +28,17 @@
                 and ((b.discount - p.post_price) / b.discount * 100) &gt;= #{cond.discountRate}
             </if>
             <if test="cond.onSale != null or cond.reserved != null or cond.sold != null">
-                and (
-                <choose>
-                    <when test="cond.reserved != null">
-                        <if test="cond.onSale != null or cond.sold != null">
-                            (p.post_status ='예약중' or
-                        </if>
-                        <if test="cond.onSale != null">
-                            (p.post_status ='예약중')
-                        </if>
-                        <if test="cond.sold != null">
-                            (p.post_status ='예약중')
-                        </if>
-                    </when>
-                    <when test="cond.onSale != null">
-                        <if test="cond.sold != null">
-                            (p.post_status = '판매중' or
-                        </if>
-                        <if test="cond.sold == null">
-                            (p.post_status = '판매중')
-                        </if>
-                    </when>
-                    <when test="cond.sold != null">
-                        (p.post_status ='판매완료')
-                    </when>
-                </choose>
+                and
+                (p.post_status = ''
+                <if test="cond.onSale != null">
+                    || p.post_status = '판매중'
+                </if>
+                <if test="cond.reserved != null">
+                    || p.post_status = '예약중'
+                </if>
+                <if test="cond.sold != null">
+                    || p.post_status = '판매완료'
+                </if>
                 )
             </if>
             <if test="cond.shippingMethod != null and cond.shippingMethod !='' and cond.shippingMethod != '전체'">

@@ -10,7 +10,8 @@
 
     <select id="findByTwoId" resultType="MessageDTO">
         select * from message
-        where (sender_id = #{user1Id} and receiver_id= #{user2Id}) or (sender_id = #{user2Id} and receiver_id = #{user1Id});
+        where (sender_id = #{user1Id} and receiver_id= #{user2Id}) or (sender_id = #{user2Id} and receiver_id = #{user1Id})
+        order by message_id asc;
     </select>
 
     <select id="findById" resultType="MessageDTO">

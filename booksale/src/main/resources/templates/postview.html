@@ -90,7 +90,7 @@
               onclick="document.getElementById('deleteInterest').submit();"><a href="#">관심 해제</a></button>
 
       <button class="custom-button" th:if="${session.loginUser != null} and ${session.loginUser.id == post.sellerId}" type="submit"><a class="black" href="">삭제</a></button>
-      <button class="custom-button" th:if="${session.loginUser != null} and ${session.loginUser.id == post.sellerId}" type="submit"><a class="black" href="post.html" th:href="@{/post}">수정</a></button>
+      <button class="custom-button" th:if="${session.loginUser != null} and ${session.loginUser.id == post.sellerId}" type="submit"><a class="black" href="post.html" th:href="@{/post/edit/{postId}(postId = ${post.postId})}">수정</a></button>
     </div>
     <div class="half-size">
       <form class="flex_right" method="post" action="/post/view/status">

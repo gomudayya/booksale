@@ -45,6 +45,25 @@ public class PostController {
         return "redirect:/";
     }
 
+    @GetMapping("/edit/{postId}")
+    public String edit(@PathVariable Long postId, Model model) {
+
+        PostBookDTO postBook = postService.findByPostId(postId);
+
+        model.addAttribute("postBook", postBook);
+
+        return "postEdit";
+    }
+
+    @PostMapping("/edit")
+    public String updatePost(@ModelAttribute PostDTO postDTO, @SessionAttribute(name = SessionConst.LOGIN_USER) User loginUser) {
+        // postDTO 받아와서 update쿼리로 보내기 ......
+
+
+        return "redirect:/";
+        //return "redirect:/post/view/" + postId;
+    }
+
     @GetMapping("/view/{postId}")
     public String view(@PathVariable Long postId, Model model,
                        @SessionAttribute(name = SessionConst.LOGIN_USER, required = false) User loginUser) {

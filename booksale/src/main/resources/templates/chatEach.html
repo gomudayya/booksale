@@ -23,7 +23,7 @@
                 <span class = "time" th:text="${#temporals.format(message.sendTime, 'HH:mm')}">01:23</span>
                 <span class = "message"  th:text="${message.messageContent}">끝말잇기 하자</span>
             </div>
-            <div class = "chat-received" th:unless="${message.receiverId} == ${otherUserId}">
+            <div class = "chat-received" th:if="${message.receiverId} == ${session.loginUser.id}">
                 <span class = "message" th:text="${message.messageContent}">름셈부르크</span>
                 <span class = "time" th:text="${#temporals.format(message.sendTime, 'HH:mm')}">01:25</span>
             </div>
