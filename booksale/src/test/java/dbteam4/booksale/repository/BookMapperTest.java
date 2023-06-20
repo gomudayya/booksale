@@ -44,24 +44,24 @@ class BookMapperTest {
         }
 
     }
-    @Test
-    void findBookWithPostsByISBN() {
-        PostSearchCond postSearchCond = new PostSearchCond();
-        postSearchCond.setUnderPrice(20000L);
-        postSearchCond.setReserved(true);
-        postSearchCond.setShippingMethod("직거래");
-
-        BookPostsDTO bookPostsDTO = bookMapper.findBookWithPostsByISBN("9791162242025", postSearchCond);
-        System.out.println("postSearchCond = " + postSearchCond);
-
-        List<Post> postList = bookPostsDTO.getPostList();
-
-        for (Post post : postList) {
-            System.out.println("post = " + post);
-        }
-
-        //printPost(postList);
-    }
+//    @Test
+//    void findBookWithPostsByISBN() {
+//        PostSearchCond postSearchCond = new PostSearchCond();
+//        postSearchCond.setUnderPrice(20000L);
+//        postSearchCond.setReserved(true);
+//        postSearchCond.setShippingMethod("직거래");
+//
+//        BookPostsDTO bookPostsDTO = bookMapper.findBookWithPostsByISBN("9791162242025", postSearchCond);
+//        System.out.println("postSearchCond = " + postSearchCond);
+//
+//        List<Post> postList = bookPostsDTO.getPostList();
+//
+//        for (Post post : postList) {
+//            System.out.println("post = " + post);
+//        }
+//
+//        //printPost(postList);
+//    }
 
     private void printPost(List<Post>  postList) {
         for (Post post : postList) {

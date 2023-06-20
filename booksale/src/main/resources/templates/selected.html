@@ -13,7 +13,7 @@
 <!-- 로그인/회원가입 bar -->
 <div th:if="${session.loginUser == null}" th:insert="~{layout/fragment/header :: header}"></div>
 <!-- 헤더 -->
-<header th:replace="~{/layout/fragment/search-header :: search-header}"></header>
+<header th:replace="~{layout/fragment/search-header :: search-header}"></header>
 
 
 <main class="container search-main no-padding flex">
